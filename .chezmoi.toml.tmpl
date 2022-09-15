@@ -1,4 +1,6 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
+{{- $skip_installs := promptBoolOnce . "skip_installs" "Skip package installs"}}
 
 [data]
 	email = {{ $email | quote }}
+	skip_installs = {{ $skip_installs }}

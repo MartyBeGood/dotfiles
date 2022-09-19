@@ -171,8 +171,7 @@ local use = packer.use
 
   -- magit
   use {
-    'TimUntersberger/neogit',
-    requires = 'nvim-lua/plenary.nvim',
+    'tpope/vim-fugitive'
     -- opt = true,
   }
 

@@ -16,7 +16,7 @@ wk.register({
     },
     g = {
       name = "Goto...",
-      g = { h.cmdify("Neogit"), "Git Status" },
+      g = { h.cmdify("Git"), "Git overview" },
       f = { h.cmdify("call gfriend#goto_cfile(winwidth(0) >=# 180 ? 'vsp' : 'sp')"), "File under cursor" },
       F = { h.cmdify("call gfriend#goto_cWORD(winwidth(0) >=# 180 ? 'vsp' : 'sp')"), "File&line under cursor" }
     },

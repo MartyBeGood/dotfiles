@@ -29,7 +29,7 @@ opt.ignorecase = true       -- Ignore case letters when search
 opt.smartcase = true        -- Ignore lowercase for the whole pattern
 opt.linebreak = true        -- Wrap on word boundary
 opt.termguicolors = true    -- Enable 24-bit RGB colors
-opt.laststatus=2            -- One statusline per window
+opt.laststatus=3            -- One statusline per window
 
 -----------------------------------------------------------
 -- Tabs, indent

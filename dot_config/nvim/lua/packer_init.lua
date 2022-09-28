@@ -104,7 +104,8 @@ local use = packer.use
 
   -- Color schemes
   use "rebelot/kanagawa.nvim"
-
+  use "luisiacc/gruvbox-baby"
+  use "Mofiqul/adwaita.nvim"
   -- LSP
   use {
     'neovim/nvim-lspconfig',

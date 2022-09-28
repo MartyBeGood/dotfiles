@@ -1,7 +1,13 @@
 local wk = require('which-key')
 local h = require('helpers/misc')
 
-wk.setup({})
+wk.setup({
+  registers = false,
+  key_labels = {
+    ["<space>"] = "SPC",
+    ["<tab>"] = "TAB",
+  }
+})
 
 local termcodes = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -17,8 +23,7 @@ wk.register({
     g = {
       name = "Goto...",
       g = { h.cmdify("Git"), "Git overview" },
-      f = { h.cmdify("call gfriend#goto_cfile(winwidth(0) >=# 180 ? 'vsp' : 'sp')"), "File under cursor" },
-      F = { h.cmdify("call gfriend#goto_cWORD(winwidth(0) >=# 180 ? 'vsp' : 'sp')"), "File&line under cursor" }
+      B = { h.cmdify("Git blame"), "Git blame" },
     },
     o = {
       name = "Open...",
@@ -37,6 +42,13 @@ wk.register({
       t = { h.cmdify("Neomux"), "Terminal" },
     },
   },
+  g = {
+    p = {
+      name = "gf in previous window",
+      f = { h.cmdify("call gfriend#goto_cfile(winwidth(0) >=# 180 ? 'vsp' : 'sp')"), "File under cursor" },
+      F = { h.cmdify("call gfriend#goto_cWORD(winwidth(0) >=# 180 ? 'vsp' : 'sp')"), "File&line under cursor" }
+    }
+  }
 })
 
 wk.register({ ["<esc>"] = { termcodes([[<C-\><C-n>]]), "Exit insert mode" } }, { mode = 't' })

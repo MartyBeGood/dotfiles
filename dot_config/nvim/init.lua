@@ -1,7 +1,7 @@
 -- local in_vscode = require('helpers/misc').in_vscode
 
-pcall (require 'impatient')
 require('packer_init')
+pcall (require 'impatient')
 
 require('core/options')
 require('core/autocmds')

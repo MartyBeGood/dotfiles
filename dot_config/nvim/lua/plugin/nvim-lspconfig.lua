@@ -220,7 +220,6 @@ cmp.setup {
     { name = 'buffer' },
   },
 
-  window = theme.window,
   formatting = {
     format = lspkind.cmp_format({
       symbol_map = theme.kind_icons,

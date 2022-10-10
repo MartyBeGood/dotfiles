@@ -80,7 +80,7 @@ local on_attach = function(client, bufnr)
       c = {
         name = "Code...",
         a = { cmdify('lua vim.lsp.buf.code_action()'), "LSP code action" },
-        f = { cmdify('lua vim.lsp.buf.formatting()'), "LSP Format" },
+        f = { cmdify('lua vim.lsp.buf.format({async = true})'), "LSP Format" },
         r = {
           name = "Refactor...",
           r = { cmdify('lua vim.lsp.buf.rename()'), "Rename symbol" },

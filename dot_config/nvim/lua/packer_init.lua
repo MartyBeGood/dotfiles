@@ -139,8 +139,6 @@ use {
 	'onsails/lspkind.nvim'
 }
 
--- Code Style
-use 'tpope/vim-sleuth'
 
 -- Statusline
 use {
@@ -171,10 +169,14 @@ use {
 }
 
 -- magit
-use {
-	'tpope/vim-fugitive'
-	-- opt = true,
-}
+use 'tpope/vim-fugitive'
+-- Code Style
+use 'tpope/vim-sleuth'
+use 'tpope/vim-rails'
+use 'tpope/vim-rake'
+use 'tpope/vim-bundler'
+use 'tpope/vim-projectionist'
+
 
 -- tree
 use {

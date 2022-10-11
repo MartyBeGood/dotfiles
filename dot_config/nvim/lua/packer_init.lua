@@ -176,6 +176,7 @@ use 'tpope/vim-rails'
 use 'tpope/vim-rake'
 use 'tpope/vim-bundler'
 use 'tpope/vim-projectionist'
+use 'tpope/vim-endwise'
 
 
 -- tree

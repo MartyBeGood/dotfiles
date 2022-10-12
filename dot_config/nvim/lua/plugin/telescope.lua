@@ -1,7 +1,13 @@
 local themes = require("telescope.themes")
 local telescope = require('telescope')
 telescope.setup({
-  -- defaults = themes.get_ivy {},
+  defaults = {
+    borderchars = {
+      prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+      results = { " " },
+      preview = { " " },
+    }
+  },
   pickers = {
     find_files = {
       previewer = false,

@@ -1,6 +1,6 @@
 
 vim.opt.background = "dark"
 vim.opt.cursorline = true
--- vim.cmd([[colorscheme adwaita]])
-require('ofirkai').setup {}
+vim.g.gruvbox_baby_telescope_theme = 1
+vim.cmd([[colorscheme gruvbox-baby]])
 

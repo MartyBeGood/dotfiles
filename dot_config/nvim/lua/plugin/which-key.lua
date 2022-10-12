@@ -40,7 +40,7 @@ wk.register({
     t = {
       name = "Tests...",
       t = { h.cmdify("TestNearest"), "Run nearest" },
-      f = { h.cmdify("TestFile"), "Run nearest" },
+      f = { h.cmdify("TestFile"), "Run all in file" },
       l = { h.cmdify("TestLast"), "Run last" },
       s = { h.cmdify("TestSuite"), "Run full suite" },
     },

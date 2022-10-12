@@ -28,14 +28,21 @@ wk.register({
     o = {
       name = "Open...",
       f = { h.cmdify("NvimTreeToggle"), "File Browser" },
-      F = { h.cmdify("NvimTreeFindFileToggle"), "File Browser at current file"},
-      t = { h.cmdify("Neomux"), "Terminal" },
+      F = { h.cmdify("NvimTreeFindFileToggle"), "File Browser at current file"}
+
     },
     s = {
       name = "Search...",
       s = { h.cmdify("Telescope grep_string"), "String under cursor" },
       g = { h.cmdify("Telescope live_grep"), "String in project" },
       h = { h.cmdify("Telescope help_tags"), "Vim Helptags" },
+    },
+    t = {
+      name = "Tests...",
+      t = { h.cmdify("TestNearest"), "Run nearest" },
+      f = { h.cmdify("TestFile"), "Run nearest" },
+      l = { h.cmdify("TestLast"), "Run last" },
+      s = { h.cmdify("TestSuite"), "Run full suite" },
     },
   },
   g = {

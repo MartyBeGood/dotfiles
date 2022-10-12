@@ -135,9 +135,7 @@ use {
 	module = 'cmp'
 }
 
-use {
-	'onsails/lspkind.nvim'
-}
+use 'onsails/lspkind.nvim'
 
 
 -- Statusline
@@ -148,14 +146,10 @@ use {
 }
 
 -- going to files, reusing existing splits
-use {
-	'ELLIOTTCABLE/vim-gfriend'
-}
+use 'ELLIOTTCABLE/vim-gfriend'
 
 -- buffer management
-use {
-	'kazhala/close-buffers.nvim'
-}
+use 'kazhala/close-buffers.nvim'
 
 -- git labels
 use {
@@ -189,10 +183,7 @@ use {
 }
 
 -- prettier keymaps
-use {
-	'folke/which-key.nvim',
-	-- opt = true
-}
+use 'folke/which-key.nvim'
 
 -- fuzzy find all the things
 use {
@@ -208,9 +199,8 @@ use {
 	-- opt = true
 }
 
-use {
-	'kylechui/nvim-surround'
-}
+use 'kylechui/nvim-surround'
+
 
 -- surround
 

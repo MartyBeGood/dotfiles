@@ -1,4 +1,3 @@
-local themes = require("telescope.themes")
 local telescope = require('telescope')
 telescope.setup({
   defaults = {
@@ -11,6 +10,7 @@ telescope.setup({
   pickers = {
     find_files = {
       previewer = false,
+      find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*', '--no-ignore-vcs' }
     },
   },
   extensions = {

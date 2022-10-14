@@ -1,6 +1,6 @@
 {{- if ne .chezmoi.os "darwin" }}
 .wezterm.lua
-dot_config/yabai/
-dot_config/skhd/
+.config/yabai/
+.config/skhd/
 {{- end}}
 

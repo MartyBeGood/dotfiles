@@ -41,7 +41,10 @@ alt - b : yabai -m space --focus recent
 alt + shift - b : yabai -m window --space recent; \
                   yabai -m space --focus recent
 
+alt - f : yabai -m window --toggle float
+
 # change layout of desktop
 alt - t : yabai -m space --layout bsp
 alt - l : yabai -m space --layout float
 alt - s : yabai -m space --layout stack
+

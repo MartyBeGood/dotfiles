@@ -17,7 +17,8 @@
 	sync = "!f() { git fetch --tags && git pull && git push; };f"
 [pull]
 	rebase = true
-
+[push]
+	autoSetupRemote = true
 {{- if eq .chezmoi.hostname "devbox" }}
 [core]
 	hooksPath = /devbox/support/default_githooks

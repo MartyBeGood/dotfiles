@@ -1,8 +1,8 @@
 {{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $skip_installs := promptBoolOnce . "skip_installs" "Skip package installs"}}
+{{- $install_packages := promptBoolOnce . "install_packages" "Install dependencies?"}}
 {{- $use_chruby := promptBoolOnce . "use_chruby" "Use chruby?"}}
 
 [data]
 	email = {{ $email | quote }}
-	skip_installs = {{ $skip_installs }}
+	install_packages = {{ $install_packages }}
 	use_chruby = {{ $use_chruby }}

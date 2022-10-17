@@ -3,8 +3,8 @@ zsh_config_dir=${0:a:h}
 export EDITOR=nvim
 
 # chruby
-source $HOMEBREW_PREFIX/opt/chruby/share/chruby/chruby.sh
-source $HOMEBREW_PREFIX/opt/chruby/share/chruby/auto.sh
+[ -f $zsh_config_dir/chruby.zsh ] && source &zsh_config_dir/chruby.zsh
+
 
 # plugins
 [ -f $zsh_config_dir/antigen.zsh ] && source $zsh_config_dir/antigen.zsh

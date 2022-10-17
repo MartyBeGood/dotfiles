@@ -4,3 +4,7 @@
 .config/skhd/
 {{- end}}
 
+{{- if not .use_chruby }}
+.config/zshrc/chruby.zsh
+{{- end }}
+

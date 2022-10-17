@@ -3,7 +3,7 @@ zsh_config_dir=${0:a:h}
 export EDITOR=nvim
 
 # chruby
-[ -f $zsh_config_dir/chruby.zsh ] && source &zsh_config_dir/chruby.zsh
+[ -f $zsh_config_dir/chruby.zsh ] && source $zsh_config_dir/chruby.zsh
 
 
 # plugins

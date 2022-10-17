@@ -3,8 +3,7 @@
 .config/yabai/
 .config/skhd/
 {{- end}}
-
-{{- if not .use_chruby }}
-.config/zshrc/chruby.zsh
+{{- if eq .chezmoi.hostname "devbox" }}
+.config/zsh/chruby.zsh
 {{- end }}
 

@@ -15,7 +15,7 @@ local opt = vim.opt   -- Set options (global/buffer/windows-scoped)
 opt.mouse = 'a'                       -- Enable mouse support
 opt.completeopt = 'menuone,noinsert,noselect'  -- Autocomplete options
 opt.timeoutlen = 500 -- shorter timeout for which-key
-
+opt.modeline = false
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------

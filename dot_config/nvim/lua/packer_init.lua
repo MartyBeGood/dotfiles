@@ -110,6 +110,10 @@ use "ofirgall/ofirkai.nvim"
 -- Additional syntax highlighting
 use "slim-template/vim-slim"
 -- LSP
+use 'williamboman/mason.nvim'
+use 'williamboman/mason-lspconfig.nvim'
+use "jose-elias-alvarez/null-ls.nvim"
+use "jayp0521/mason-null-ls.nvim"
 use {
 	'neovim/nvim-lspconfig',
 	after = { "impatient.nvim" }
@@ -121,10 +125,6 @@ use {
 	after = { "nvim-lspconfig" }
 }
 
-use {
-	"jose-elias-alvarez/null-ls.nvim",
-	after = { "nvim-lspconfig" }
-}
 -- Autocomplete
 use {
 	'hrsh7th/nvim-cmp',

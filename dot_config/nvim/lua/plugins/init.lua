@@ -1,0 +1,7 @@
+require('plugins/close-buffers')
+require('plugins/which-key')
+require('plugins/treesitter')
+require('plugins/lualine')
+require('plugins/telescope')
+require('plugins/nvim-tree')
+require('plugins/lspconfig')

@@ -26,14 +26,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
   vim.o.runtimepath = vim.fn.stdpath('data') .. '/site/pack/*/start/*,' .. vim.o.runtimepath
 end
 
--- Autocommand that reloads neovim whenever you save the packer_init.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost packer_init.lua source <afile> | PackerSync
-  augroup end
-]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
@@ -59,7 +51,7 @@ use 'lewis6991/impatient.nvim'
 -- Indent line
 use {
   'lukas-reineke/indent-blankline.nvim',
-  after = 'nvim-treesitter'
+  after = 'nvim-treesitter',
 }
 
 -- Comments
@@ -78,9 +70,10 @@ use {
     require('nvim-autopairs').setup()
   end
 }
+use 'windwp/nvim-ts-autotag'
+
 
 -- Text editing goodness
-use 'RRethy/nvim-treesitter-endwise'
 use 'michaeljsmith/vim-indent-object'
 
 -- Icons
@@ -92,6 +85,7 @@ use {
   run = ":TSUpdate"
   -- opt = true
 }
+use 'RRethy/nvim-treesitter-endwise'
 
 -- Color schemes
 use "luisiacc/gruvbox-baby"
@@ -104,11 +98,7 @@ use 'williamboman/mason.nvim'
 use 'williamboman/mason-lspconfig.nvim'
 use "jose-elias-alvarez/null-ls.nvim"
 use "jayp0521/mason-null-ls.nvim"
-use {
-  'neovim/nvim-lspconfig',
-  after = { "impatient.nvim" }
-  -- opt = true
-}
+use 'neovim/nvim-lspconfig'
 
 use {
   'hrsh7th/cmp-nvim-lsp',
@@ -129,13 +119,20 @@ use {
 }
 
 use 'onsails/lspkind.nvim'
+use {
+  'folke/trouble.nvim',
+  requires = {
+    'folke/lsp-colors.nvim',
+    'kyazdani42/nvim-web-devicons'
+  },
+  config = function() require('trouble').setup(); end
+}
 
 
 -- Statusline
 use {
   'nvim-lualine/lualine.nvim',
   requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-  -- opt = true
 }
 
 -- going to files, reusing existing splits
@@ -164,17 +161,14 @@ use 'tpope/vim-rails'
 use 'tpope/vim-rake'
 use 'tpope/vim-bundler'
 use 'tpope/vim-projectionist'
-use 'tpope/vim-endwise'
 
-
--- tree
 use {
-  'kyazdani42/nvim-tree.lua',
+  'nvim-tree/nvim-tree.lua',
   requires = {
-    'kyazdani42/nvim-web-devicons'
+    'nvim-tree/nvim-web-devicons',
   },
-  tag = 'nightly'
 }
+
 
 -- prettier keymaps
 use 'folke/which-key.nvim'
@@ -193,7 +187,9 @@ use {
   -- opt = true
 }
 
-use 'kylechui/nvim-surround'
+use { 'kylechui/nvim-surround',
+  config = function() require("nvim-surround").setup({}); end
+}
 use 'vim-test/vim-test'
 
 

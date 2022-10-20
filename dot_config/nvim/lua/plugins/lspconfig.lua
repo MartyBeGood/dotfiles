@@ -7,6 +7,7 @@ null_ls.setup({
   sources = {
   }
 })
+
 require("mason-null-ls").setup()
 
 local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
@@ -50,7 +51,7 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-  local cmdify = require('helpers/misc').cmdify
+  local cmdify = require('helpers').cmdify
   require('which-key').register({
     g = {
       name = "Go to...",
@@ -136,17 +137,13 @@ end
 -- url: https://github.com/hrsh7th/nvim-cmpa
 
 
-local cmp_status_ok, cmp = pcall(require, 'cmp')
-if not cmp_status_ok then
-  return
-end
-
-local luasnip_status_ok, luasnip = pcall(require, 'luasnip')
-if not luasnip_status_ok then
-  return
-end
-
+local cmp = require('cmp')
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
+
+if cmp == nil then
+  return
+end
 
 cmp.setup {
   -- Load snippet support

@@ -21,8 +21,9 @@ opt.modeline = false
 -----------------------------------------------------------
 opt.number = true           -- Show line number
 opt.showmatch = true        -- Highlight matching parenthesis
+opt.matchtime = 0           -- ... but don't make slow jumps please
 opt.foldmethod = 'marker'   -- Enable folding (default 'foldmarker')
--- opt.colorcolumn = '80'      -- Line lenght marker at 80 columns
+-- opt.colorcolumn = '80'      -- Line length marker at 80 columns
 opt.splitright = true       -- Vertical split to the right
 opt.splitbelow = true       -- Horizontal split to the bottom
 opt.ignorecase = true       -- Ignore case letters when search

@@ -147,7 +147,6 @@ if not luasnip_status_ok then
 end
 
 local lspkind = require('lspkind')
-local theme = require('ofirkai.plugins.nvim-cmp')
 
 cmp.setup {
   -- Load snippet support
@@ -207,7 +206,6 @@ cmp.setup {
 
   formatting = {
     format = lspkind.cmp_format({
-      symbol_map = theme.kind_icons,
       mode = 'symbol',
       maxwidth = 50
     })

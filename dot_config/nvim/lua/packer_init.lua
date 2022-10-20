@@ -103,9 +103,7 @@ use {
 }
 
 -- Color schemes
-use "rebelot/kanagawa.nvim"
 use "luisiacc/gruvbox-baby"
-use "ofirgall/ofirkai.nvim"
 
 -- Additional syntax highlighting
 use "slim-template/vim-slim"

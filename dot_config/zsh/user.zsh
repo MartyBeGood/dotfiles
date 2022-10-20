@@ -5,6 +5,8 @@ export EDITOR=nvim
 # chruby
 [ -f $zsh_config_dir/chruby.zsh ] && source $zsh_config_dir/chruby.zsh
 
+# common functions
+[ -f ~/.functions ] && source ~/.functions
 
 # plugins
 [ -f $zsh_config_dir/antigen.zsh ] && source $zsh_config_dir/antigen.zsh

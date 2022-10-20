@@ -1,6 +1,6 @@
 #!/bin/sh
 
-{{ if .skip_installs }}
+{{ if not .install_packages }}
 exit 0
 {{ end }}
 

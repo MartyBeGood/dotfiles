@@ -77,7 +77,7 @@ local on_attach = function(client, bufnr)
         d = { cmdify('lua vim.diagnostic.open_float()'), "Line diagnostics" },
         n = { cmdify('lua vim.diagnostic.goto_next()'), "Next" },
         p = { cmdify('lua vim.diagnostic.goto_prev()'), "Previous" },
-        l = { cmdify('Telescope diagnostics'), "List" },
+        l = { cmdify("Trouble document_diagnostics"), "Diagnostics in file" },
       },
     },
   }, {

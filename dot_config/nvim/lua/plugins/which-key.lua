@@ -2,7 +2,9 @@ local wk = require('which-key')
 local cmdify = require('helpers').cmdify
 
 wk.setup({
-  registers = false,
+  plugins = {
+    registers = false,
+  },
   key_labels = {
     ["<space>"] = "SPC",
     ["<tab>"] = "TAB",

@@ -20,7 +20,14 @@ autocmd('TextYankPost', {
 -- Remove whitespace on save
 autocmd('BufWritePre', {
   pattern = '*',
-  command = ":%s/\\s\\+$//e"
+  callback = function (args)
+    print("Saving file " .. args.file)
+    if string.match(args.file, "config/locales/[%a%d%p/]+.yml") then
+      return
+    else
+      vim.cmd(":%s/\\s\\+$//e")
+    end
+  end
 })
 
 -- Don't auto commenting new lines

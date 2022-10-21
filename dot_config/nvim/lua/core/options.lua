@@ -33,12 +33,19 @@ opt.termguicolors = true    -- Enable 24-bit RGB colors
 opt.laststatus = 2            -- One statusline per window
 
 -----------------------------------------------------------
--- Tabs, indent
+-- Tabs, indent, whitespace
 -----------------------------------------------------------
 opt.expandtab = true        -- Use spaces instead of tabs
 opt.shiftwidth = 4          -- Shift 4 spaces when tab
 opt.tabstop = 4             -- 1 tab == 4 spaces
 opt.smartindent = true      -- Autoindent new lines
+opt.list = true
+opt.listchars = {           -- Show whitespace
+  tab = '|-',
+  extends = '⟩',
+  precedes = '⟨',
+  trail = '·'
+}
 
 -----------------------------------------------------------
 -- Memory, CPU

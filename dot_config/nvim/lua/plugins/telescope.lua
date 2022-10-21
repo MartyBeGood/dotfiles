@@ -17,6 +17,10 @@ telescope.setup({
       previewer = false,
       find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*', '--no-ignore-vcs' }
     },
+    lsp_references = {
+      show_line = true,
+      fname_width = 0.5
+    }
   },
   extensions = {
     file_browser = {

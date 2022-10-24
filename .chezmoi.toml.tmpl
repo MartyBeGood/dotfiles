@@ -1,8 +1,10 @@
+{{- $name := promptStringOnce . "name" "Your full name" -}}
 {{- $email := promptStringOnce . "email" "Email address" -}}
-{{- $install_packages := promptBoolOnce . "install_packages" "Install dependencies?"}}
-{{- $use_chruby := promptBoolOnce . "use_chruby" "Use chruby?"}}
+{{- $install_packages := promptBoolOnce . "install_packages" "Install dependencies"}}
+{{- $use_chruby := promptBoolOnce . "use_chruby" "Use chruby"}}
 
 [data]
 	email = {{ $email | quote }}
+	name = {{ $name | quote }}
 	install_packages = {{ $install_packages }}
 	use_chruby = {{ $use_chruby }}

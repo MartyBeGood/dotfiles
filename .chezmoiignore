@@ -1,3 +1,5 @@
+README.md
+
 {{- if ne .chezmoi.os "darwin" }}
 .wezterm.lua
 .config/yabai/
@@ -6,4 +8,3 @@
 {{- if eq .chezmoi.hostname "devbox" }}
 .config/zsh/chruby.zsh
 {{- end }}
-

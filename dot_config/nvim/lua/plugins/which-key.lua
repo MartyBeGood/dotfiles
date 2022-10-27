@@ -30,7 +30,7 @@ wk.register({
     },
     g = {
       name = "Git...",
-      g = { cmdify("Git"), "Overview" },
+      g = { function() require('neogit').open() end, "Overview" },
       B = { cmdify("Git blame"), "Blame" },
       s = { cmdify("Git sync"), "pull, then push" }
     },

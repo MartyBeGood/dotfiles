@@ -88,7 +88,9 @@ use {
 use 'RRethy/nvim-treesitter-endwise'
 
 -- Color schemes
-use "luisiacc/gruvbox-baby"
+use 'jacoborus/tender.vim'
+use 'ellisonleao/gruvbox.nvim'
+use "rebelot/kanagawa.nvim"
 
 -- Additional syntax highlighting
 use "slim-template/vim-slim"

@@ -5,8 +5,8 @@
 -- Define autocommands with Lua APIs
 -- See: h:api-autocmd, h:augroup
 
-local augroup = vim.api.nvim_create_augroup   -- Create/get autocommand group
-local autocmd = vim.api.nvim_create_autocmd   -- Create autocommand
+local augroup = vim.api.nvim_create_augroup -- Create/get autocommand group
+local autocmd = vim.api.nvim_create_autocmd -- Create autocommand
 
 -- Highlight on yank
 augroup('YankHighlight', { clear = true })
@@ -20,7 +20,7 @@ autocmd('TextYankPost', {
 -- Remove whitespace on save
 autocmd('BufWritePre', {
   pattern = '*',
-  callback = function (args)
+  callback = function(args)
     print("Saving file " .. args.file)
     if string.match(args.file, "config/locales/[%a%d%p/]+.yml") then
       return
@@ -61,15 +61,16 @@ autocmd('CmdlineEnter', {
   command = 'command! Term :botright vsplit term://$SHELL'
 })
 
--- Enter insert mode when switching to terminal
+-- No line numbers, no whitespace characters in terminal buffers
 autocmd('TermOpen', {
   command = 'setlocal listchars= nonumber norelativenumber nocursorline',
 })
 
-autocmd('TermOpen', {
-  pattern = '*',
-  command = 'startinsert'
-})
+-- Open terminal buffers in insert mode
+-- autocmd('TermOpen', {
+--   pattern = '*',
+--   command = 'startinsert'
+-- })
 
 -- Close terminal buffer on process exit
 autocmd('BufLeave', {

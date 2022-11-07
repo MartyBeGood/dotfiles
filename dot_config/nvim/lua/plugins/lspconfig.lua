@@ -164,9 +164,11 @@ cmp.setup {
 
   -- Completion settings
   completion = {
-    --completeopt = 'menu,menuone,noselect'
-    keyword_length = 2
+    completeopt = 'menu,menuone,noselect',
+    keyword_length = 2,
   },
+
+  preselect = cmp.PreselectMode.None,
 
   -- Key mapping
   mapping = {

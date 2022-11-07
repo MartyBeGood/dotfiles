@@ -156,9 +156,6 @@ use {
 
 -- magit
 use 'tpope/vim-fugitive'
-use { 'TimUntersberger/neogit',
-  requires = 'nvim-lua/plenary.nvim'
-}
 
 -- tpope all the things
 use 'tpope/vim-sleuth'

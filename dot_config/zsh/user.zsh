@@ -11,6 +11,15 @@ export EDITOR=nvim
 # plugins
 [ -f $zsh_config_dir/antigen.zsh ] && source $zsh_config_dir/antigen.zsh
 
+# brew completion
+if type brew &>/dev/null
+then
+  FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+  autoload -Uz compinit
+  compinit
+fi
+
 antigen use oh-my-zsh
 
 antigen bundle git

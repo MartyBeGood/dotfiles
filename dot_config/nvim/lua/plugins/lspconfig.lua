@@ -154,6 +154,18 @@ if cmp == nil then
   return
 end
 
+-- Workaround for a weirdly-styled completion window in ofirkai
+local cmpdesign = {
+  border = nil,
+  zindex = 1001,
+  winhighlight = 'Normal:NormalFloat,CursorLine:Visual,Search:None',
+}
+
+local cmpwindows = {
+  completion = cmpdesign,
+  documentation = cmpdesign
+}
+
 cmp.setup {
   -- Load snippet support
   snippet = {
@@ -161,6 +173,8 @@ cmp.setup {
       luasnip.lsp_expand(args.body)
     end,
   },
+
+  window = cmpwindows,
 
   -- Completion settings
   completion = {

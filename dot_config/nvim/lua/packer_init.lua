@@ -88,7 +88,8 @@ use {
 use 'RRethy/nvim-treesitter-endwise'
 
 -- Color schemes
-use 'jacoborus/tender.vim'
+use 'ofirgall/ofirkai.nvim'
+
 use 'ellisonleao/gruvbox.nvim'
 use "rebelot/kanagawa.nvim"
 

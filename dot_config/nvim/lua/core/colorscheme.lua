@@ -1,6 +1,4 @@
 vim.opt.background = "dark"
 vim.opt.cursorline = true
-require('kanagawa').setup({
-})
+require('ofirkai').setup({ })
 
-vim.cmd("colorscheme kanagawa")

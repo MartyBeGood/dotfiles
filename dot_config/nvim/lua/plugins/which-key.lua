@@ -21,6 +21,13 @@ wk.register({
     b = {
       name = "Buffer...",
       b = { cmdify("Telescope buffers"), "Switch buffers" },
+      d = {
+        name = "delete...",
+        d = { cmdify("BDelete this"), "current buffer" },
+        D = { cmdify("BDelete! this"), "current buffer forcefully"},
+        h = { cmdify("BDelete hidden"), "hidden buffers" },
+        H = { cmdify("BDelete! hidden"), "hidden buffers forcefully"},
+      }
     },
     l = {
       name = "List..",

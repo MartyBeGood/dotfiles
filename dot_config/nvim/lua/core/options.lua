@@ -41,7 +41,6 @@ opt.tabstop = 2             -- 1 tab == 2 spaces
 opt.smartindent = true      -- Autoindent new lines
 opt.list = true
 opt.listchars = {           -- Show whitespace
-  tab = '|-',
   extends = '⟩',
   precedes = '⟨',
   trail = '·'

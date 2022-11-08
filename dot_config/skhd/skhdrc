@@ -50,4 +50,4 @@ alt - t : yabai -m space --layout bsp
 alt - l : yabai -m space --layout float
 alt - s : yabai -m window --stack west
 
-shift + ctrl + shift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+alt + ctrl + shift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"

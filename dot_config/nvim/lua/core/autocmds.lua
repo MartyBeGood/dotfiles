@@ -55,6 +55,12 @@ autocmd('Filetype', {
   command = 'setlocal shiftwidth=2 tabstop=2'
 })
 
+augroup('fugitiveLineNumber', { clear = true })
+autocmd('FileType', {
+  group = 'fugitiveLineNumber',
+  pattern = { 'fugitive' },
+  command = 'setlocal nonumber'
+})
 -- Terminal settings:
 -- Open a Terminal on the right tab
 autocmd('CmdlineEnter', {

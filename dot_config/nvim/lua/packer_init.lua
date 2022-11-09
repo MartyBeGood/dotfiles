@@ -49,10 +49,7 @@ use 'wbthomason/packer.nvim' -- packer can manage itself
 use 'lewis6991/impatient.nvim'
 
 -- Indent line
-use {
-  'lukas-reineke/indent-blankline.nvim',
-  after = 'nvim-treesitter',
-}
+use 'lukas-reineke/indent-blankline.nvim'
 
 -- Comments
 use {
@@ -144,7 +141,9 @@ use 'ELLIOTTCABLE/vim-gfriend'
 -- buffer management
 use 'kazhala/close-buffers.nvim'
 
--- git labels
+-- git
+use 'tpope/vim-fugitive'
+
 use {
   'lewis6991/gitsigns.nvim',
   requires = { 'nvim-lua/plenary.nvim' },
@@ -152,11 +151,8 @@ use {
   config = function()
     require('gitsigns').setup()
   end,
-  -- opt = true
 }
 
--- magit
-use 'tpope/vim-fugitive'
 
 -- tpope all the things
 use 'tpope/vim-sleuth'

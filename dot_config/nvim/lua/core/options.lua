@@ -39,9 +39,11 @@ opt.laststatus = 2 -- One statusline per window
 opt.expandtab = true -- Use spaces instead of tabs
 opt.shiftwidth = 2 -- Shift 2 spaces when tab
 opt.tabstop = 2 -- 1 tab == 2 spaces
+opt.softtabstop = 2
 opt.smartindent = true -- Autoindent new lines
 opt.list = true
 opt.listchars = { -- Show whitespace
+  tab = ' ·',
   extends = '⟩',
   precedes = '⟨',
   trail = '·'

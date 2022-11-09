@@ -153,6 +153,11 @@ use {
   end,
 }
 
+-- sneak on steroids
+use {
+  'ggandor/lightspeed.nvim',
+  requires = { 'tpope/vim-repeat' }
+}
 
 -- tpope all the things
 use 'tpope/vim-sleuth'

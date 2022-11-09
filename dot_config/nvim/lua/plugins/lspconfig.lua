@@ -23,11 +23,6 @@ end
 -- Diagnostic options, see: `:help vim.diagnostic.config`
 vim.diagnostic.config({ virtual_text = true })
 
--- Show line diagnostics automatically in hover window
-vim.cmd([[
-  autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false })
-]])
-
 -- Add additional capabilities supported by nvim-cmp
 -- See: https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local capabilities = cmp_nvim_lsp.default_capabilities()

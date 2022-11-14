@@ -52,5 +52,5 @@ return {
   },
   cell_width = 0.8, -- for fira code
   -- line_height = 0.95, -- for jetbrains mono
-  underline_position = -3,
+  underline_position = -4,
 }

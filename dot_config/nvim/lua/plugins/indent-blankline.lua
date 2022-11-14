@@ -12,7 +12,8 @@ if not status_ok then
 end
 
 indent_blankline.setup {
-  char = "┊",
+  char = "┆",
+  context_char = "▏",
   use_treesitter = false,
   show_current_context = true,
   show_current_context_start = true,

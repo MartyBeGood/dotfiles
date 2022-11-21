@@ -87,6 +87,11 @@ use 'RRethy/nvim-treesitter-endwise'
 -- Color schemes
 use 'ofirgall/ofirkai.nvim'
 
+use {
+  'briones-gabriel/darcula-solid.nvim',
+  requires = "rktjmp/lush.nvim"
+}
+
 use 'ellisonleao/gruvbox.nvim'
 use "rebelot/kanagawa.nvim"
 

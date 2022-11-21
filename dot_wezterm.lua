@@ -16,9 +16,30 @@ local firacode_harfbuzz = {
   'ss09', -- additional ligatures: >>= <<= ||= |=
 }
 
+local italic_font = function(weight)
+  return wezterm.font(
+    {
+      family = 'CaskaydiaCove Nerd Font',
+      italic = true,
+      weight = weight,
+    }
+  )
+end
+
+local straight_font = function(weight)
+  return wezterm.font(
+    {
+      family = 'FiraCode Nerd Font',
+      weight = weight,
+      harfbuzz_features = firacode_harfbuzz,
+    }
+
+  )
+end
+
 return {
   -- Colors
-  color_scheme = 'MonokaiDark (Gogh)',
+  color_scheme = 'Default Dark (base16)',
   colors = {
     cursor_bg = wezterm.color.get_default_colors().foreground,
     cursor_fg = wezterm.color.get_default_colors().background
@@ -38,19 +59,25 @@ return {
 
   -- Font
   font_size = 14,
-  font = wezterm.font_with_fallback {
-    'FiraCode Nerd Font',
-    'JetBrainsMono Nerd Font',
-    'JetBrains Mono'
-  },
-  harfbuzz_features = firacode_harfbuzz,
+  font = straight_font('Regular'),
+
   font_rules = {
     {
       italic = true,
-      font = wezterm.font({ family = "JetBrainsMono Nerd Font", style = "Italic" })
-    }
+      intensity = 'Bold',
+      font = italic_font('Bold')
+    },
+    {
+      italic = true,
+      intensity = 'Half',
+      font = italic_font('DemiBold')
+    },
+    {
+      italic = true,
+      font = italic_font('Light')
+    },
   },
-  cell_width = 0.8, -- for fira code
+  cell_width = 0.81, -- for fira code
   -- line_height = 0.95, -- for jetbrains mono
   underline_position = -4,
 }

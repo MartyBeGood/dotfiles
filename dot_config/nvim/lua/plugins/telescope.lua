@@ -2,11 +2,12 @@ local telescope = require('telescope')
 local trouble = require('trouble.providers.telescope')
 telescope.setup({
   defaults = {
-    -- borderchars = {
-    -- prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-    -- results = { " " },
-    -- preview = { " " },
-    -- },
+    borderchars = {
+      prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
+      results = { " " },
+      preview = { " " },
+    },
+    prompt_prefix = "  ",
     mappings = {
       i = { ["<c-t>"] = trouble.open_with_trouble },
       n = { ["<c-t>"] = trouble.open_with_trouble },

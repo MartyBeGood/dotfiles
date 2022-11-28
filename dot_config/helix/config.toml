@@ -2,7 +2,9 @@ theme = "monokai"
 
 [editor]
 true-color = true
+color-modes = true
 cursorline = true
+
 
 [editor.cursor-shape]
 insert = "bar"

@@ -5,6 +5,7 @@ local firacode_harfbuzz = {
   'zero', -- dotted 0
   'cv01', -- a
   'cv02', -- g
+  'cv05', -- i
   'cv26', -- :-
   'cv29', -- less cluttered {}
   'ss01', -- r
@@ -37,10 +38,13 @@ local straight_font = function(weight)
   )
 end
 
+local darcula_fg = 'hsl:210 7 82'
+
 return {
   -- Colors
-  color_scheme = 'Default Dark (base16)',
+  color_scheme = 'Monokai (base16)',
   colors = {
+    -- foreground = darcula_fg,
     cursor_bg = wezterm.color.get_default_colors().foreground,
     cursor_fg = wezterm.color.get_default_colors().background
   },
@@ -48,7 +52,7 @@ return {
   -- Behavior
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
-  send_composed_key_when_left_alt_is_pressed = true,
+  -- send_composed_key_when_left_alt_is_pressed = true,
   adjust_window_size_when_changing_font_size = false,
   window_padding = {
     left = 0,
@@ -58,7 +62,7 @@ return {
   },
 
   -- Font
-  font_size = 14,
+  font_size = 14.5,
   font = straight_font('Regular'),
 
   font_rules = {
@@ -74,10 +78,10 @@ return {
     },
     {
       italic = true,
-      font = italic_font('Light')
+      font = italic_font('DemiLight')
     },
   },
-  cell_width = 0.81, -- for fira code
+  cell_width = 0.85, -- for fira code
   -- line_height = 0.95, -- for jetbrains mono
   underline_position = -4,
 }

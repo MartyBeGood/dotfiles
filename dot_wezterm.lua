@@ -84,4 +84,5 @@ return {
   cell_width = 0.85, -- for fira code
   -- line_height = 0.95, -- for jetbrains mono
   underline_position = -4,
+  audible_bell = "Disabled"
 }

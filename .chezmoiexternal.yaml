@@ -2,9 +2,3 @@
   type: file
   url: "https://git.io/antigen"
   refreshPeriod: 168h
-.config/helix/themes:
-  type: archive
-  url: "https://github.com/helix-editor/helix/archive/refs/heads/master.zip"
-  refreshPeriod: 168h
-  stripComponents: 3
-  include: ["helix-master/runtime/themes/*.toml"]

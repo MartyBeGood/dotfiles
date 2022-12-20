@@ -10,6 +10,10 @@ if type fnm &> /dev/null
 then
   eval "$(fnm env --use-on-cd)"
 fi
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # common functions
 [ -f ~/.functions ] && source ~/.functions
 

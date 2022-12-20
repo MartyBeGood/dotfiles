@@ -5,6 +5,11 @@ export EDITOR=nvim
 # chruby
 [ -f $zsh_config_dir/chruby.zsh ] && source $zsh_config_dir/chruby.zsh
 
+# fnm
+if type fnm &> /dev/null
+then
+  eval "$(fnm env --use-on-cd)"
+fi
 # common functions
 [ -f ~/.functions ] && source ~/.functions
 

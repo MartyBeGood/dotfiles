@@ -42,7 +42,7 @@ local darcula_fg = 'hsl:210 7 82'
 
 return {
   -- Colors
-  color_scheme = 'Monokai (base16)',
+  color_scheme = 'Brogrammer',
   colors = {
     -- foreground = darcula_fg,
     cursor_bg = wezterm.color.get_default_colors().foreground,

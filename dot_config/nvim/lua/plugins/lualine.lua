@@ -2,7 +2,7 @@ require('lualine').setup({
     options = {
         component_separators = { left = '', right = '' },
         section_separators = { left = '', right = '' },
-        theme = require('ofirkai.statuslines.lualine').theme,
+        -- theme = require('ofirkai.statuslines.lualine').theme,
     },
     sections = {
         lualine_a = { 'mode' },

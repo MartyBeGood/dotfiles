@@ -1,17 +1,22 @@
 local telescope = require('telescope')
 local trouble = require('trouble.providers.telescope')
+local full_border = { "─", "│", "─", "│", "┌", "┐", "┘", "└" }
 telescope.setup({
   defaults = {
     borderchars = {
-      prompt = { "─", " ", " ", " ", "─", "─", " ", " " },
-      results = { " " },
-      preview = { " " },
+      prompt = full_border,
+      results = full_border,
+      preview = full_border,
+    },
+    layout = {
+      prompt_position = "top"
     },
     prompt_prefix = "  ",
+    selection_caret = "  ",
     mappings = {
       i = { ["<c-t>"] = trouble.open_with_trouble },
       n = { ["<c-t>"] = trouble.open_with_trouble },
-    }
+    },
   },
   pickers = {
     find_files = {

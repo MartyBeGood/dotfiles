@@ -86,6 +86,9 @@ use 'RRethy/nvim-treesitter-endwise'
 
 -- Color schemes
 use 'ofirgall/ofirkai.nvim'
+use 'yazeed1s/minimal.nvim'
+use 'bluz71/vim-moonfly-colors'
+use 'navarasu/onedark.nvim'
 
 use {
   'briones-gabriel/darcula-solid.nvim',

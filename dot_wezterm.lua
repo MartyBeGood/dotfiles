@@ -12,17 +12,21 @@ local firacode_harfbuzz = {
   'ss02', -- <= >= with straight equals line
   'ss03', -- alternate &
   'ss06', -- lighter first backslash in \\
-  'ss07', -- !~ and =~ ligatures
   'ss08', -- alternate != and !== ligatures
   'ss09', -- additional ligatures: >>= <<= ||= |=
+}
+
+local victor_harfbuzz = {
+  'ss02', -- a
 }
 
 local italic_font = function(weight)
   return wezterm.font(
     {
-      family = 'CaskaydiaCove Nerd Font',
-      italic = true,
+      family = 'Victor Mono',
+      style = 'Oblique',
       weight = weight,
+      harfbuzz_features = victor_harfbuzz
     }
   )
 end
@@ -32,7 +36,7 @@ local straight_font = function(weight)
     {
       family = 'FiraCode Nerd Font',
       weight = weight,
-      harfbuzz_features = firacode_harfbuzz,
+      harfbuzz_features = firacode_harfbuzz
     }
 
   )
@@ -62,7 +66,8 @@ return {
   },
 
   -- Font
-  font_size = 14.5,
+  font_size = 14, -- .5, -- for non-retina screens, the .5 seems to make a difference in spacing
+  -- but it's annoying for retina screens. Unify if possible. Is this line height or something?
   font = straight_font('Regular'),
 
   font_rules = {
@@ -78,10 +83,10 @@ return {
     },
     {
       italic = true,
-      font = italic_font('DemiLight')
+      font = italic_font('Medium')
     },
   },
-  cell_width = 0.85, -- for fira code
+  cell_width = 0.86, -- for fira code
   -- line_height = 0.95, -- for jetbrains mono
   underline_position = -4,
   audible_bell = "Disabled",

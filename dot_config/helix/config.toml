@@ -1,4 +1,4 @@
-theme = "monokai"
+theme = "gruvbox_dark_hard"
 
 [editor]
 true-color = true
@@ -9,7 +9,7 @@ cursorline = true
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
-select = "underline"
+select = "block"
 
 [editor.statusline]
 left = ["mode", "spinner", "diagnostics"]

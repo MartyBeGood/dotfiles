@@ -42,11 +42,10 @@ local straight_font = function(weight)
   )
 end
 
-local darcula_fg = 'hsl:210 7 82'
 
 return {
   -- Colors
-  color_scheme = 'Brogrammer',
+  color_scheme = 'Gruvbox dark, hard (base16)',
   colors = {
     -- foreground = darcula_fg,
     cursor_bg = wezterm.color.get_default_colors().foreground,

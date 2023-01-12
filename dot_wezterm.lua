@@ -45,9 +45,11 @@ end
 
 return {
   -- Colors
-  color_scheme = 'Gruvbox dark, hard (base16)',
+  color_scheme = 'Darcula (base16)',
   colors = {
     -- foreground = darcula_fg,
+    background = "#282828",
+    foreground = "#d8d8d8",
     cursor_bg = wezterm.color.get_default_colors().foreground,
     cursor_fg = wezterm.color.get_default_colors().background
   },

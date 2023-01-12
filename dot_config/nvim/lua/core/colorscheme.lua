@@ -7,12 +7,14 @@ vim.opt.cursorline = true
 -- }
 -- require('onedark').load()
 
-require('gruvbox').setup {
-  contrast = "hard"
-}
+-- require('gruvbox').setup {
+--   contrast = "hard"
+-- }
 
-vim.cmd.colorscheme "gruvbox"
+-- vim.cmd.colorscheme "gruvbox"
 
 -- vim.cmd [[colorscheme minimal]]
 
 -- require('ofirkai').setup({})
+
+vim.cmd.colorscheme "darcula-solid"

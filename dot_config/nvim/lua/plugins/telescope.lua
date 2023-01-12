@@ -21,9 +21,15 @@ telescope.setup({
   pickers = {
     find_files = {
       previewer = false,
+      theme = "ivy",
       find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*', '--no-ignore-vcs' }
     },
+    git_files = {
+      previewer = false,
+      theme = "ivy",
+    },
     lsp_references = {
+      theme = "ivy",
       show_line = true,
       fname_width = 0.5
     }

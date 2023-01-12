@@ -88,14 +88,13 @@ use 'RRethy/nvim-treesitter-endwise'
 use 'ofirgall/ofirkai.nvim'
 use 'navarasu/onedark.nvim'
 use 'ellisonleao/gruvbox.nvim'
+use "rebelot/kanagawa.nvim"
 
 use {
   'briones-gabriel/darcula-solid.nvim',
   requires = "rktjmp/lush.nvim"
 }
 
-use 'ellisonleao/gruvbox.nvim'
-use "rebelot/kanagawa.nvim"
 
 -- Additional syntax highlighting
 use "slim-template/vim-slim"

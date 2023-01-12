@@ -1,6 +1,8 @@
 local wk = require('which-key')
 local cmdify = require('helpers').cmdify
 
+local themed_telescope = require('helpers').themed_telescope
+
 wk.setup({
   plugins = {
     registers = false,
@@ -15,18 +17,20 @@ local termcodes = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
 
+local telescope_builtin = require('telescope.builtin')
+
 wk.register({
   ["<space>"] = {
-    ["<space>"] = { cmdify("Telescope find_files"), "Find Files" },
+    ["<space>"] = { themed_telescope(telescope_builtin.find_files), "Find Files" },
     b = {
       name = "Buffer...",
-      b = { cmdify("Telescope buffers"), "Switch buffers" },
+      b = { themed_telescope(telescope_builtin.buffers), "Switch buffers" },
       d = {
         name = "delete...",
         d = { cmdify("BDelete this"), "current buffer" },
-        D = { cmdify("BDelete! this"), "current buffer forcefully"},
+        D = { cmdify("BDelete! this"), "current buffer forcefully" },
         h = { cmdify("BDelete hidden"), "hidden buffers" },
-        H = { cmdify("BDelete! hidden"), "hidden buffers forcefully"},
+        H = { cmdify("BDelete! hidden"), "hidden buffers forcefully" },
       }
     },
     l = {
@@ -49,9 +53,9 @@ wk.register({
     },
     s = {
       name = "Search...",
-      s = { cmdify("Telescope grep_string"), "String under cursor" },
-      g = { cmdify("Telescope live_grep"), "String in project" },
-      h = { cmdify("Telescope help_tags"), "Vim Helptags" },
+      s = { themed_telescope(telescope_builtin.grep_string), "String under cursor" },
+      g = { themed_telescope(telescope_builtin.live_grep), "String in project" },
+      h = { themed_telescope(telescope_builtin.help_tags), "Vim Helptags" },
     },
     t = {
       name = "Tests...",

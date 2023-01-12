@@ -56,6 +56,8 @@ local on_attach = function(client, bufnr)
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   local cmdify = require('helpers').cmdify
+  local themed_telescope = require('helpers').themed_telescope
+
   require('which-key').register({
     g = {
       name = "Go to...",
@@ -63,8 +65,8 @@ local on_attach = function(client, bufnr)
       d = { cmdify('Telescope lsp_definitions'), "Definition" },
       h = { cmdify('lua vim.lsp.buf.hover()'), "Hover" },
       i = { cmdify('lua vim.lsp.buf.implementation()'), "Implementation" },
-      y = { cmdify('Telescope lsp_type_definitions'), "Type definition" },
-      r = { cmdify('Telescope lsp_references'), "References" },
+      y = { themed_telescope(require('telescope.builtin').lsp_type_definitions), "Type definition" },
+      r = { themed_telescope(require('telescope.builtin').lsp_references), "References" },
     },
     ["<space>"] = {
       c = {

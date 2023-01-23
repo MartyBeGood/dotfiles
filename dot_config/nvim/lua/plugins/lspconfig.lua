@@ -140,7 +140,7 @@ end
 -----------------------------------------------------------
 
 -- Plugin: nvim-cmp
--- url: https://github.com/hrsh7th/nvim-cmpa
+-- url: https://github.com/hrsh7th/nvim-cmp
 
 
 local cmp = require('cmp')

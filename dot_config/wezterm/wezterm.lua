@@ -3,7 +3,7 @@ local wezterm = require 'wezterm'
 -- see https://github.com/tonsky/FiraCode/wiki/How-to-enable-stylistic-sets
 local firacode_harfbuzz = {
   'zero', -- dotted 0
-  'cv01', -- a
+  -- 'cv01', -- a
   'cv02', -- g
   'cv05', -- i
   'cv26', -- :-
@@ -16,17 +16,13 @@ local firacode_harfbuzz = {
   'ss09', -- additional ligatures: >>= <<= ||= |=
 }
 
-local victor_harfbuzz = {
-  'ss02', -- a
-}
-
 local italic_font = function(weight)
   return wezterm.font(
     {
-      family = 'Space Mono',
+      family = 'Input Mono Narrow',
       style = 'Italic',
       weight = weight,
-      harfbuzz_features = { 'ss01', 'ss03', 'liga=0' }
+      harfbuzz_features = { 'liga=0', 'clig=0', 'calt=0' }
     }
   )
 end
@@ -38,12 +34,56 @@ local straight_font = function(weight)
       weight = weight,
       harfbuzz_features = firacode_harfbuzz
     }
-
   )
 end
 
+local firacode = {
+  font_size = 14.7,
+  cell_width = 0.88, -- for fira code
+  font = straight_font('Regular'),
+  font_rules = {
+    {
+      italic = true,
+      intensity = 'Bold',
+      font = italic_font('DemiBold')
+    },
+    {
+      italic = true,
+      intensity = 'Half',
+      font = italic_font('Regular')
+    },
+    {
+      italic = true,
+      font = italic_font('DemiLight')
+    },
+  },
+}
 
-return {
+local input_mono = {
+  font_size = 15,
+  line_height = 1.05,
+  cell_width = 0.88,
+  font = wezterm.font(
+    {
+      family = 'Input Mono Narrow',
+      harfbuzz_features = { 'liga=0', 'clig=0', 'calt=0' }
+    }
+  ),
+}
+
+local dog = 'The quick brown fox jumps over the lazy dog'
+
+
+local table_merge = function(t1, t2)
+  for k, v in pairs(t2) do
+    t1[k] = v
+  end
+  return t1
+end
+
+
+
+local settings = {
   -- Colors
   color_scheme = 'Darcula (base16)',
   colors = {
@@ -67,26 +107,11 @@ return {
   },
 
   -- Font
-  font_size = 14,
-  font = straight_font('Regular'),
 
-  font_rules = {
-    {
-      italic = true,
-      intensity = 'Bold',
-      font = italic_font('Bold')
-    },
-    {
-      italic = true,
-      intensity = 'Half',
-      font = italic_font('DemiBold')
-    },
-    {
-      italic = true,
-      font = italic_font('Regular')
-    },
-  },
-  cell_width = 0.86, -- for fira code
   underline_position = -4,
   audible_bell = "Disabled",
 }
+
+table_merge(settings, firacode)
+
+return settings

@@ -146,9 +146,13 @@ use {
 -- going to files, reusing existing splits
 use 'ELLIOTTCABLE/vim-gfriend'
 
--- buffer management
+-- buffer & window management
 use 'kazhala/close-buffers.nvim'
 use 'sindrets/winshift.nvim'
+use {
+  'luukvbaal/stabilize.nvim',
+  config = function() require('stabilize').setup() end
+}
 
 -- git
 use 'tpope/vim-fugitive'

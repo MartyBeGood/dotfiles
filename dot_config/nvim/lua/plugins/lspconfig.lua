@@ -85,6 +85,10 @@ local on_attach = function(client, bufnr)
         p = { cmdify('lua vim.diagnostic.goto_prev()'), "Previous" },
         l = { cmdify("Trouble document_diagnostics"), "Diagnostics in file" },
       },
+      s = {
+        name = "Search...",
+        s = { themed_telescope(require('telescope.builtin').lsp_dynamic_workspace_symbols), "Symbol in workspace" }
+      }
     },
   }, {
     buffer = bufnr

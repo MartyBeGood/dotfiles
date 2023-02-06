@@ -38,6 +38,7 @@ wk.register({
       j = { cmdify("TSJJoin"), "Join thing under cursor" },
       c = { cmdify("TSJToggle"), "Toggle split/join thing under cursor" }
     },
+    f = { themed_telescope(telescope_builtin.find_files), "Find Files" },
     l = {
       name = "List..",
       d = { cmdify("Trouble document_diagnostics"), "Diagnostics in file" },
@@ -47,13 +48,14 @@ wk.register({
     g = {
       name = "Git...",
       g = { cmdify("Git"), "Overview" },
+      f = { themed_telescope(telescope_builtin.git_files), "Files in Git" },
       B = { cmdify("Git blame"), "Blame" },
       s = { cmdify("Git sync"), "pull, then push" }
     },
     o = {
       name = "Open...",
       f = { cmdify("NvimTreeToggle"), "File Browser" },
-      F = { cmdify("NvimTreeFindFileToggle"), "File Browser at current file" },
+      F = { cmdify("NvimTreeFindFile"), "File Browser at current file" },
 
     },
     s = {

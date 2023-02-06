@@ -13,7 +13,7 @@ local iosevka = {
   cell_width = 0.88,
   font = wezterm.font(
     {
-      family = 'Iosevka Custom',
+      family = 'Miosevka',
     }
   ),
 }

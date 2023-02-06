@@ -1,40 +1,5 @@
 local wezterm = require 'wezterm'
 
--- see https://github.com/tonsky/FiraCode/wiki/How-to-enable-stylistic-sets
-local firacode_harfbuzz = {
-  'zero', -- dotted 0
-  -- 'cv01', -- a
-  'cv02', -- g
-  'cv05', -- i
-  'cv26', -- :-
-  'cv29', -- less cluttered {}
-  'ss01', -- r
-  'ss02', -- <= >= with straight equals line
-  'ss03', -- alternate &
-  'ss06', -- lighter first backslash in \\
-  'ss08', -- alternate != and !== ligatures
-  'ss09', -- additional ligatures: >>= <<= ||= |=
-}
-
-local italic_font = function(weight)
-  return wezterm.font(
-    {
-      family = 'Input Mono Narrow',
-      style = 'Italic',
-      weight = weight,
-      harfbuzz_features = { 'liga=0', 'clig=0', 'calt=0' }
-    }
-  )
-end
-
-local straight_font = function(weight)
-  return wezterm.font(
-    {
-      family = 'FiraCode Nerd Font',
-      weight = weight,
-      harfbuzz_features = firacode_harfbuzz
-    }
-  )
 local table_merge = function(t1, t2)
   for k, v in pairs(t2) do
     t1[k] = v
@@ -42,36 +7,13 @@ local table_merge = function(t1, t2)
   return t1
 end
 
-local firacode = {
-  font_size = 14.7,
-  cell_width = 0.88, -- for fira code
-  font = straight_font('Regular'),
-  font_rules = {
-    {
-      italic = true,
-      intensity = 'Bold',
-      font = italic_font('DemiBold')
-    },
-    {
-      italic = true,
-      intensity = 'Half',
-      font = italic_font('Regular')
-    },
-    {
-      italic = true,
-      font = italic_font('DemiLight')
-    },
-  },
-}
-
-local input_mono = {
-  font_size = 15,
-  line_height = 1.05,
+local iosevka = {
+  font_size = 14,
+  line_height = 1.1,
   cell_width = 0.88,
   font = wezterm.font(
     {
-      family = 'Input Mono Narrow',
-      harfbuzz_features = { 'liga=0', 'clig=0', 'calt=0' }
+      family = 'Iosevka Custom',
     }
   ),
 }
@@ -102,6 +44,6 @@ local settings = {
   audible_bell = "Disabled",
 }
 
-table_merge(settings, firacode)
+table_merge(settings, iosevka)
 
 return settings

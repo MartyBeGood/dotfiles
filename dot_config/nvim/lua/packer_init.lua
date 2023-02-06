@@ -165,8 +165,9 @@ use {
 
 -- sneak on steroids
 use {
-  'ggandor/lightspeed.nvim',
-  requires = { 'tpope/vim-repeat' }
+  'ggandor/leap.nvim',
+  requires = { 'tpope/vim-repeat' },
+  config = function() require('leap').add_default_mappings() end
 }
 
 -- tpope all the things

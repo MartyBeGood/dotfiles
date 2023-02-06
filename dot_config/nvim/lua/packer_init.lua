@@ -148,6 +148,7 @@ use 'ELLIOTTCABLE/vim-gfriend'
 
 -- buffer management
 use 'kazhala/close-buffers.nvim'
+use 'sindrets/winshift.nvim'
 
 -- git
 use 'tpope/vim-fugitive'

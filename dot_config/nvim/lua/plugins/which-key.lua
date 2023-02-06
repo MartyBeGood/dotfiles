@@ -71,6 +71,21 @@ wk.register({
       l = { cmdify("TestLast"), "Run last" },
       s = { cmdify("TestSuite"), "Run full suite" },
     },
+    w = {
+      name = "Window...",
+      w = { cmdify("WinShift"), "Enter move mode" },
+      s = { cmdify("WinShift swap"), "Swap current window with..." },
+
+      h = { cmdify("WinShift left"), "Move current window left" },
+      j = { cmdify("WinShift down"), "Move current window down" },
+      k = { cmdify("WinShift up"), "Move current window up" },
+      l = { cmdify("WinShift right"), "Move current window right" },
+
+      H = { cmdify("WinShift far_left"), "Move current window all the way left" },
+      J = { cmdify("WinShift far_down"), "Move current window all the way down" },
+      K = { cmdify("WinShift far_up"), "Move current window all the way up" },
+      L = { cmdify("WinShift far_right"), "Move current window all the way right" },
+    }
   },
   g = {
     p = {

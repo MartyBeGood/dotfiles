@@ -72,6 +72,10 @@ use 'windwp/nvim-ts-autotag'
 
 -- Text editing goodness
 use 'michaeljsmith/vim-indent-object'
+use {
+  'Wansmer/treesj',
+  requires = { 'nvim-treesitter' }
+}
 
 -- Icons
 use 'kyazdani42/nvim-web-devicons'

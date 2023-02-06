@@ -33,6 +33,11 @@ wk.register({
         H = { cmdify("BDelete! hidden"), "hidden buffers forcefully" },
       }
     },
+    c = {
+      s = { cmdify("TSJSplit"), "Split thing under cursor" },
+      j = { cmdify("TSJJoin"), "Join thing under cursor" },
+      c = { cmdify("TSJToggle"), "Toggle split/join thing under cursor" }
+    },
     l = {
       name = "List..",
       d = { cmdify("Trouble document_diagnostics"), "Diagnostics in file" },

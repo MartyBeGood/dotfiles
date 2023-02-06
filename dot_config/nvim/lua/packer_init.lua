@@ -98,8 +98,6 @@ use "rebelot/kanagawa.nvim"
 use 'ofirgall/ofirkai.nvim'
 use 'navarasu/onedark.nvim'
 
-
-
 -- Additional syntax highlighting
 use "slim-template/vim-slim"
 
@@ -158,9 +156,7 @@ use {
   'lewis6991/gitsigns.nvim',
   requires = { 'nvim-lua/plenary.nvim' },
   event = 'BufWinEnter',
-  config = function()
-    require('gitsigns').setup()
-  end,
+  config = function() require('gitsigns').setup() end,
 }
 
 -- sneak on steroids

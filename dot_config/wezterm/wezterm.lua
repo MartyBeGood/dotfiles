@@ -35,6 +35,11 @@ local straight_font = function(weight)
       harfbuzz_features = firacode_harfbuzz
     }
   )
+local table_merge = function(t1, t2)
+  for k, v in pairs(t2) do
+    t1[k] = v
+  end
+  return t1
 end
 
 local firacode = {
@@ -71,33 +76,20 @@ local input_mono = {
   ),
 }
 
-local dog = 'The quick brown fox jumps over the lazy dog'
-
-
-local table_merge = function(t1, t2)
-  for k, v in pairs(t2) do
-    t1[k] = v
-  end
-  return t1
-end
-
 
 
 local settings = {
-  -- Colors
   color_scheme = 'Darcula (base16)',
   colors = {
-    -- foreground = darcula_fg,
     background = "#282828",
     foreground = "#d8d8d8",
     cursor_bg = wezterm.color.get_default_colors().foreground,
     cursor_fg = wezterm.color.get_default_colors().background
   },
 
-  -- Behavior
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
-  -- send_composed_key_when_left_alt_is_pressed = true,
+
   adjust_window_size_when_changing_font_size = false,
   window_padding = {
     left = 0,
@@ -105,8 +97,6 @@ local settings = {
     top = 1,
     bottom = 0,
   },
-
-  -- Font
 
   underline_position = -4,
   audible_bell = "Disabled",

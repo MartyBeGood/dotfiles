@@ -21,10 +21,10 @@ local iosevka = {
 
 
 local settings = {
-  color_scheme = 'Darcula (base16)',
+  color_scheme = 'GruvboxDarkHard',
   colors = {
-    background = "#282828",
-    foreground = "#d8d8d8",
+    -- background = "#282828",
+    -- foreground = "#d8d8d8",
     cursor_bg = wezterm.color.get_default_colors().foreground,
     cursor_fg = wezterm.color.get_default_colors().background
   },

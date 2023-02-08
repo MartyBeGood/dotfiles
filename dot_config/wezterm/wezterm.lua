@@ -21,7 +21,7 @@ local iosevka = {
 
 
 local settings = {
-  color_scheme = 'GruvboxDarkHard',
+  color_scheme = 'MaterialDark',
   colors = {
     -- background = "#282828",
     -- foreground = "#d8d8d8",

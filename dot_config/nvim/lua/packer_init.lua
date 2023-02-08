@@ -94,9 +94,8 @@ use {
   requires = "rktjmp/lush.nvim"
 }
 use 'ellisonleao/gruvbox.nvim'
-use "rebelot/kanagawa.nvim"
 use 'ofirgall/ofirkai.nvim'
-use 'navarasu/onedark.nvim'
+use 'marko-cerovac/material.nvim'
 
 -- Additional syntax highlighting
 use "slim-template/vim-slim"

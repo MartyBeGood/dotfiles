@@ -108,7 +108,7 @@ end
 local servers = { 'bashls', 'cssls', 'emmet_ls', 'gopls', 'html', 'pyright', 'rust_analyzer', 'solargraph', 'tsserver' }
 
 -- Call setup
-lspconfig['sumneko_lua'].setup {
+lspconfig['lua_ls'].setup {
   on_attach = on_attach,
   root_dir = root_dir,
   capabilities = capabilities,

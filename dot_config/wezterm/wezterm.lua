@@ -21,7 +21,7 @@ local iosevka = {
 
 
 local settings = {
-  color_scheme = 'MaterialDark',
+  color_scheme = 'MaterialDarker',
   colors = {
     -- background = "#282828",
     -- foreground = "#d8d8d8",

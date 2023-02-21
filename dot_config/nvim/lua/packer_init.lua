@@ -97,8 +97,9 @@ use 'ellisonleao/gruvbox.nvim'
 use 'ofirgall/ofirkai.nvim'
 use 'marko-cerovac/material.nvim'
 
--- Additional syntax highlighting
+-- Language specifics that can't be addressed with LSP
 use "slim-template/vim-slim"
+use "lmeijvogel/vim-yaml-helper"
 
 -- LSP
 use 'williamboman/mason.nvim'

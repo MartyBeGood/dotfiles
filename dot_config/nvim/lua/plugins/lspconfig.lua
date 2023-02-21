@@ -105,7 +105,8 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches.
 -- Add your language server below:
-local servers = { 'bashls', 'cssls', 'emmet_ls', 'gopls', 'html', 'pyright', 'rust_analyzer', 'solargraph', 'tsserver' }
+local servers = { 'bashls', 'cssls', 'emmet_ls', 'gopls', 'html', 'pyright', 'rust_analyzer', 'solargraph', 'tsserver',
+  'yamlls' }
 
 -- Call setup
 lspconfig['lua_ls'].setup {

@@ -55,6 +55,12 @@ autocmd('Filetype', {
   command = 'setlocal shiftwidth=2 tabstop=2'
 })
 
+-- Make eruby.yaml files be treated like yaml files
+autocmd('FileType', {
+  pattern = 'eruby.yaml',
+  command = 'set filetype=yaml'
+})
+
 augroup('fugitiveLineNumber', { clear = true })
 autocmd('FileType', {
   group = 'fugitiveLineNumber',

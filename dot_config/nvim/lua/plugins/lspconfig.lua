@@ -182,7 +182,7 @@ cmp.setup {
     keyword_length = 2,
   },
 
-  preselect = cmp.PreselectMode.None,
+  preselect = cmp.PreselectMode.Item,
 
   -- Key mapping
   mapping = {
@@ -200,7 +200,10 @@ cmp.setup {
     -- Tab mapping
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
-        cmp.select_next_item()
+        cmp.confirm({
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true
+        })
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
       else

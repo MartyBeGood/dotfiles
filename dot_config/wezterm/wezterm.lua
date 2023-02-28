@@ -21,17 +21,15 @@ local iosevka = {
 
 
 local settings = {
-  color_scheme = 'MaterialDarker',
+  color_scheme = 'Darcula (base16)',
   colors = {
-    -- background = "#282828",
-    -- foreground = "#d8d8d8",
+    background = "#282828",
+    foreground = "#d8d8d8",
     cursor_bg = wezterm.color.get_default_colors().foreground,
     cursor_fg = wezterm.color.get_default_colors().background
   },
-
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
-
   adjust_window_size_when_changing_font_size = false,
   window_padding = {
     left = 0,
@@ -39,7 +37,6 @@ local settings = {
     top = 1,
     bottom = 0,
   },
-
   underline_position = -4,
   audible_bell = "Disabled",
 }

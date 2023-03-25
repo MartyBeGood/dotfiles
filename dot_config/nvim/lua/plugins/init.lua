@@ -1,6 +1,6 @@
+-- Plugins that don't have enough config to warrant their own file go here
 return {
   "folke/which-key.nvim",
-  --  "folke/neodev.nvim",
   'michaeljsmith/vim-indent-object',
   "slim-template/vim-slim",
   "lmeijvogel/vim-yaml-helper",

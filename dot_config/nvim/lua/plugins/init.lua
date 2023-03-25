@@ -1,12 +1,28 @@
-require('plugins/close-buffers')
-require('plugins/indent-blankline')
-require('plugins/lspconfig')
-require('plugins/lualine')
-require('plugins/mini')
-require('plugins/nvim-tree')
-require('plugins/telescope')
-require('plugins/treesitter')
-require('plugins/treesj')
-require('plugins/vim-test')
-require('plugins/which-key')
-require('plugins/winshift')
+return {
+  "folke/which-key.nvim",
+  --  "folke/neodev.nvim",
+  'michaeljsmith/vim-indent-object',
+  "slim-template/vim-slim",
+  "lmeijvogel/vim-yaml-helper",
+  "vim-test/vim-test",
+  'tpope/vim-sleuth',
+  'tpope/vim-rails',
+  'tpope/vim-rake',
+  'tpope/vim-bundler',
+  'tpope/vim-projectionist',
+  'tpope/vim-fugitive',
+  { "kylechui/nvim-surround",             config = true },
+  { "numToStr/Comment.nvim",              config = true },
+  { 'windwp/nvim-autopairs',              config = true },
+  { 'briones-gabriel/darcula-solid.nvim', dependencies = "rktjmp/lush.nvim",      lazy = false },
+  { 'Wansmer/treesj',                     config = true },
+  { "kazhala/close-buffers.nvim",         config = true },
+  { "sindrets/winshift.nvim",             config = true },
+  { "luukvbaal/stabilize.nvim",           config = true },
+  { "lewis6991/gitsigns.nvim",            dependencies = "nvim-lua/plenary.nvim", event = "BufWinEnter", config = true },
+  {
+    'ggandor/leap.nvim',
+    dependencies = { 'tpope/vim-repeat' },
+    config = function() require('leap').add_default_mappings() end
+  }
+}

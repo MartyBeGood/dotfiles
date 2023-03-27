@@ -167,12 +167,13 @@ M.setup = function()
       { name = 'path' },
       { name = 'buffer' },
     },
-    -- formatting = {
-    --   format = lspkind.cmp_format({
-    --     mode = 'symbol',
-    --     maxwidth = 50
-    --   })
-    -- }
+    formatting = {
+      format = require('lspkind').cmp_format({
+        mode = 'symbol',
+        maxwidth = 50,
+        ellipsis_char = '...'
+      })
+    }
   })
 end
 

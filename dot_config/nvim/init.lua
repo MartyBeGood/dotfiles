@@ -19,6 +19,3 @@ require("autocmds")
 require("lazy").setup("plugins")
 
 require("plugins/autocomplete/setup").setup()
-
--- should go someplace else
-vim.cmd [[colorscheme darcula-solid]]

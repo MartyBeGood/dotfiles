@@ -13,14 +13,7 @@ return {
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      {
-        'j-hui/fidget.nvim', -- LSP info in bottom right corner
-        opts = {
-          text = {
-            spinner = 'dots'
-          }
-        }
-      },
+      'j-hui/fidget.nvim', -- LSP info in bottom right corner
     },
   },
   { 'folke/neodev.nvim' },
@@ -53,6 +46,14 @@ return {
       Event = ' ',
       Operator = ' ',
       TypeParameter = ' '
+    }
+  },
+  {
+    'j-hui/fidget.nvim',     -- LSP info in bottom right corner
+    opts = {
+      text = {
+        spinner = 'dots'
+      }
     }
   },
 }

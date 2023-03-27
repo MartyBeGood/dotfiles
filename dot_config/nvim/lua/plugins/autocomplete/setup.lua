@@ -72,11 +72,19 @@ M.setup = function()
   end
 
   -- SERVER CONFIG GOES HERE
+
+  -- TODO: Unified table for mason-managed and manual servers. Some can be installed through mason, some need shadowenv/other stuff/are provided through project config
+  -- Something like
+  -- local servers = {
+  --   lspconfig_name = {
+  --     auto_install = [nil | false | true | mason_package_name]
+  --     config = {}
+  --   }
+  -- }
   local servers = {
     bashls = {},
     cssls = {},
     emmet_ls = {},
-    gopls = {},
     html = {},
     lua_ls = {
       workspace = { checkThirdParty = false },
@@ -84,9 +92,13 @@ M.setup = function()
     },
     pyright = {},
     rust_analyzer = {},
-    solargraph = {},
     tsserver = {},
     yamlls = {},
+  }
+
+  local manually_installed_servers = {
+    solargraph = {},
+    gopls = {},
   }
 
   -- Actual work starts here
@@ -94,6 +106,8 @@ M.setup = function()
   capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
   require('mason').setup()
+
+  local lspconfig = require('lspconfig')
   local mason_lspconfig = require('mason-lspconfig')
 
   -- auto-install servers mentioned in table above
@@ -103,13 +117,21 @@ M.setup = function()
 
   mason_lspconfig.setup_handlers {
     function(server_name)
-      require('lspconfig')[server_name].setup {
+      lspconfig[server_name].setup {
         capabilities = capabilities,
         on_attach = on_attach,
         settings = servers[server_name],
       }
     end
   }
+
+  for server_name, config in pairs(manually_installed_servers) do
+    lspconfig[server_name].setup({
+      capabilities = capabilities,
+      on_attach = on_attach,
+      settings = config,
+    })
+  end
 
   local cmp = require('cmp')
   local luasnip = require('luasnip')

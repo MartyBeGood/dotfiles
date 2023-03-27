@@ -13,7 +13,6 @@ return {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       { 'j-hui/fidget.nvim', config = true },
-      { 'folke/neodev.nvim', config = true },
     },
   },
   {
@@ -46,5 +45,5 @@ return {
       Operator = ' ',
       TypeParameter = ' '
     }
-  }
+  },
 }

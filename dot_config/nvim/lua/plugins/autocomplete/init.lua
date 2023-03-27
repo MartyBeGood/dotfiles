@@ -23,6 +23,7 @@ return {
       },
     },
   },
+  { 'folke/neodev.nvim' },
   {
     'SmiteshP/nvim-navic',
     opts = {

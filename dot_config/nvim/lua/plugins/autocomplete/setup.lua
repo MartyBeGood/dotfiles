@@ -89,11 +89,13 @@ M.setup = function()
     rust_analyzer = {},
     tsserver = {},
     lua_ls = {
+      Lua = {
+        workspace = {
+          checkThirdParty = false,
+        },
+        telemetry = { enable = false },
+      }
       -- mason-name = lua-language-server
-      workspace = {
-        checkThirdParty = false,
-      },
-      telemetry = { enable = false },
     },
     yamlls = {},
   }
@@ -139,6 +141,7 @@ M.setup = function()
   local luasnip = require('luasnip')
 
   luasnip.config.setup({})
+  require('neodev').setup()
 
   cmp.setup({
     snippet = {

@@ -12,7 +12,14 @@ return {
     dependencies = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-      { 'j-hui/fidget.nvim', config = true },
+      {
+        'j-hui/fidget.nvim', -- LSP info in bottom right corner
+        opts = {
+          text = {
+            spinner = 'dots'
+          }
+        }
+      },
     },
   },
   {

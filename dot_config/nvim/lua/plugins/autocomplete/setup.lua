@@ -70,7 +70,6 @@ M.setup = function()
       buffer = bufnr
     })
   end
-
   -- SERVER CONFIG GOES HERE
 
   -- TODO: Unified table for mason-managed and manual servers. Some can be installed through mason, some need shadowenv/other stuff/are provided through project config
@@ -86,13 +85,16 @@ M.setup = function()
     cssls = {},
     emmet_ls = {},
     html = {},
-    lua_ls = {
-      workspace = { checkThirdParty = false },
-      telemetry = { enable = false },
-    },
     pyright = {},
     rust_analyzer = {},
     tsserver = {},
+    lua_ls = {
+      -- mason-name = lua-language-server
+      workspace = {
+        checkThirdParty = false,
+      },
+      telemetry = { enable = false },
+    },
     yamlls = {},
   }
 

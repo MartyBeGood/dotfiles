@@ -4,6 +4,7 @@ export EDITOR=nvim
 
 # chruby
 [ -f $zsh_config_dir/chruby.zsh ] && source $zsh_config_dir/chruby.zsh
+[ -f $zsh_config_dir/fnm-yarn.zsh ] && source $zsh_config_dir/fnm-yarn.zsh
 
 # fnm
 if type fnm &> /dev/null

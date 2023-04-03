@@ -19,22 +19,12 @@ alt + cmd - h : yabai -m window --warp west  || $(yabai -m window --display west
 alt + cmd - j : yabai -m window --warp south || $(yabai -m window --display south; yabai -m display --focus south)
 alt + cmd - k : yabai -m window --warp north || $(yabai -m window --display north; yabai -m display --focus north)
 alt + cmd - l : yabai -m window --warp east || $(yabai -m window --display east; yabai -m display --focus east)
+
+# Stack the next window inserted to the current container
 alt + cmd - i : yabai -m window --insert stack
+
+# Rotate the parent container
 alt + cmd - u : yabai -m window --toggle split
-
-# set insertion point in focused container
-
-# move focused window to next/prev workspace
-alt + shift - 1 : yabai -m window --space 1
-alt + shift - 2 : yabai -m window --space 2
-alt + shift - 3 : yabai -m window --space 3
-alt + shift - 4 : yabai -m window --space 4
-alt + shift - 5 : yabai -m window --space 5
-alt + shift - 6 : yabai -m window --space 6
-alt + shift - 7 : yabai -m window --space 7
-alt + shift - 8 : yabai -m window --space 8
-alt + shift - 9 : yabai -m window --space 9
-#alt + shift - 0 : yabai -m window --space 10
 
 # go back to previous workspace (kind of like back_and_forth in i3)
 alt - b : yabai -m space --focus recent

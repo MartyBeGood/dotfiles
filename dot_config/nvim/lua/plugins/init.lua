@@ -11,6 +11,8 @@ return {
   'tpope/vim-bundler',
   'tpope/vim-projectionist',
   'tpope/vim-fugitive',
+  'github/copilot.vim',
+  'vim-ruby/vim-ruby',
   { "kylechui/nvim-surround", config = true },
   { "numToStr/Comment.nvim",  config = true },
   { 'windwp/nvim-autopairs',  config = true },

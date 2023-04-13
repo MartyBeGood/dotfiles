@@ -1,41 +1,40 @@
 # change focus
-alt - h : yabai -m window --focus west || yabai -m display --focus prev
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east || yabai -m display --focus next
-alt - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
-alt - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+fn - h : yabai -m window --focus west || yabai -m display --focus prev
+fn - j : yabai -m window --focus south
+fn - k : yabai -m window --focus north
+fn - l : yabai -m window --focus east || yabai -m display --focus next
+fn - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+fn - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
 
 # swap window in current workspace
-alt + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
-alt + shift - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
-alt + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
-alt + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+fn + alt - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+fn + alt - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+fn + alt - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+fn + alt - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
 # warp window in current workspace
-alt + cmd - h : yabai -m window --warp west  || $(yabai -m window --display west; yabai -m display --focus west)
-
-alt + cmd - j : yabai -m window --warp south || $(yabai -m window --display south; yabai -m display --focus south)
-alt + cmd - k : yabai -m window --warp north || $(yabai -m window --display north; yabai -m display --focus north)
-alt + cmd - l : yabai -m window --warp east || $(yabai -m window --display east; yabai -m display --focus east)
+fn + cmd - h : yabai -m window --warp west  || $(yabai -m window --display west; yabai -m display --focus west)
+fn + cmd - j : yabai -m window --warp south || $(yabai -m window --display south; yabai -m display --focus south)
+fn + cmd - k : yabai -m window --warp north || $(yabai -m window --display north; yabai -m display --focus north)
+fn + cmd - l : yabai -m window --warp east || $(yabai -m window --display east; yabai -m display --focus east)
 
 # Stack the next window inserted to the current container
-alt + cmd - i : yabai -m window --insert stack
+fn - i : yabai -m window --insert stack
 
 # Rotate the parent container
-alt + cmd - u : yabai -m window --toggle split
+fn - u : yabai -m window --toggle split
 
 # go back to previous workspace (kind of like back_and_forth in i3)
-alt - b : yabai -m space --focus recent
+fn - b : yabai -m space --focus recent
 
 # move focused window to previous workspace
 alt + shift - b : yabai -m window --space recent; \
                   yabai -m space --focus recent
 
-alt - f : yabai -m window --toggle float
+fn - f : yabai -m window --toggle float
 
 # change layout of desktop
-alt - t : yabai -m space --layout bsp
+fn - t : yabai -m space --layout bsp
 
-alt + ctrl + shift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+fn + ctrl + shift - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"

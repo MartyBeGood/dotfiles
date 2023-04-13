@@ -90,6 +90,10 @@ M.setup = function()
     tsserver = {},
     lua_ls = {
       Lua = {
+        completion = {
+          callSnippet = "Replace",
+          keywordSnippet = "Replace",
+        },
         workspace = {
           checkThirdParty = false,
         },
@@ -137,11 +141,10 @@ M.setup = function()
     })
   end
 
+  require('neodev').setup()
   local cmp = require('cmp')
   local luasnip = require('luasnip')
-
   luasnip.config.setup({})
-  require('neodev').setup()
 
   cmp.setup({
     snippet = {
@@ -156,15 +159,7 @@ M.setup = function()
       ['<C-f>'] = cmp.mapping.scroll_docs(4),
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.close(),
-      ["<CR>"] = cmp.mapping({
-        i = function(fallback)
-          if cmp.visible() and cmp.get_active_entry() then
-            cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-          else
-            fallback()
-          end
-        end,
-      }),
+      ["<CR>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
     },
     sources = {
       { name = 'nvim_lsp' },

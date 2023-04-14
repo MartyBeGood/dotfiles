@@ -15,35 +15,42 @@ return {
   { "kylechui/nvim-surround", config = true },
   { "numToStr/Comment.nvim",  config = true },
   { 'windwp/nvim-autopairs',  config = true },
-  -- { 'briones-gabriel/darcula-solid.nvim', dependencies = "rktjmp/lush.nvim",      lazy = false },
   {
-    'marko-cerovac/material.nvim',
+    'briones-gabriel/darcula-solid.nvim',
+    dependencies = "rktjmp/lush.nvim",
     lazy = false,
     config = function()
-      vim.g.material_style = 'darker'
-      require('material').setup({
-        contrast = {
-          terminal = true,
-          sidebars = true
-        },
-        plugins = {
-          "gitsigns",
-          "indent-blankline",
-          "nvim-cmp",
-          "nvim-navic",
-          "nvim-tree",
-          "nvim-web-devicons",
-          "telescope",
-          "trouble",
-          "which-key",
-        },
-        high_visibility = {
-          darker = true
-        }
-      })
-      vim.cmd 'colorscheme material'
+      vim.cmd 'colorscheme darcula-solid'
     end
   },
+  -- {
+  --   'marko-cerovac/material.nvim',
+  --   lazy = false,
+  --   config = function()
+  --     vim.g.material_style = 'darker'
+  --     require('material').setup({
+  --       contrast = {
+  --         terminal = true,
+  --         sidebars = true
+  --       },
+  --       plugins = {
+  --         "gitsigns",
+  --         "indent-blankline",
+  --         "nvim-cmp",
+  --         "nvim-navic",
+  --         "nvim-tree",
+  --         "nvim-web-devicons",
+  --         "telescope",
+  --         "trouble",
+  --         "which-key",
+  --       },
+  --       high_visibility = {
+  --         darker = true
+  --       }
+  --     })
+  --     vim.cmd 'colorscheme material'
+  --   end
+  -- },
   { 'Wansmer/treesj',             config = true },
   { "kazhala/close-buffers.nvim", config = true },
   { "sindrets/winshift.nvim",     config = true },

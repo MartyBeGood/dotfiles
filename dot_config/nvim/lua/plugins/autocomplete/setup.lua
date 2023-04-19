@@ -24,7 +24,7 @@ M.setup = function()
       vim.api.nvim_create_autocmd("BufWritePre", {
         group = vim.api.nvim_create_augroup("Format", { clear = true }),
         buffer = bufnr,
-        callback = function() vim.lsp.buf.format() end
+        callback = function() vim.lsp.buf.format({ async = true }) end
       })
     end
 
@@ -101,11 +101,15 @@ M.setup = function()
       }
       -- mason-name = lua-language-server
     },
-    yamlls = {},
   }
 
   local manually_installed_servers = {
-    solargraph = {},
+    solargraph = {
+      solargraph = {
+        diagnostics = false,
+        formatting = false,
+      }
+    },
     gopls = {},
   }
 
@@ -114,6 +118,19 @@ M.setup = function()
   capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
   require('mason').setup()
+  local null_ls = require('null-ls')
+  null_ls.setup({
+    sources = {
+      null_ls.builtins.formatting.rubocop,
+      null_ls.builtins.diagnostics.rubocop,
+    }
+  })
+  require('mason-null-ls').setup({
+    automatic_installation = false,
+    automatic_setup = true,
+    handlers = {},
+  })
+
 
   local lspconfig = require('lspconfig')
   local mason_lspconfig = require('mason-lspconfig')

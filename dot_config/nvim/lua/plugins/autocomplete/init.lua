@@ -19,8 +19,22 @@ return {
   },
   { 'folke/neodev.nvim' },
   {
+    'williamboman/mason.nvim',
+    build = ':MasonUpdate',
+  },
+  {
+    'jose-elias-alvarez/null-ls.nvim',
+  },
+  {
+    'jay-babu/mason-null-ls.nvim',
+    dependencies = {
+      'williamboman/mason.nvim',
+      'jose-elias-alvarez/null-ls.nvim',
+    },
+  },
+  {
     'onsails/lspkind.nvim',
-    config = function() require('lspkind').init({ mode = 'symbol' }) end
+    config = function() require('lspkind').init({ mode = 'symbol' }) end,
   },
   {
     'j-hui/fidget.nvim', -- LSP info in bottom right corner

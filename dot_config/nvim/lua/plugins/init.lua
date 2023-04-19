@@ -6,11 +6,15 @@ return {
   "lmeijvogel/vim-yaml-helper",
   "vim-test/vim-test",
   'tpope/vim-sleuth',
-  'tpope/vim-rails',
   'tpope/vim-rake',
   'tpope/vim-bundler',
-  'tpope/vim-projectionist',
   'tpope/vim-fugitive',
+  {
+    'tpope/vim-rails',
+    dependencies = {
+      'tpope/vim-projectionist',
+    }
+  },
   'vim-ruby/vim-ruby',
   { "kylechui/nvim-surround", config = true },
   { "numToStr/Comment.nvim",  config = true },

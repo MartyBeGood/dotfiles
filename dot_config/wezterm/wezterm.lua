@@ -25,10 +25,10 @@ local settings = {
   send_composed_key_when_left_alt_is_pressed = false,
   use_dead_keys = false,
   use_ime = false,
-  color_scheme = 'MaterialDarker',
+  color_scheme = 'Darcula (base16)',
   colors = {
-    -- background = "#282828",
-    -- foreground = "#d8d8d8",
+    background = "#262627",
+    foreground = "#d8d8d8",
     cursor_bg = wezterm.color.get_default_colors().foreground,
     cursor_fg = wezterm.color.get_default_colors().background
   },

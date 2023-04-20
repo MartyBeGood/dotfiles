@@ -9,13 +9,10 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
-vim.opt.rtp:prepend(lazypath)
 
--- Example using a list of specs with the default options
+vim.opt.rtp:prepend(lazypath)
 
 require("options")
 require("autocmds")
 
 require("lazy").setup("plugins")
-
-require("plugins/autocomplete/setup").setup()

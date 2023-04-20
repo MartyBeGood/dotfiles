@@ -1,9 +1,9 @@
 -- Plugins that don't have enough config to warrant their own file go here
 return {
-  "folke/which-key.nvim",
-  'michaeljsmith/vim-indent-object',
   "slim-template/vim-slim",
   "lmeijvogel/vim-yaml-helper",
+  'vim-ruby/vim-ruby',
+
   "vim-test/vim-test",
   'tpope/vim-sleuth',
   'tpope/vim-rake',
@@ -15,7 +15,6 @@ return {
       'tpope/vim-projectionist',
     }
   },
-  'vim-ruby/vim-ruby',
   { "kylechui/nvim-surround", config = true },
   { "numToStr/Comment.nvim",  config = true },
   { 'windwp/nvim-autopairs',  config = true },

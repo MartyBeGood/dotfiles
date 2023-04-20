@@ -101,3 +101,4 @@ return {
 		wk.register({ ["<esc>"] = { termcodes([[<C-\><C-n>]]), "Exit insert mode" } }, { mode = 't' })
 	end
 }
+

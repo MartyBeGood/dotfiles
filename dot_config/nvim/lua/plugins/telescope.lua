@@ -2,6 +2,7 @@ local empty_border = { " ", " ", " ", " ", " ", " ", " ", " " }
 
 return {
   "nvim-telescope/telescope.nvim",
+  event = 'VeryLazy',
   dependencies = {
     'nvim-lua/plenary.nvim',
     "folke/trouble.nvim",

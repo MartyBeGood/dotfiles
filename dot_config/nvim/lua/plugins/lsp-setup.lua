@@ -53,6 +53,7 @@ return {
       'folke/which-key.nvim',
       'folke/neodev.nvim',
     },
+    event = 'BufReadPre',
     config = function()
       local lspconfig = require('lspconfig')
       local mason_lspconfig = require('mason-lspconfig')

@@ -9,5 +9,6 @@ return {
     action_keys = {
       cancel = "q",
     }
-  }
+  },
+  event = "LspAttach",
 }

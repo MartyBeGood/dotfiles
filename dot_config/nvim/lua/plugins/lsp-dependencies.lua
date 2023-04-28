@@ -14,6 +14,7 @@ return {
   {
     'onsails/lspkind.nvim',
     config = function() require('lspkind').init({ mode = 'symbol' }) end,
+    event = 'VeryLazy',
   },
   {
     'j-hui/fidget.nvim', -- LSP info in bottom right corner

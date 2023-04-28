@@ -78,12 +78,6 @@ autocmd('TermOpen', {
   command = 'setlocal listchars= nonumber norelativenumber nocursorline',
 })
 
--- Open terminal buffers in insert mode
--- autocmd('TermOpen', {
---   pattern = '*',
---   command = 'startinsert'
--- })
-
 -- Close terminal buffer on process exit
 autocmd('BufLeave', {
   pattern = 'term://*',

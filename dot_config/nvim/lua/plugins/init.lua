@@ -57,7 +57,6 @@ return {
   { 'Wansmer/treesj',             config = true },
   { "kazhala/close-buffers.nvim", config = true },
   { "sindrets/winshift.nvim",     config = true },
-  { "luukvbaal/stabilize.nvim",   config = true },
   { "lewis6991/gitsigns.nvim",    dependencies = "nvim-lua/plenary.nvim", event = "BufWinEnter", config = true },
   {
     'ggandor/leap.nvim',

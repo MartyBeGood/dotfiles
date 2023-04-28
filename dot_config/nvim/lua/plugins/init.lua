@@ -9,6 +9,7 @@ return {
   'tpope/vim-rake',
   'tpope/vim-bundler',
   'tpope/vim-fugitive',
+  'michaeljsmith/vim-indent-object',
   {
     'tpope/vim-rails',
     dependencies = {

@@ -23,10 +23,6 @@ return {
   { 'folke/neodev.nvim', config = true },
   {
     'jose-elias-alvarez/null-ls.nvim',
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'williamboman/mason-lspconfig.nvim'
-    },
     config = function()
       local null_ls = require('null-ls')
       null_ls.setup({

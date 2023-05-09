@@ -52,6 +52,7 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'folke/which-key.nvim',
       'folke/neodev.nvim',
+      'jay-babu/mason-null-ls.nvim'
     },
     event = 'BufReadPre',
     config = function()

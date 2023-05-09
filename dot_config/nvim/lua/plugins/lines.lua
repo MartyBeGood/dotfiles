@@ -2,6 +2,7 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons' },
+    event = "UIEnter",
     config = function()
       require('lualine').setup({
         options = {

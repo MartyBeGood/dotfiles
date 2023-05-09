@@ -1,24 +1,48 @@
 -- Plugins that don't have enough config to warrant their own file go here
 return {
-  "slim-template/vim-slim",
-  "lmeijvogel/vim-yaml-helper",
-  'vim-ruby/vim-ruby',
+  {
+    "lmeijvogel/vim-yaml-helper",
+    ft = "yaml",
+  },
 
-  "vim-test/vim-test",
-  'tpope/vim-sleuth',
-  'tpope/vim-rake',
-  'tpope/vim-bundler',
-  'tpope/vim-fugitive',
-  'michaeljsmith/vim-indent-object',
+  {
+    "vim-test/vim-test",
+    ft = 'ruby',
+  },
+  {
+    'tpope/vim-sleuth',
+    event = "BufReadPre",
+  },
+  {
+    'tpope/vim-fugitive',
+    event = "BufWinEnter",
+  },
+  {
+    'michaeljsmith/vim-indent-object',
+    event = 'BufWinEnter',
+  },
   {
     'tpope/vim-rails',
+    ft = {'ruby', 'slim'},
     dependencies = {
       'tpope/vim-projectionist',
     }
   },
-  { "kylechui/nvim-surround", config = true },
-  { "numToStr/Comment.nvim",  config = true },
-  { 'windwp/nvim-autopairs',  config = true },
+  {
+    "kylechui/nvim-surround",
+    config = true,
+    event = "BufWinEnter",
+  },
+  {
+    "numToStr/Comment.nvim",
+    config = true,
+    event = "BufWinEnter",
+  },
+  {
+    'windwp/nvim-autopairs',
+    config = true,
+    event = "BufWinEnter",
+  },
   {
     'briones-gabriel/darcula-solid.nvim',
     dependencies = "rktjmp/lush.nvim",
@@ -55,13 +79,29 @@ return {
   --     vim.cmd 'colorscheme material'
   --   end
   -- },
-  { 'Wansmer/treesj',             config = true },
-  { "kazhala/close-buffers.nvim", config = true },
-  { "sindrets/winshift.nvim",     config = true },
-  { "lewis6991/gitsigns.nvim",    dependencies = "nvim-lua/plenary.nvim", event = "BufWinEnter", config = true },
+  {
+    'Wansmer/treesj',
+    config = true,
+    event = 'BufWinEnter',
+  },
+  {
+    "kazhala/close-buffers.nvim",
+    config = true,
+  },
+  {
+    "sindrets/winshift.nvim",
+    config = true,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    event = "BufWinEnter",
+    config = true,
+  },
   {
     'ggandor/leap.nvim',
     dependencies = { 'tpope/vim-repeat' },
+    event = "BufWinEnter",
     config = function() require('leap').add_default_mappings() end
   }
 }

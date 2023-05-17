@@ -6,7 +6,15 @@
 --     config = {}
 --   }
 -- }
+local table_merge = function(t1, t2)
+  for k, v in pairs(t2) do
+    t1[k] = v
+  end
+  return t1
+end
 
+
+-- Servers you want mason to keep installed
 local servers = {
   bashls = {},
   cssls = {},
@@ -15,29 +23,40 @@ local servers = {
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
-  lua_ls = {
-    Lua = {
-      completion = {
-        callSnippet = "Replace",
-        keywordSnippet = "Replace",
-      },
-      workspace = {
-        checkThirdParty = false,
-      },
-      telemetry = { enable = false },
-    }
-    -- mason-name = lua-language-server
-  },
 }
 
+-- Servers you'll handle yourself. Could still be through mason, or through env management. Up to you.
 local manually_installed_servers = {
   solargraph = {
-    solargraph = {
-      diagnostics = false,
-      formatting = false,
+    settings = {
+      solargraph = {
+        diagnostics = false
+      }
+    },
+    init_options = {
+      formatting = false
     }
   },
   gopls = {},
+  lua_ls = {
+    settings = {
+      Lua = {
+        completion = {
+          callSnippet = "Replace",
+          keywordSnippet = "Replace",
+        },
+        workspace = {
+          checkThirdParty = false,
+        },
+        telemetry = { enable = false },
+      }
+    }
+  },
+  ruby_ls = {
+    init_options = {
+      formatter = "rubocop"
+    }
+  },
 }
 
 
@@ -91,10 +110,7 @@ return {
             group = vim.api.nvim_create_augroup("Format", { clear = true }),
             buffer = bufnr,
             callback = function()
-              -- RuboCop through null-ls is too slow to run on every save
-              if vim.bo.filetype ~= "ruby" then
-                vim.lsp.buf.format({})
-              end
+              vim.lsp.buf.format({})
             end
           })
         end
@@ -107,20 +123,13 @@ return {
 
       mason_lspconfig.setup_handlers {
         function(server_name)
-          lspconfig[server_name].setup {
-            capabilities = capabilities,
-            on_attach = on_attach,
-            settings = servers[server_name],
-          }
+          lspconfig[server_name].setup(table_merge({ capabilities = capabilities, on_attach = on_attach },
+            servers[server_name] or {}))
         end
       }
 
       for server_name, config in pairs(manually_installed_servers) do
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
-          on_attach = on_attach,
-          settings = config,
-        })
+        lspconfig[server_name].setup(table_merge({ capabilities = capabilities, on_attach = on_attach }, config or {}))
       end
     end
   }

@@ -1,6 +1,6 @@
 return {
   "kyazdani42/nvim-tree.lua",
-  cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus" },
+  cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
   opts = {
     hijack_cursor = true,
     sort_by = "name",

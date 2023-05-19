@@ -73,7 +73,6 @@ return {
       'folke/neodev.nvim',
       'jay-babu/mason-null-ls.nvim'
     },
-    event = 'BufReadPre',
     config = function()
       local lspconfig = require('lspconfig')
       local mason_lspconfig = require('mason-lspconfig')

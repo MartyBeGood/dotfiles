@@ -4,7 +4,7 @@ return {
   g = {
     name = "Go to...",
     D = { cmdify('lua vim.lsp.buf.declaration()'), "Declaration" },
-    d = { themed_telescope(require('telescope.builtin').lsp_definitions), "Definition" },
+    d = { cmdify('lua vim.lsp.buf.definition()'), "Definition" },
     h = { cmdify('lua vim.lsp.buf.hover()'), "Hover" },
     i = { cmdify('lua vim.lsp.buf.implementation()'), "Implementation" },
     y = { themed_telescope(require('telescope.builtin').lsp_type_definitions), "Type definition" },

@@ -2,16 +2,6 @@ zsh_config_dir=${0:a:h}
 # basic env vars
 export EDITOR=nvim
 
-# chruby
-[ -f $zsh_config_dir/chruby.zsh ] && source $zsh_config_dir/chruby.zsh
-[ -f $zsh_config_dir/fnm-yarn.zsh ] && source $zsh_config_dir/fnm-yarn.zsh
-
-# fnm
-if type fnm &> /dev/null
-then
-  eval "$(fnm env --use-on-cd)"
-fi
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -46,7 +36,6 @@ antigen bundle pip
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
 
-antigen theme romkatv/powerlevel10k
 antigen apply
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -56,5 +45,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f $zsh_config_dir/p10k.zsh ]] || source $zsh_config_dir/p10k.zsh
+eval "$(rtx activate zsh)"
+
+# rtx isn't ready for the rest of this file
+eval "$(rtx x starship -- starship init zsh)"

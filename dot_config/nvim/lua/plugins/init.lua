@@ -8,6 +8,13 @@ return {
   {
     "vim-test/vim-test",
     ft = 'ruby',
+    config = function()
+      vim.g['test#strategy'] = 'neovim'
+      vim.g['test#ruby#rspec#options'] = {
+        nearest = '--backtrace',
+        file = '--format documentation',
+      }
+    end
   },
   {
     'tpope/vim-sleuth',

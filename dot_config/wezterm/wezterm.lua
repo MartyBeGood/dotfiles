@@ -8,14 +8,9 @@ local table_merge = function(t1, t2)
 end
 
 local iosevka = {
-  font_size = 14,
-  line_height = 1.1,
+  font_size = 15,
   cell_width = 0.88,
-  font = wezterm.font(
-    {
-      family = 'Miosevka',
-    }
-  ),
+  font = wezterm.font('Miosevka Nerd Font'),
 }
 
 
@@ -25,10 +20,9 @@ local settings = {
   send_composed_key_when_left_alt_is_pressed = false,
   use_dead_keys = false,
   use_ime = false,
-  color_scheme = 'Darcula (base16)',
+  color_scheme = 'Google Dark (Gogh)',
   colors = {
-    background = "#262627",
-    foreground = "#d8d8d8",
+    -- Make sure you can read the character at the cursor
     cursor_bg = wezterm.color.get_default_colors().foreground,
     cursor_fg = wezterm.color.get_default_colors().background
   },

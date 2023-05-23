@@ -30,7 +30,7 @@ return {
   },
   {
     'tpope/vim-rails',
-    ft = {'ruby', 'slim'},
+    ft = { 'ruby', 'slim' },
     dependencies = {
       'tpope/vim-projectionist',
     }
@@ -54,9 +54,30 @@ return {
     'briones-gabriel/darcula-solid.nvim',
     dependencies = "rktjmp/lush.nvim",
     lazy = false,
-    config = function()
-      vim.cmd 'colorscheme darcula-solid'
-    end
+  },
+  {
+    'marko-cerovac/material.nvim',
+    opts = {
+      contrast = {
+        sidebars = true,
+        floating_windows = true,
+        cursor_line = true
+      },
+      plugins = {
+        "gitsigns",
+        "indent-blankline",
+        "nvim-cmp",
+        "nvim-tree",
+        "telescope",
+        "trouble",
+        "which-key"
+      },
+      high_visibility = {
+        lighter = true,
+        darker = true
+      },
+    },
+    lazy = false,
   },
   {
     'Wansmer/treesj',

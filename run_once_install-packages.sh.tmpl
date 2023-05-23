@@ -12,5 +12,5 @@ exit 0
 {{ end -}}
 
 if ! command -v rg &> /dev/null; then
-	{{ $install }} ripgrep
+	{{ $install }} ripgrep curl
 fi

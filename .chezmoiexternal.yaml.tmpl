@@ -1,0 +1,23 @@
+{{- $os := "" -}}
+{{- if eq .chezmoi.os "linux" -}}
+  {{- $os = "linux" -}}
+{{- else if eq .chezmoi.os "darwin" -}}
+  {{- $os = "macos" -}}
+{{- end -}}
+
+{{- $arch := "" -}}
+{{- if eq .chezmoi.arch "amd64" -}}
+  {{- $arch = "x64" -}}
+{{- else -}}
+  {{- $arch = .chezmoi.arch -}}
+{{- end -}}
+
+.config/zsh/antigen.zsh:
+  type: file
+  url: "https://git.io/antigen"
+  refreshPeriod: 168h
+.local/bin/rtx:
+  type: file
+  url: "https://rtx.pub/rtx-latest-{{- $os -}}-{{- $arch -}}"
+  executable: true
+  refreshPeriod: 168h

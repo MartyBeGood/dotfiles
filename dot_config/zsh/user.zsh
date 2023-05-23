@@ -45,7 +45,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-eval "$(rtx activate zsh)"
+eval "$(~/.local/bin/rtx activate zsh)"
 
 # rtx isn't ready for the rest of this file
 eval "$(rtx x starship -- starship init zsh)"

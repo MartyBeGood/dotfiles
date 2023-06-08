@@ -20,7 +20,7 @@ local settings = {
   send_composed_key_when_left_alt_is_pressed = false,
   use_dead_keys = false,
   use_ime = false,
-  color_scheme = 'Google Dark (Gogh)',
+  color_scheme = 'Gruber (base16)',
   colors = {
     -- Make sure you can read the character at the cursor
     cursor_bg = wezterm.color.get_default_colors().foreground,

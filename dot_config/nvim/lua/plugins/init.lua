@@ -4,17 +4,22 @@ return {
     "lmeijvogel/vim-yaml-helper",
     ft = "yaml",
   },
-
+  {
+    'akinsho/toggleterm.nvim',
+    config = true,
+    lazy = true,
+  },
   {
     "vim-test/vim-test",
     ft = 'ruby',
     config = function()
-      vim.g['test#strategy'] = 'neovim'
+      vim.g['test#strategy'] = 'toggleterm'
       vim.g['test#ruby#rspec#options'] = {
         nearest = '--backtrace',
         file = '--format documentation',
       }
-    end
+    end,
+    dependencies = 'akinsho/toggleterm.nvim',
   },
   {
     'tpope/vim-sleuth',

@@ -18,7 +18,10 @@ return {
   },
   {
     'j-hui/fidget.nvim', -- LSP info in bottom right corner
-    opts = { text = { spinner = 'dots' } }
+    opts = {
+      text = { spinner = 'dots' },
+      window = { blend = 0 },
+    }
   },
   { 'folke/neodev.nvim', config = true },
   {

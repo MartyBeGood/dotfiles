@@ -34,7 +34,7 @@ local manually_installed_servers = {
       }
     },
     init_options = {
-      formatting = false
+      formatting = true
     }
   },
   gopls = {},
@@ -50,11 +50,6 @@ local manually_installed_servers = {
         },
         telemetry = { enable = false },
       }
-    }
-  },
-  ruby_ls = {
-    init_options = {
-      formatter = "rubocop"
     }
   },
 }

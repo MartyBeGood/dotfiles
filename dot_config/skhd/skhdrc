@@ -6,18 +6,17 @@ fn - l : yabai -m window --focus east || yabai -m display --focus next
 fn - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
 fn - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
+# warp window in current workspace
+fn + alt - h : yabai -m window --warp west  || $(yabai -m window --display west; yabai -m display --focus west)
+fn + alt - j : yabai -m window --warp south || $(yabai -m window --display south; yabai -m display --focus south)
+fn + alt - k : yabai -m window --warp north || $(yabai -m window --display north; yabai -m display --focus north)
+fn + alt - l : yabai -m window --warp east || $(yabai -m window --display east; yabai -m display --focus east)
 
 # swap window in current workspace
-fn + alt - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
-fn + alt - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
-fn + alt - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
-fn + alt - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
-
-# warp window in current workspace
-fn + cmd - h : yabai -m window --warp west  || $(yabai -m window --display west; yabai -m display --focus west)
-fn + cmd - j : yabai -m window --warp south || $(yabai -m window --display south; yabai -m display --focus south)
-fn + cmd - k : yabai -m window --warp north || $(yabai -m window --display north; yabai -m display --focus north)
-fn + cmd - l : yabai -m window --warp east || $(yabai -m window --display east; yabai -m display --focus east)
+fn + cmd - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+fn + cmd - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+fn + cmd - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+fn + cmd - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
 
 # Stack the next window inserted to the current container
 fn - i : yabai -m window --insert stack

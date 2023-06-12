@@ -15,7 +15,6 @@ return {
     config = function()
       vim.g['test#strategy'] = 'toggleterm'
       vim.g['test#ruby#rspec#options'] = {
-        nearest = '--backtrace',
         file = '--format documentation',
       }
     end,

@@ -34,17 +34,6 @@ return {
     event = 'BufWinEnter',
   },
   {
-    'slim-template/vim-slim',
-    ft = 'slim',
-  },
-  {
-    'tpope/vim-rails',
-    ft = { 'ruby', 'slim' },
-    dependencies = {
-      'tpope/vim-projectionist',
-    }
-  },
-  {
     "kylechui/nvim-surround",
     config = true,
     event = "BufWinEnter",

@@ -7,7 +7,7 @@ return {
   {
     'akinsho/toggleterm.nvim',
     config = true,
-    lazy = true,
+    cmd = { 'ToggleTerm', 'ToggleTermSendCurrentLine', 'ToggleTermSendVisualLines', 'ToggleTermSendVisualSelection' },
   },
   {
     "vim-test/vim-test",
@@ -32,6 +32,10 @@ return {
   {
     'michaeljsmith/vim-indent-object',
     event = 'BufWinEnter',
+  },
+  {
+    'slim-template/vim-slim',
+    ft = 'slim',
   },
   {
     'tpope/vim-rails',

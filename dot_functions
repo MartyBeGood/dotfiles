@@ -10,3 +10,6 @@ EOF
 # alias tmux='tmux -2'
 function tn { if [ "$1" ]; then tmux new -s "$1"; else tmux new -s "$(basename "$PWD" | tr . _)"; fi }
 function ta { if [ "$1" ]; then tmux attach -t "$1"; else tmux attach; fi }
+
+function zn { if [ "$1" ]; then zellij --session "$1"; else zellij --session "$(basename "$PWD" | tr . _)"; fi }
+function za { if [ "$1" ]; then zellij attach "$1"; else zellij attach; fi }

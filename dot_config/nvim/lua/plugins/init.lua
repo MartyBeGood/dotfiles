@@ -6,8 +6,18 @@ return {
   },
   {
     'akinsho/toggleterm.nvim',
-    config = true,
     cmd = { 'ToggleTerm', 'ToggleTermSendCurrentLine', 'ToggleTermSendVisualLines', 'ToggleTermSendVisualSelection' },
+    opts = {
+      size = function(term)
+        if term.direction == 'horizontal' then
+          return vim.o.lines * 0.3
+        elseif term.direction == 'vertical' then
+          return math.max(vim.o.columns * 0.4, 25)
+        else
+          return 20
+        end
+      end,
+    }
   },
   {
     "vim-test/vim-test",

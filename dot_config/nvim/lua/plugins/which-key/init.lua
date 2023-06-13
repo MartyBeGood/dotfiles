@@ -60,6 +60,7 @@ return {
 					name = "Open...",
 					f = { cmdify("NvimTreeToggle"), "File Browser" },
 					F = { cmdify("NvimTreeFindFile"), "File Browser at current file" },
+					t = { cmdify("ToggleTerm"), "Terminal" },
 				},
 				s = {
 					name = "Search...",
@@ -101,4 +102,3 @@ return {
 		wk.register({ ["<esc>"] = { termcodes([[<C-\><C-n>]]), "Exit insert mode" } }, { mode = 't' })
 	end
 }
-

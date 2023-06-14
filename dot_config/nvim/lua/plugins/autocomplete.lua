@@ -22,6 +22,7 @@ return {
             require('luasnip').lsp_expand(args.body)
           end,
         },
+        preselect = cmp.PreselectMode.None,
         completion = {
           completeopt = 'menu,menuone,noinsert,noselect',
         },

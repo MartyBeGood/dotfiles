@@ -25,7 +25,10 @@ return {
         prompt_prefix = "  ",
         selection_caret = "  ",
         mappings = {
-          i = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
+          i = {
+            ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble,
+            ["<c-f>"] = require("telescope.actions").to_fuzzy_refine,
+          },
           n = { ["<c-t>"] = require("trouble.providers.telescope").open_with_trouble },
         },
       },

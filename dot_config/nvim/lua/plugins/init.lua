@@ -1,9 +1,61 @@
 -- Plugins that don't have enough config to warrant their own file go here
 return {
+  -- Editing goodness
+  {
+    'ggandor/leap.nvim',
+    dependencies = { 'tpope/vim-repeat' },
+    event = "BufWinEnter",
+    config = function() require('leap').add_default_mappings() end
+  },
+  {
+    "kylechui/nvim-surround",
+    config = true,
+    event = "BufWinEnter",
+  },
+  {
+    'windwp/nvim-autopairs',
+    config = true,
+    event = "BufWinEnter",
+  },
+  {
+    'michaeljsmith/vim-indent-object',
+    event = 'BufWinEnter',
+  },
+  {
+    "numToStr/Comment.nvim",
+    config = true,
+    event = "BufWinEnter",
+  },
+
+  -- buffer/split/window/whatever-management
+  {
+    "kazhala/close-buffers.nvim",
+    config = true,
+  },
+  {
+    "sindrets/winshift.nvim",
+    config = true,
+  },
+
+  -- language support
   {
     "lmeijvogel/vim-yaml-helper",
     ft = "yaml",
   },
+
+  -- Git
+  {
+    'tpope/vim-fugitive',
+    event = "BufWinEnter",
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
+    event = "BufWinEnter",
+    config = true,
+  },
+
+  -- IDE-like features
   {
     'akinsho/toggleterm.nvim',
     cmd = { 'ToggleTerm', 'ToggleTermSendCurrentLine', 'ToggleTermSendVisualLines', 'ToggleTermSendVisualSelection' },
@@ -31,33 +83,8 @@ return {
     end,
     dependencies = 'akinsho/toggleterm.nvim',
   },
-  {
-    'tpope/vim-sleuth',
-    event = "BufReadPre",
-  },
-  {
-    'tpope/vim-fugitive',
-    event = "BufWinEnter",
-  },
-  {
-    'michaeljsmith/vim-indent-object',
-    event = 'BufWinEnter',
-  },
-  {
-    "kylechui/nvim-surround",
-    config = true,
-    event = "BufWinEnter",
-  },
-  {
-    "numToStr/Comment.nvim",
-    config = true,
-    event = "BufWinEnter",
-  },
-  {
-    'windwp/nvim-autopairs',
-    config = true,
-    event = "BufWinEnter",
-  },
+
+  -- colorschemes
   {
     'briones-gabriel/darcula-solid.nvim',
     dependencies = "rktjmp/lush.nvim",
@@ -87,29 +114,9 @@ return {
     },
     lazy = false,
   },
+
   {
-    'Wansmer/treesj',
-    config = true,
-    event = 'BufWinEnter',
+    'tpope/vim-sleuth',
+    event = "BufReadPre",
   },
-  {
-    "kazhala/close-buffers.nvim",
-    config = true,
-  },
-  {
-    "sindrets/winshift.nvim",
-    config = true,
-  },
-  {
-    "lewis6991/gitsigns.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
-    event = "BufWinEnter",
-    config = true,
-  },
-  {
-    'ggandor/leap.nvim',
-    dependencies = { 'tpope/vim-repeat' },
-    event = "BufWinEnter",
-    config = function() require('leap').add_default_mappings() end
-  }
 }

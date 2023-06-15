@@ -1,6 +1,10 @@
 -- Plugins that don't have enough config to warrant their own file go here
 return {
   -- Editing goodness
+  {
+    'NMAC427/guess-indent.nvim',
+    config = true,
+  },
   { 'tpope/vim-projectionist' },
   {
     'ggandor/leap.nvim',
@@ -116,8 +120,4 @@ return {
     lazy = false,
   },
 
-  {
-    'tpope/vim-sleuth',
-    event = "BufReadPre",
-  },
 }

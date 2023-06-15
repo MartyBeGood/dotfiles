@@ -1,6 +1,7 @@
 -- Plugins that don't have enough config to warrant their own file go here
 return {
   -- Editing goodness
+  { 'tpope/vim-projectionist' },
   {
     'ggandor/leap.nvim',
     dependencies = { 'tpope/vim-repeat' },

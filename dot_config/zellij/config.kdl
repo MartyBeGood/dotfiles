@@ -5,32 +5,46 @@ keybinds clear-defaults=true {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
     }
-    // Prefix key is Ctrl a. This should be the main menu.
+
+    // Prefix key, basically
+    shared_except "tmux" "locked" {
+        bind "Ctrl a" { SwitchToMode "Tmux"; }
+    }
+
     tmux {
+        bind "Ctrl a" { Write 1; SwitchToMode "Normal"; } // Send Ctrl a to the terminal. Keep this in sync with the prefix key
+
+        // Mode switches
+        bind "m" { SwitchToMode "Move"; }
+        bind "r" { SwitchToMode "Resize"; }
+        bind "s" { SwitchToMode "Scroll"; }
+        bind "t" { SwitchToMode "Tab"; }
+        bind "/" { SwitchToMode "EnterSearch"; }
+        bind "[" { SwitchToMode "Scroll"; }
+        bind "," { SwitchToMode "RenameTab"; }
+
         bind "c" { NewTab; SwitchToMode "Normal"; }
-        bind "d" { Detach; }
         bind "h" { MoveFocus "Left"; SwitchToMode "Normal"; }
         bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
         bind "l" { MoveFocus "Right"; SwitchToMode "Normal"; }
-        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
-        bind "o" { FocusNextPane; }
-        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
-        bind "r" { SwitchToMode "Resize"; }
-        bind "s" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "t" { SwitchToMode "Tab"; }
-        bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
-        bind "x" { CloseFocus; SwitchToMode "Normal"; }
-        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
-        bind "/" { SwitchToMode "EnterSearch"; }
-        bind "[" { SwitchToMode "Scroll"; }
-        bind "," { SwitchToMode "RenameTab"; }
         bind "Left" { MoveFocus "Left"; SwitchToMode "Normal"; }
         bind "Right" { MoveFocus "Right"; SwitchToMode "Normal"; }
         bind "Down" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "Up" { MoveFocus "Up"; SwitchToMode "Normal"; }
+        bind "n" { GoToNextTab; SwitchToMode "Normal"; }
+        bind "p" { GoToPreviousTab; SwitchToMode "Normal"; }
+
+        bind "o" { FocusNextPane; }
+
+        bind "x" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
+
+        bind "q" { CloseFocus; SwitchToMode "Normal"; }
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+
         bind "Space" { NextSwapLayout; }
-        bind "Ctrl a" { Write 1; SwitchToMode "Normal"; } // Send Ctrl a to the terminal
+        bind "d" { Detach; }
         bind "Ctrl q" { Quit; }
     }
 
@@ -67,7 +81,7 @@ keybinds clear-defaults=true {
     }
 
     move {
-        bind "Ctrl h" { SwitchToMode "Normal"; }
+        bind "m" { SwitchToMode "Normal"; }
         bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
@@ -77,7 +91,7 @@ keybinds clear-defaults=true {
     }
 
     tab {
-        bind "Ctrl t" { SwitchToMode "Normal"; }
+        bind "t" { SwitchToMode "Normal"; }
         bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
         bind "h" "Left" "Up" "k" { GoToPreviousTab; }
         bind "l" "Right" "Down" "j" { GoToNextTab; }
@@ -177,9 +191,6 @@ keybinds clear-defaults=true {
     // shared_except "tab" "locked" {
     //     bind "Ctrl t" { SwitchToMode "Tab"; }
     // }
-    shared_except "tmux" "locked" {
-        bind "Ctrl a" { SwitchToMode "Tmux"; }
-    }
 }
 
 plugins {
@@ -247,7 +258,7 @@ theme "google"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "default"
+default_layout "compact"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal

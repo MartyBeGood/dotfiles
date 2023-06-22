@@ -20,6 +20,10 @@
 	rebase = true
 [push]
 	autoSetupRemote = true
+[rebase]
+	autosquash = true
+[diff]
+	noprefix = true
 {{- if eq .chezmoi.hostname "devbox" }}
 [core]
 	hooksPath = /devbox/support/default_githooks

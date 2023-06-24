@@ -18,5 +18,4 @@ require("autocmds")
 require("lazy").setup("plugins")
 
 vim.g.material_style = "darker"
--- vim.cmd 'colorscheme darcula-solid'
-vim.cmd "colorscheme arctic"
+vim.cmd 'colorscheme darcula-solid'

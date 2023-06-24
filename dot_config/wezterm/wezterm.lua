@@ -20,11 +20,10 @@ local settings = {
   send_composed_key_when_left_alt_is_pressed = false,
   use_dead_keys = false,
   use_ime = false,
-  color_scheme = 'arctic',
+  color_scheme = 'Darcula (base16)',
   colors = {
-    -- Make sure you can read the character at the cursor
-    cursor_bg = wezterm.color.get_default_colors().foreground,
-    cursor_fg = wezterm.color.get_default_colors().background
+    foreground = '#ced1d4',
+    background = '#262627'
   },
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,

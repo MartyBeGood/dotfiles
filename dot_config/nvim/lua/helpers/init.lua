@@ -6,7 +6,7 @@ end
 
 function helpers.themed_telescope(picker)
   local theme = require('telescope.themes').get_ivy({
-    border = false,
+    border = true,
   })
   return function() picker(theme) end
 end

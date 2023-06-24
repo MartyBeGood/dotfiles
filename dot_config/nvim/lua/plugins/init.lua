@@ -96,6 +96,12 @@ return {
     lazy = false,
   },
   {
+    'rockyzhang24/arctic.nvim',
+    dependencies = "rktjmp/lush.nvim",
+    branch = 'v2',
+    lazy = false,
+  },
+  {
     'marko-cerovac/material.nvim',
     opts = {
       contrast = {

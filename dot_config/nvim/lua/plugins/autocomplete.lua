@@ -16,7 +16,28 @@ return {
     },
     config = function()
       local cmp = require('cmp')
+
+      -- some vscode-dark-specific magic
+      local winhighlight = 'FloatBorder:SuggestWidgetBorder,CursorLine:SuggestWidgetSelect,Search:None'
+      local border_enabled = true
+      if border_enabled then
+        winhighlight = 'Normal:Normal,PmenuThumb:ScrollbarSlider,' .. winhighlight
+      else
+        winhighlight = 'Normal:Pmenu,' .. winhighlight
+      end
+
       cmp.setup({
+        window = {
+          completion = {
+            winhighlight = winhighlight,
+            border = border_enabled and 'single' or 'none',
+          },
+          documentation = {
+            winhighlight = winhighlight,
+            border = border_enabled and 'single' or 'none',
+            focusable = true,
+          }
+        },
         snippet = {
           expand = function(args)
             require('luasnip').lsp_expand(args.body)

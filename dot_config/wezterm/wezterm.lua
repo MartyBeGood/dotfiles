@@ -1,30 +1,30 @@
 local wezterm = require 'wezterm'
 
-local table_merge = function(t1, t2)
-  for k, v in pairs(t2) do
-    t1[k] = v
-  end
-  return t1
-end
-
-local iosevka = {
-  font_size = 15,
-  cell_width = 0.88,
-  font = wezterm.font('Miosevka Nerd Font'),
+local extra_colors = {
+  bg = '#262627',
+  fg = '#ced1d4',
+  cursor = '#ff9808',
 }
 
 
-
 local settings = {
+  -- Keyboard-related settings
   send_composed_key_when_right_alt_is_pressed = true,
   send_composed_key_when_left_alt_is_pressed = false,
   use_dead_keys = false,
   use_ime = false,
-  color_scheme = 'Darcula (base16)',
+
+  -- Might want to bake this into a theme at some point
+  color_scheme = 'midnight-in-mojave',
   colors = {
-    foreground = '#ced1d4',
-    background = '#262627'
+    foreground = extra_colors.fg,
+    background = extra_colors.bg,
+    cursor_bg = extra_colors.cursor,
+    cursor_border = extra_colors.cursor,
+    cursor_fg = extra_colors.bg,
   },
+
+  -- UI-related settings
   hide_tab_bar_if_only_one_tab = true,
   use_fancy_tab_bar = false,
   adjust_window_size_when_changing_font_size = false,
@@ -34,10 +34,13 @@ local settings = {
     top = 1,
     bottom = 0,
   },
-  underline_position = -4,
   audible_bell = "Disabled",
-}
 
-table_merge(settings, iosevka)
+  -- Font settings
+  font_size = 15,
+  cell_width = 0.88,
+  underline_position = -4,
+  font = wezterm.font('Miosevka Nerd Font'),
+}
 
 return settings

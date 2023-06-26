@@ -15,7 +15,7 @@ local settings = {
   use_ime = false,
 
   -- Might want to bake this into a theme at some point
-  color_scheme = 'midnight-in-mojave',
+  color_scheme = 'arctic',
   colors = {
     foreground = extra_colors.fg,
     background = extra_colors.bg,

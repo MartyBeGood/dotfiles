@@ -48,6 +48,8 @@ EOF
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [ command -v 'rtx' &> /dev/null ]; then
+if [[ ! -z "$(which rtx)" ]]; then
   eval "$(rtx activate zsh)"
+else
+  echo "rtx not found"
 fi

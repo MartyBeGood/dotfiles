@@ -93,13 +93,7 @@ return {
   {
     'briones-gabriel/darcula-solid.nvim',
     dependencies = "rktjmp/lush.nvim",
-    lazy = false,
-  },
-  {
-    'rockyzhang24/arctic.nvim',
-    dependencies = "rktjmp/lush.nvim",
-    branch = 'v2',
-    lazy = false,
+    event = "VeryLazy" -- required to build the variation I'm using, so this gets loaded anyway.
   },
   {
     'marko-cerovac/material.nvim',

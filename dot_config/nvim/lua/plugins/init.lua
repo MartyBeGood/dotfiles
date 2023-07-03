@@ -54,6 +54,11 @@ return {
     event = "BufWinEnter",
   },
   {
+    'sindrets/diffview.nvim',
+    cmd = { 'DiffviewOpen', 'DiffviewFileHistory', 'DiffviewToggleFiles', 'DiffviewFocusFiles', 'DiffviewRefresh' },
+    dependencies = 'kyazdani42/nvim-web-devicons',
+  },
+  {
     "lewis6991/gitsigns.nvim",
     dependencies = "nvim-lua/plenary.nvim",
     event = "BufWinEnter",

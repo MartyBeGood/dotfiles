@@ -1,5 +1,24 @@
 return {
-  'github/copilot.vim',
+  {
+    'zbirenbaum/copilot.lua',
+    cmd = "Copilot",
+    event = "InsertEnter",
+    opts = {
+      panel = {
+        enabled = false
+      },
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = '<M-Space>',
+          accept_line = '<M-l>',
+          next = '<M-n>',
+          prev = '<M-p>',
+        }
+      }
+    }
+  },
   {
     'L3MON4D3/LuaSnip',
     config = function() require('luasnip').config.setup({}); end
@@ -35,6 +54,7 @@ return {
           ['<C-Space>'] = cmp.mapping.complete(),
           ['<C-e>'] = cmp.mapping.close(),
           ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
+          ["<Tab>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
         },
         sources = {
           { name = 'nvim_lsp' },

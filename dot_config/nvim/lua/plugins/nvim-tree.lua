@@ -1,6 +1,7 @@
 return {
   "kyazdani42/nvim-tree.lua",
   cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
+  dependencies = { 'kyazdani42/nvim-web-devicons' },
   opts = {
     hijack_cursor = true,
     sort_by = "name",

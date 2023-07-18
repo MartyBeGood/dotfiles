@@ -49,7 +49,6 @@ local gray_comment_groups = {
   "sassComment",
   "sassCssComment",
   "sassEndOfLineComment",
-  "slimComment",
   "TelescopeResultsComment",
   "TroubleCode",
   "TroubleSource",

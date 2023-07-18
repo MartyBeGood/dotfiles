@@ -8,7 +8,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
-      'j-hui/fidget.nvim', -- LSP info in bottom right corner
+      'j-hui/fidget.nvim',
     },
   },
   {
@@ -18,6 +18,7 @@ return {
   },
   {
     'j-hui/fidget.nvim', -- LSP info in bottom right corner
+    branch = 'legacy',
     opts = {
       text = { spinner = 'dots' },
       window = { blend = 0 },

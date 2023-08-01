@@ -34,7 +34,7 @@ return {
         glyphs = {
           default = "",
           symlink = "",
-          bookmark = "",
+          bookmark = "󰆤",
           folder = {
             arrow_closed = "",
             arrow_open = "",
@@ -50,7 +50,7 @@ return {
             staged = "",
             unmerged = "",
             renamed = "",
-            untracked = "﯂",
+            untracked = "󰩴",
             deleted = "",
             ignored = "",
           },

@@ -50,10 +50,6 @@ return {
 
   -- Git
   {
-    'tpope/vim-fugitive',
-    event = "BufWinEnter",
-  },
-  {
     'sindrets/diffview.nvim',
     cmd = { 'DiffviewOpen', 'DiffviewFileHistory', 'DiffviewToggleFiles', 'DiffviewFocusFiles', 'DiffviewRefresh' },
     dependencies = 'nvim-tree/nvim-web-devicons',
@@ -64,7 +60,8 @@ return {
     event = "BufWinEnter",
     config = true,
   },
-
+  { 'rhysd/conflict-marker.vim' },
+  { 'tpope/vim-fugitive' },
   -- IDE-like features
   {
     'akinsho/toggleterm.nvim',

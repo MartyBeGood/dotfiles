@@ -25,25 +25,33 @@ m.auto_install_with_mason = {
 m.server_settings = {
   bashls = {},
   cssls = {},
-  emmet_ls = {},
-  efm = {
-    init_options = { documentFormatting = true, documentRangeFormatting = true },
-    filetypes = { "slim" },
-    settings = {
-      rootMarkers = { ".git/" },
-      languages = {
-        slim = {
-          {
-            rootMarkers = { ".git/" },
-            lintCommand = "slim-lint --reporter emacs --stdin-file-path ${INPUT}",
-            lintStdin = true,
-            lintFormats = { "%f:%l:%c: %m" },
-            lintIgnoreExitCode = true,
-          }
-        }
-      }
-    }
+  diagnosticls = {
+    init_options = {
+      linters = {
+        slimlint = {
+          command = "slim-lint",
+          rootPatterns = { ".git/" },
+          debounce = 100,
+          args = { "--reporter", "json", "--stdin-file-path", "%filepath" },
+          sourceName = "slim-lint",
+          parseJson = {
+            errorsRoot = "files[0].offenses",
+            line = "location.line",
+            message = "${message}",
+            security = "severity",
+          },
+          securities = {
+            error = "error",
+            warning = "warning",
+          },
+        },
+      },
+      filetypes = {
+        slim = "slimlint",
+      },
+    },
   },
+  emmet_ls = {},
   gopls = {},
   html = {},
   lua_ls = {

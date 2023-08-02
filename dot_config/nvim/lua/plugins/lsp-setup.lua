@@ -1,62 +1,3 @@
--- TODO: Unified table for mason-managed and manual servers. Some can be installed through mason, some need shadowenv/other stuff/are provided through project config
--- Something like
--- local servers = {
---   lspconfig_name = {
---     auto_install = [nil | false | true | mason_package_name]
---     config = {}
---   }
--- }
-local table_merge = function(t1, t2)
-  for k, v in pairs(t2) do
-    t1[k] = v
-  end
-  return t1
-end
-
-
--- Servers you want mason to keep installed
-local servers = {
-  bashls = {},
-  cssls = {},
-  emmet_ls = {},
-  html = {},
-  pyright = {},
-  rust_analyzer = {},
-  tsserver = {},
-}
-
--- Servers you'll handle yourself. Could still be through mason, or through env management. Up to you.
-local manually_installed_servers = {
-  solargraph = {
-    settings = {
-      solargraph = {
-        diagnostics = false
-      }
-    },
-    init_options = {
-      formatting = true
-    }
-  },
-  gopls = {},
-  lua_ls = {
-    settings = {
-      Lua = {
-        completion = {
-          callSnippet = "Replace",
-          keywordSnippet = "Replace",
-        },
-        workspace = {
-          checkThirdParty = false,
-        },
-        telemetry = { enable = false },
-      }
-    }
-  },
-}
-
-
-
-
 return {
   {
     'williamboman/mason-lspconfig.nvim',
@@ -66,16 +7,16 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'folke/which-key.nvim',
       'folke/neodev.nvim',
-      'jay-babu/mason-null-ls.nvim'
+      'creativenull/efmls-configs-nvim',
     },
     config = function()
       local lspconfig = require('lspconfig')
       local mason_lspconfig = require('mason-lspconfig')
-
+      local table_merge = require('plugins.lsp.tables').table_merge
 
       -- auto-install servers mentioned in table above
       mason_lspconfig.setup {
-        ensure_installed = vim.tbl_keys(servers)
+        ensure_installed = require('plugins.lsp.tables').auto_install_with_mason,
       }
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -98,13 +39,21 @@ return {
           )
         end
 
-        -- Format on save
+        -- Format on save if the LS supports it
         if client.server_capabilities.documentFormattingProvider then
           vim.api.nvim_create_autocmd("BufWritePre", {
             group = vim.api.nvim_create_augroup("Format", { clear = true }),
             buffer = bufnr,
             callback = function()
-              vim.lsp.buf.format({})
+              -- RuboCop through EFM is too slow to run on every save
+              vim.lsp.buf.format({
+                timeout_ms = 500,
+                formatting_options = {
+                  trimFinalNewlines = true,
+                  insertFinalNewline = true,
+                  trimTrailingWhitespace = true,
+                }
+              })
             end
           })
         end
@@ -115,14 +64,8 @@ return {
         require('which-key').register(require('plugins.which-key.lsp-binds'), { buffer = bufnr })
       end
 
-      mason_lspconfig.setup_handlers {
-        function(server_name)
-          lspconfig[server_name].setup(table_merge({ capabilities = capabilities, on_attach = on_attach },
-            servers[server_name] or {}))
-        end
-      }
-
-      for server_name, config in pairs(manually_installed_servers) do
+      local server_settings = require('plugins.lsp.tables').server_settings
+      for server_name, config in pairs(server_settings) do
         lspconfig[server_name].setup(table_merge({ capabilities = capabilities, on_attach = on_attach }, config or {}))
       end
     end

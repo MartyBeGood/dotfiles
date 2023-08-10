@@ -55,12 +55,21 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
   },
   {
-    "lewis6991/gitsigns.nvim",
-    dependencies = "nvim-lua/plenary.nvim",
-    event = "BufWinEnter",
+    'tanvirtin/vgit.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+    opts = {
+      hls = {
+        GitComment = 'diffComment'
+      }
+    }
+  },
+  {
+    'akinsho/git-conflict.nvim',
+    version = '*',
     config = true,
   },
-  { 'rhysd/conflict-marker.vim' },
   { 'tpope/vim-fugitive' },
   -- IDE-like features
   {

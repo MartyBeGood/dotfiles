@@ -14,7 +14,7 @@ return {
     c = {
       name = "Code...",
       a = { cmdify('lua vim.lsp.buf.code_action()'), "LSP code action" },
-      f = { cmdify('lua vim.lsp.buf.format()'), "LSP Format" },
+      f = { cmdify('lua vim.lsp.buf.format({timeout_ms = 10000})'), "LSP Format" },
       r = {
         name = "Refactor...",
         r = { cmdify('lua vim.lsp.buf.rename()'), "Rename symbol" },

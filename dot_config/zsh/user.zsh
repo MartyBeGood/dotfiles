@@ -13,9 +13,7 @@ export PATH=$HOME/.local/bin:$PATH
 
 # plugin management
 source $zsh_config_dir/antigen.zsh
-antigen use oh-my-zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
-# antigen bundle marlonrichert/zsh-autocomplete --branch=main
 antigen theme romkatv/powerlevel10k
 
 antigen apply

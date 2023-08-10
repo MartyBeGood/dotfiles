@@ -28,6 +28,7 @@ local gray_comment_groups = {
   "DiagnosticUnnecessary",
   "dtdComment",
   "dtdParamEntityDPunct",
+  "GitComment",
   "gitcommitComment",
   "gitcommitOnBranch",
   "gitcommitArrow",

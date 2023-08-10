@@ -3,9 +3,18 @@ return {
   event = 'BufEnter',
   config = function()
     local wk = require('which-key')
-    local cmdify = require('helpers').cmdify
-
+    local helpers = require('helpers')
+    local cmdify = helpers.cmdify
+    local telescope_builtin = require('telescope.builtin')
     local themed_telescope = require('helpers').themed_telescope
+
+    local git_files_or_all_files = function()
+      if helpers.cwd_in_git_repo() then
+        return themed_telescope(telescope_builtin.git_files)
+      else
+        return themed_telescope(telescope_builtin.find_files)
+      end
+    end
 
     wk.setup({
       plugins = {
@@ -21,11 +30,10 @@ return {
       return vim.api.nvim_replace_termcodes(str, true, true, true)
     end
 
-    local telescope_builtin = require('telescope.builtin')
 
     wk.register({
       ["<space>"] = {
-        ["<space>"] = { themed_telescope(telescope_builtin.find_files), "Find Files" },
+        ["<space>"] = { git_files_or_all_files(), "Find Files" },
         b = {
           name = "Buffer...",
           b = { themed_telescope(telescope_builtin.buffers), "Switch buffers" },

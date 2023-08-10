@@ -35,10 +35,12 @@ return {
       pickers = {
         find_files = {
           previewer = false,
-          find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*', '--no-ignore-vcs' }
+          find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*', '--no-ignore-vcs' },
+          prompt_prefix = " "
         },
         git_files = {
           previewer = false,
+          prompt_prefix = "󰊢 "
         },
         lsp_references = {
           show_line = true,

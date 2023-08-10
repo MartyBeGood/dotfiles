@@ -11,4 +11,8 @@ function helpers.themed_telescope(picker)
   return function() picker(theme) end
 end
 
+function helpers.cwd_in_git_repo()
+  return vim.fn.system("git rev-parse --is-inside-work-tree") == "true\n"
+end
+
 return helpers

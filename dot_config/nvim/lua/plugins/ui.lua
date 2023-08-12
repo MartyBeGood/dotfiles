@@ -53,6 +53,9 @@ return {
           enabled = true,
           view = "hover"
         }
+      },
+      presets = {
+        long_message_to_split = true
       }
     }
   },

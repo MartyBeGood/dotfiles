@@ -29,7 +29,8 @@ return {
     },
     s = {
       name = "Search...",
-      s = { themed_telescope(require('telescope.builtin').lsp_dynamic_workspace_symbols), "Symbol in workspace" }
+      s = { themed_telescope(require('telescope.builtin').lsp_dynamic_workspace_symbols), "Symbol in workspace" },
+      n = { cmdify("Navbuddy"), "Open Navbuddy" },
     }
   },
 }

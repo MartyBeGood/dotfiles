@@ -1,88 +1,32 @@
-local icon_presets = {
-  default = {
-    -- if you change or add symbol here
-    -- replace corresponding line in readme
-    Text = "󰉿",
-    Method = "󰆧",
-    Function = "󰊕",
-    Constructor = "",
-    Field = "󰜢",
-    Variable = "󰀫",
-    Class = "󰠱",
-    Interface = "",
-    Module = "",
-    Property = "󰜢",
-    Unit = "󰑭",
-    Value = "󰎠",
-    Enum = "",
-    Keyword = "󰌋",
-    Snippet = "",
-    Color = "󰏘",
-    File = "󰈙",
-    Reference = "󰈇",
-    Folder = "󰉋",
-    EnumMember = "",
-    Constant = "󰏿",
-    Struct = "󰙅",
-    Event = "",
-    Operator = "󰆕",
-    TypeParameter = "",
-  },
-  codicons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "",
-    Interface = "",
-    Module = "",
-    Property = "",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = "",
-  },
-  mine = {
-    Text = "󰉿 ",
-    Method = "󰆧 ",
-    Function = "󰊕 ",
-    Constructor = " ",
-    Field = "󰜢 ",
-    Variable = "󰀫 ",
-    Class = " ",
-    Interface = " ",
-    Module = " ",
-    Property = " ",
-    Unit = "󰑭 ",
-    Value = " ",
-    Enum = " ",
-    Keyword = "󰌋 ",
-    Snippet = " ",
-    Color = "󰏘 ",
-    File = "󰈙 ",
-    Reference = "󰈇 ",
-    Folder = "󰉋 ",
-    EnumMember = " ",
-    Constant = "󰏿 ",
-    Struct = " ",
-    Event = " ",
-    Operator = "󰆕 ",
-    TypeParameter = " ",
-  }
+-- codicons stolen from onsails/lspkind.nvim
+local codicons = {
+  Text = " ",
+  Method = " ",
+  Function = " ",
+  Constructor = " ",
+  Field = " ",
+  Variable = " ",
+  Class = " ",
+  Interface = " ",
+  Module = " ",
+  Property = " ",
+  Unit = " ",
+  Value = " ",
+  Enum = " ",
+  Keyword = " ",
+  Snippet = " ",
+  Color = " ",
+  File = " ",
+  Reference = " ",
+  Folder = " ",
+  EnumMember = " ",
+  Constant = " ",
+  Struct = " ",
+  Event = " ",
+  Operator = " ",
+  TypeParameter = " ",
 }
+
 return {
   {
     'williamboman/mason.nvim',
@@ -100,7 +44,7 @@ return {
     config = function()
       require('lspkind').init({
         mode = 'symbol',
-        symbol_map = icon_presets.mine
+        preset = 'codicons'
       })
     end,
     event = 'VeryLazy',
@@ -111,8 +55,9 @@ return {
       "SmiteshP/nvim-navic",
       "nvim-tree/nvim-web-devicons",
     },
+
     opts = {
-      kinds = icon_presets.mine,
+      show_modified = true,
       attach_navic = false,
     }
   },
@@ -125,7 +70,12 @@ return {
       'nvim-telescope/telescope.nvim',
     },
     opts = {
-      icons = icon_presets.mine,
+      icons = codicons,
+      node_markers = {
+        icons = {
+          branch = " ",
+        }
+      }
     }
   }
 }

@@ -24,7 +24,25 @@
 	autosquash = true
 [diff]
 	noprefix = true
-{{- if eq .chezmoi.hostname "devbox" }}
+
 [core]
+{{- if eq .chezmoi.hostname "devbox" }}
 	hooksPath = /devbox/support/default_githooks
 {{- end }}
+{{- if lookPath "delta" }}
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	light = false
+	line-numbers = true
+
+[diff]
+	colorMoved = default
+{{- end }}
+
+
+

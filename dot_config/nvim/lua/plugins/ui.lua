@@ -1,5 +1,32 @@
 return {
   {
+    'nvim-lualine/lualine.nvim',
+    dependencies = {
+      'nvim-tree/nvim-web-devicons',
+    },
+    event = "UIEnter",
+    config = function()
+      require('lualine').setup({
+        options = {
+          component_separators = { left = '', right = '' },
+          section_separators = { left = '', right = '' },
+          theme = require('ofirkai.statuslines.lualine').theme, -- Will break lazy loading if not in a function
+          disabled_filetypes = {
+            'NvimTree'
+          }
+        },
+        sections = {
+          lualine_a = { 'mode' },
+          lualine_b = { 'branch', 'diff', 'diagnostics' },
+          lualine_c = { { 'filename', path = 1 } },
+          lualine_x = { 'encoding', 'fileformat', 'filetype' },
+          lualine_y = { 'progress' },
+          lualine_z = { 'location' }
+        },
+      })
+    end
+  },
+  {
     'folke/noice.nvim',
     dependencies = {
       'MunifTanjim/nui.nvim'
@@ -27,6 +54,33 @@ return {
           view = "hover"
         }
       }
+    }
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    event = "BufReadPre",
+    opts = {
+      char = "┆",
+      context_char = "┆",
+      use_treesitter = false,
+      show_current_context = true,
+      show_current_context_start = true,
+      filetype_exclude = {
+        'help',
+        'dashboard',
+        'git',
+        'markdown',
+        'text',
+        'terminal',
+        'lspinfo',
+        'packer',
+        'NvimTree',
+      },
+      buftype_exclude = {
+        'terminal',
+        'nofile',
+        'TelescopePrompt'
+      },
     }
   }
 }

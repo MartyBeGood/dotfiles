@@ -1,6 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
-  cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile" },
+  cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeFindFileToggle" },
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
     hijack_cursor = true,
@@ -22,7 +22,8 @@ return {
       },
       icons = {
         webdev_colors = true,
-        git_placement = "before",
+        git_placement = "after",
+        modified_placement = "after",
         padding = " ",
         symlink_arrow = " ➛ ",
         show = {

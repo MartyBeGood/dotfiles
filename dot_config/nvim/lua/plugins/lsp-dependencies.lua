@@ -6,11 +6,13 @@ return {
   },
 
   { 'neovim/nvim-lspconfig', },
-  { 'creativenull/efmls-configs-nvim' },
+  {
+    'folke/neodev.nvim',
+    config = true,
+  },
   {
     'onsails/lspkind.nvim',
     config = function() require('lspkind').init({ mode = 'symbol' }) end,
     event = 'VeryLazy',
   },
-  { 'folke/neodev.nvim', config = true },
 }

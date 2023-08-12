@@ -12,10 +12,6 @@
   {{- $arch = .chezmoi.arch -}}
 {{- end -}}
 
-.config/zsh/antigen.zsh:
-  type: file
-  url: "https://git.io/antigen"
-  refreshPeriod: 168h
 .local/bin/rtx:
   type: file
   url: "https://rtx.pub/rtx-latest-{{- $os -}}-{{- $arch -}}"

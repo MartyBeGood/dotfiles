@@ -2,6 +2,7 @@ return {
   {
     'williamboman/mason-lspconfig.nvim',
     dependencies = {
+      'SmiteshP/nvim-navbuddy',
       'williamboman/mason.nvim',
       'neovim/nvim-lspconfig',
       'hrsh7th/cmp-nvim-lsp',
@@ -12,6 +13,8 @@ return {
     config = function()
       local lspconfig = require('lspconfig')
       local mason_lspconfig = require('mason-lspconfig')
+      local navic = require('nvim-navic')
+      local navbuddy = require('nvim-navbuddy')
       local table_merge = require('plugins.lsp.tables').table_merge
 
       -- auto-install servers mentioned in table above
@@ -24,6 +27,12 @@ return {
 
       local on_attach = function(client, bufnr)
         local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+        -- Breadcrumbs and symbol-based navigation
+        if client.server_capabilities.documentSymbolProvider then
+          navic.attach(client, bufnr)
+          navbuddy.attach(client, bufnr)
+        end
 
         -- Highlighting references
         if client.server_capabilities.documentHighlightProvider then

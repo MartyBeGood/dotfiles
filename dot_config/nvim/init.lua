@@ -19,3 +19,5 @@ require("lazy").setup("plugins")
 
 vim.g.material_style = "darker"
 vim.cmd.colorscheme('darcula-visible-comments')
+
+require("helpers").link_navic_to_other_hlgroups()

@@ -95,6 +95,9 @@ return {
     event = "VeryLazy" -- required to build the variation I'm using, so this gets loaded anyway.
   },
   {
+    'ofirgall/ofirkai.nvim',
+  },
+  {
     'marko-cerovac/material.nvim',
     opts = {
       contrast = {

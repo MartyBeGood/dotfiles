@@ -1,10 +1,12 @@
 local wezterm = require 'wezterm'
 
+local theme = "Monokai Dark (Gogh)"
 local extra_colors = {
-  bg = '#262627',
-  fg = '#ced1d4',
+  background = '#1f1f19',
   cursor = '#ff9808',
 }
+
+local theme_colors = wezterm.color.get_builtin_schemes()[theme]
 
 
 local settings = {
@@ -14,15 +16,22 @@ local settings = {
   use_dead_keys = false,
   use_ime = false,
 
-  -- Might want to bake this into a theme at some point
-  color_scheme = 'arctic',
+
+  -- Colors
+  color_scheme = theme,
   colors = {
-    foreground = extra_colors.fg,
-    background = extra_colors.bg,
+    background = extra_colors.background,
     cursor_bg = extra_colors.cursor,
     cursor_border = extra_colors.cursor,
-    cursor_fg = extra_colors.bg,
+    cursor_fg = theme_colors.background,
+
+    tab_bar = {
+      background = extra_colors.background,
+
+    }
   },
+
+
 
   -- UI-related settings
   hide_tab_bar_if_only_one_tab = true,
@@ -40,7 +49,7 @@ local settings = {
   font_size = 15,
   cell_width = 0.88,
   underline_position = -4,
-  font = wezterm.font('Miosevka Nerd Font'),
+  font = wezterm.font('Nerdosevka'),
 }
 
 return settings

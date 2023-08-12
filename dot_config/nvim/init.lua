@@ -17,7 +17,13 @@ require("autocmds")
 
 require("lazy").setup("plugins")
 
-vim.g.material_style = "darker"
-vim.cmd.colorscheme('darcula-visible-comments')
+-- vim.g.material_style = "darker"
+-- vim.cmd.colorscheme('darcula-visible-comments')
+vim.cmd.colorscheme('ofirkai')
+
+if vim.g.neovide or vim.g.fvim_loaded then
+  vim.o.guifont = "Nerdosevka:h15"
+  vim.opt.linespace = 1
+end
 
 require("helpers").link_navic_to_other_hlgroups()

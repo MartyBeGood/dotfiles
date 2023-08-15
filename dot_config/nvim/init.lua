@@ -17,9 +17,7 @@ require("autocmds")
 
 require("lazy").setup("plugins")
 
--- vim.g.material_style = "darker"
--- vim.cmd.colorscheme('darcula-visible-comments')
-vim.cmd.colorscheme('ofirkai')
+vim.cmd.colorscheme('darcula-visible-comments')
 
 if vim.g.neovide or vim.g.fvim_loaded then
   vim.o.guifont = "Nerdosevka:h15"

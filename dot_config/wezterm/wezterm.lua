@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 
-local theme = "Monokai Dark (Gogh)"
+local theme = "midnight-in-mojave"
 local extra_colors = {
   background = '#1f1f19',
   cursor = '#ff9808',
@@ -20,13 +20,13 @@ local settings = {
   -- Colors
   color_scheme = theme,
   colors = {
-    background = extra_colors.background,
+    background = theme_colors.background,
     cursor_bg = extra_colors.cursor,
     cursor_border = extra_colors.cursor,
     cursor_fg = theme_colors.background,
 
     tab_bar = {
-      background = extra_colors.background,
+      background = theme_colors.background,
 
     }
   },

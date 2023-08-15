@@ -10,7 +10,6 @@ return {
         options = {
           component_separators = { left = '', right = '' },
           section_separators = { left = '', right = '' },
-          theme = require('ofirkai.statuslines.lualine').theme, -- Will break lazy loading if not in a function
           disabled_filetypes = {
             'NvimTree'
           }

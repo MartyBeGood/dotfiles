@@ -63,7 +63,6 @@ local gray_comment_groups = {
   "xmlCommentStart",
   "xmlCommentPart",
   "xmlProcessingDelim",
-  "@comment",
 }
 for _, group in ipairs(gray_comment_groups) do
   vim.api.nvim_set_hl(0, group, { link = "diffComment" })

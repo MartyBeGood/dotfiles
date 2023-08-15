@@ -82,6 +82,7 @@ m.server_settings = {
     }
   },
   tsserver = {},
+  lemminx = {},
 }
 
 m.table_merge = function(t1, t2)

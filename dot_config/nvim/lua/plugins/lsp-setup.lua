@@ -8,7 +8,6 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'folke/which-key.nvim',
       'folke/neodev.nvim',
-      'creativenull/efmls-configs-nvim',
     },
     config = function()
       local lspconfig = require('lspconfig')
@@ -54,7 +53,6 @@ return {
             group = vim.api.nvim_create_augroup("Format", { clear = true }),
             buffer = bufnr,
             callback = function()
-              -- RuboCop through EFM is too slow to run on every save
               vim.lsp.buf.format({
                 timeout_ms = 500,
                 formatting_options = {

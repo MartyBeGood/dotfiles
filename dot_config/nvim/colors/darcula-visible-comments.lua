@@ -66,5 +66,5 @@ local gray_comment_groups = {
   "@comment",
 }
 for _, group in ipairs(gray_comment_groups) do
-  vim.cmd("highlight default link " .. group .. " diffComment")
+  vim.api.nvim_set_hl(0, group, { link = "diffComment" })
 end

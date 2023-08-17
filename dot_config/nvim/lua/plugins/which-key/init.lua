@@ -8,6 +8,10 @@ return {
     local telescope_builtin = require('telescope.builtin')
     local themed_telescope = require('helpers').themed_telescope
 
+    local plug = function(cmd)
+      return "<Plug>(" .. cmd .. ")"
+    end
+
     local git_files_or_all_files = function()
       if helpers.cwd_in_git_repo() then
         return themed_telescope(telescope_builtin.git_files)
@@ -59,11 +63,20 @@ return {
         },
         g = {
           name = "Git...",
+          c = {
+            name = "Conflict...",
+            o = { plug("git-conflict-ours"), "Choose ours" },
+            t = { plug("git-conflict-theirs"), "Choose theirs" },
+            b = { plug("git-conflict-both"), "Choose both" },
+            ["0"] = { plug("git-conflict-none"), "Choose none" },
+            n = { plug("git-conflict-next-conflict"), "Go to next conflict" },
+            p = { plug("git-conflict-prev-conflict"), "Go to prev conflict" },
+          },
           f = { themed_telescope(telescope_builtin.git_files), "Files in Git" },
           g = { cmdify("Git"), "Overview" },
           h = { cmdify("VGit buffer_history_preview"), "History of current buffer" },
           B = { cmdify("VGit toggle_live_blame"), "Toggle blame lens" },
-          s = { cmdify("Git sync"), "pull, then push" }
+          s = { cmdify("Git sync"), "pull, then push" },
         },
         o = {
           name = "Open...",

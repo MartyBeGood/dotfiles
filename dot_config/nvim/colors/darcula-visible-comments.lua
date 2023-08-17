@@ -1,9 +1,6 @@
 vim.opt.background = "dark"
 vim.g.colors_name = 'darcula-visible-comments'
 
--- First we define a group that should be present early on and should be grey
-vim.cmd("highlight default link diffComment NONE")
-
 local lush = require("lush")
 local darcula_solid = require("lush_theme.darcula-solid")
 local spec = lush.extends({ darcula_solid }).with(function()

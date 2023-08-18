@@ -1,3 +1,6 @@
+-- see :help lush-pitfalls -> Linters
+---@diagnostic disable: undefined-global
+
 vim.opt.background = "dark"
 vim.g.colors_name = 'darcula-visible-comments'
 
@@ -5,9 +8,11 @@ local lush = require("lush")
 local darcula_solid = require("lush_theme.darcula-solid")
 local spec = lush.extends({ darcula_solid }).with(function()
   local blue_comment = lush.hsl(207, 100, 82)
-  local gray_comment = lush.hsl(0, 0, 54) -- the original comment color
+  local gray_comment = darcula_solid.Comment.fg
   local the_spec = {
     Comment { fg = blue_comment, gui = "italic" },
+
+    -- Everything that should have a grey comment color
     UnimportantComment { fg = gray_comment, gui = "italic" },
     diffComment { UnimportantComment },
     CopilotSuggestion { UnimportantComment },
@@ -53,7 +58,6 @@ local spec = lush.extends({ darcula_solid }).with(function()
     xmlCommentStart { UnimportantComment },
     xmlCommentPart { UnimportantComment },
     xmlProcessingDelim { UnimportantComment },
-  }
 
     -- other fixes
     -- Need to redefine these because reasons
@@ -65,6 +69,7 @@ local spec = lush.extends({ darcula_solid }).with(function()
     GitSignsDelete { DiffDelete },
     GitWordAdd { DiffAdd },
     GitSignsAdd { DiffAdd },
+  }
   return the_spec
 end)
 

@@ -55,6 +55,16 @@ local spec = lush.extends({ darcula_solid }).with(function()
     xmlProcessingDelim { UnimportantComment },
   }
 
+    -- other fixes
+    -- Need to redefine these because reasons
+    DiffAdd { fg = darcula_solid.DiffAdd.fg, },
+    DiffDelete { fg = darcula_solid.DiffDelete.fg },
+
+    -- Missing from darcula-solid
+    GitWordDelete { DiffDelete },
+    GitSignsDelete { DiffDelete },
+    GitWordAdd { DiffAdd },
+    GitSignsAdd { DiffAdd },
   return the_spec
 end)
 

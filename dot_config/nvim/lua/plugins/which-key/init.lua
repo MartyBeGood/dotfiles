@@ -74,7 +74,7 @@ return {
           },
           f = { themed_telescope(telescope_builtin.git_files), "Files in Git" },
           g = { cmdify("Git"), "Overview" },
-          h = { cmdify("VGit buffer_history_preview"), "History of current buffer" },
+          h = { cmdify("DiffviewFileHistory %"), "History of current buffer" },
           B = { cmdify("VGit toggle_live_blame"), "Toggle blame lens" },
           s = { cmdify("Git sync"), "pull, then push" },
         },

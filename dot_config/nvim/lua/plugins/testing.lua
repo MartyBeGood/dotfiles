@@ -1,6 +1,7 @@
 return {
   {
     "vim-test/vim-test",
+    cond = not vim.g.vscode,
     ft = { 'ruby', 'js', 'ts', 'go' },
     config = function()
       vim.g['test#strategy'] = 'toggleterm'

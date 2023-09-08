@@ -14,7 +14,7 @@ return {
       },
       sync_install = false, -- Don't install parsers synchronously (only applied to `ensure_installed`)
       highlight = {
-        enable = true,
+        enable = not vim.g.vscode,
         additional_vim_regex_highlighting = { 'ruby' }, -- Needed for non-treesitter indentation to work
       },
       indent = {

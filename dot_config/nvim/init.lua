@@ -11,17 +11,19 @@ if not vim.loop.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-
-require("options")
-require("autocmds")
-
 require("lazy").setup("plugins")
 
-vim.cmd.colorscheme('darcula-visible-comments')
+if vim.g.vscode then
+else
+  require("options")
+  require("autocmds")
 
-if vim.g.neovide or vim.g.fvim_loaded then
-  vim.o.guifont = "Nerdosevka:h15"
-  vim.opt.linespace = 1
+  vim.cmd.colorscheme('darcula-visible-comments')
+
+  if vim.g.neovide or vim.g.fvim_loaded then
+    vim.o.guifont = "Nerdosevka:h15"
+    vim.opt.linespace = 1
+  end
+
+  require("helpers").link_navic_to_other_hlgroups()
 end
-
-require("helpers").link_navic_to_other_hlgroups()

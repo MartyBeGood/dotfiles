@@ -9,6 +9,7 @@ return {
       'folke/which-key.nvim',
       'folke/neodev.nvim',
     },
+    cond = not vim.g.vscode,
     config = function()
       local lspconfig = require('lspconfig')
       local mason_lspconfig = require('mason-lspconfig')

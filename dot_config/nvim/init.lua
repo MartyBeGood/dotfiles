@@ -21,7 +21,7 @@ else
   vim.cmd.colorscheme('darcula-visible-comments')
 
   if vim.g.neovide or vim.g.fvim_loaded then
-    vim.o.guifont = "Nerdosevka:h15"
+    vim.o.guifont = "Nerdosevka:h15:w-1"
     vim.opt.linespace = 1
   end
 

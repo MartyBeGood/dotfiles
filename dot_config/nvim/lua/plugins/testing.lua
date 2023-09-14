@@ -12,4 +12,20 @@ return {
     end,
     dependencies = 'akinsho/toggleterm.nvim',
   },
+
+  {
+    "nvim-neotest/neotest",
+    cond = not vim.g.vscode,
+    ft = { 'ruby', 'js', 'ts', 'go' },
+    dependencies = {
+      'olimorris/neotest-rspec',
+    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-rspec")({})
+        }
+      })
+    end
+  }
 }

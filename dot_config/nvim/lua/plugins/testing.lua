@@ -23,7 +23,16 @@ return {
     config = function()
       require("neotest").setup({
         adapters = {
-          require("neotest-rspec")({})
+          require("neotest-rspec")({
+            rspec_cmd = function()
+              local local_rspec = "./bin/rspec"
+              if vim.fn.executable(local_rspec) == 1 then
+                return local_rspec
+              else
+                return vim.tbl_flatten({ "bundle", "exec", "rspec" })
+              end
+            end,
+          })
         }
       })
     end

@@ -56,12 +56,6 @@ return {
           c = { cmdify("TSJToggle"), "Toggle split/join thing under cursor" }
         },
         f = { themed_telescope(telescope_builtin.find_files), "Find Files" },
-        l = {
-          name = "List..",
-          d = { cmdify("Trouble document_diagnostics"), "Diagnostics in file" },
-          D = { cmdify("Trouble workspace_diagnostics"), "Diagnostics in workspace" },
-          r = { cmdify("Trouble lsp_references"), "References" },
-        },
         g = {
           name = "Git...",
           c = {

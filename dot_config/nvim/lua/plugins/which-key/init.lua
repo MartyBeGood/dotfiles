@@ -94,10 +94,13 @@ return {
         },
         t = {
           name = "Tests...",
-          t = { cmdify("TestNearest"), "Run nearest" },
-          f = { cmdify("TestFile"), "Run all in file" },
-          l = { cmdify("TestLast"), "Run last" },
-          s = { cmdify("TestSuite"), "Run full suite" },
+          f = { cmdify("Neotest run file"), "Run all in file" },
+          j = { cmdify("Neotest jump"), "Jump to test" },
+          l = { cmdify("Neotest run last"), "Run last" },
+          o = { cmdify("Neotest output"), "Test Output in floating window" },
+          p = { cmdify("Neotest output_panel"), "Test Output in panel" },
+          s = { cmdify("Neotest summary"), "Test Summary panel" },
+          t = { cmdify("Neotest run"), "Run nearest" },
         },
         w = {
           name = "Window...",

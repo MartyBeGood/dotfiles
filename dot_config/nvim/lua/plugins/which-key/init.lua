@@ -92,16 +92,6 @@ return {
           g = { themed_telescope(telescope_builtin.live_grep), "String in project" },
           h = { themed_telescope(telescope_builtin.help_tags), "Vim Helptags" },
         },
-        t = {
-          name = "Tests...",
-          f = { cmdify("Neotest run file"), "Run all in file" },
-          j = { cmdify("Neotest jump"), "Jump to test" },
-          l = { cmdify("Neotest run last"), "Run last" },
-          o = { cmdify("Neotest output"), "Test Output in floating window" },
-          p = { cmdify("Neotest output_panel"), "Test Output in panel" },
-          s = { cmdify("Neotest summary"), "Test Summary panel" },
-          t = { cmdify("Neotest run"), "Run nearest" },
-        },
         w = {
           name = "Window...",
           w = { cmdify("WinShift"), "Enter move mode" },

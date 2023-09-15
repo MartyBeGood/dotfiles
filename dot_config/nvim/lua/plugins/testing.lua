@@ -19,9 +19,12 @@ return {
     ft = { 'ruby', 'js', 'ts', 'go' },
     dependencies = {
       'olimorris/neotest-rspec',
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
     },
-    config = function()
-      require("neotest").setup({
+
+    opts = function()
+      return {
         adapters = {
           require("neotest-rspec")({
             rspec_cmd = function()
@@ -34,6 +37,24 @@ return {
             end,
           })
         }
+      }
+    end,
+
+    config = function(_, opts)
+      local neotest = require("neotest")
+      neotest.setup(opts)
+
+      require("which-key").register({
+        t = {
+          name = "Tests...",
+          a = { function() neotest.run.attach() end, "Show output of running test" },
+          f = { function() neotest.run.run(vim.fn.expand("%")) end, "Run all in file" },
+          l = { function() neotest.run.run_last() end, "Run last" },
+          o = { function() neotest.output.open() end, "Test Output in floating window" },
+          p = { function() neotest.output_panel.toggle() end, "Test Output in panel" },
+          s = { function() neotest.summary.toggle() end, "Test Summary panel" },
+          t = { function() neotest.run.run() end, "Run nearest" },
+        },
       })
     end
   }

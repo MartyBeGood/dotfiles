@@ -41,13 +41,6 @@ return {
         b = {
           name = "Buffer...",
           b = { themed_telescope(telescope_builtin.buffers), "Switch buffers" },
-          d = {
-            name = "delete...",
-            d = { cmdify("BDelete this"), "current buffer" },
-            D = { cmdify("BDelete! this"), "current buffer forcefully" },
-            h = { cmdify("BDelete hidden"), "hidden buffers" },
-            H = { cmdify("BDelete! hidden"), "hidden buffers forcefully" },
-          }
         },
         c = {
           s = { cmdify("TSJSplit"), "Split thing under cursor" },

@@ -38,7 +38,28 @@ return {
   {
     "kazhala/close-buffers.nvim",
     cond = not vim.g.vscode,
-    config = true,
+    opts = function ()
+      return {}
+    end,
+    config = function(_, opts)
+      local close_buffers = require('close_buffers')
+      close_buffers.setup(opts)
+
+      require('which-key').register({
+        ["<space>"] = {
+          b = {
+            d = {
+              name = "delete...",
+              d = { function() close_buffers.delete({ type = 'this' }) end, "current buffer" },
+              D = { function() close_buffers.delete({ type = 'this', force = true }) end, "current buffer forcefully" },
+              h = { function() close_buffers.delete({ type = 'hidden', force = true }) end, "hidden buffers" },
+              H = { function() close_buffers.delete({ type = 'hidden' }) end, "hidden buffers forcefully" },
+            }
+          }
+
+        }
+      })
+    end,
   },
   {
     "sindrets/winshift.nvim",

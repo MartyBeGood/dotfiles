@@ -9,9 +9,7 @@ return {
 
     main = 'nvim-treesitter.configs', -- Which module to call '#setup(opts)' on
     opts = {
-      ensure_installed = {
-        'bash', 'c', 'cpp', 'css', 'go', 'html', 'json', 'lua', 'python', 'ruby', 'vim'
-      },
+      auto_install = true,
       sync_install = false, -- Don't install parsers synchronously (only applied to `ensure_installed`)
       highlight = {
         enable = not vim.g.vscode,

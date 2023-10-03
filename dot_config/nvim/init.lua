@@ -20,10 +20,8 @@ else
 
   vim.cmd.colorscheme('darcula-visible-comments')
 
-  if vim.g.neovide or vim.g.fvim_loaded then
-    vim.o.guifont = "Nerdosevka:h15:w-1"
-    vim.opt.linespace = 1
-  end
+  vim.o.guifont = "Nerdosevka:h15:w-1"
+  vim.opt.linespace = 1
 
   require("helpers").link_navic_to_other_hlgroups()
 end

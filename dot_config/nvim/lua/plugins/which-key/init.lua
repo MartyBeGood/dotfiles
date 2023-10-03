@@ -72,6 +72,17 @@ return {
           B = { cmdify("VGit toggle_live_blame"), "Toggle blame lens" },
           s = { cmdify("Git sync"), "pull, then push" },
         },
+        n = {
+          name = "Nvim",
+          g = {
+            function()
+              local result = vim.treesitter.get_captures_at_cursor()
+              print(vim.inspect(result))
+            end,
+            "Print treesitter captures at cursor",
+          },
+
+        },
         o = {
           name = "Open...",
           f = { cmdify("NvimTreeToggle"), "File Browser" },

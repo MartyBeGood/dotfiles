@@ -79,6 +79,7 @@ return {
     config = true,
   },
   { 'tpope/vim-fugitive' },
+
   -- IDE-like features
   {
     'akinsho/toggleterm.nvim',

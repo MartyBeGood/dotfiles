@@ -1,7 +1,7 @@
 return {
   {
     'tpope/vim-rails',
-    ft = { 'ruby', 'slim' },
+    ft = { 'ruby', 'slim', 'js' },
     dependencies = {
       'tpope/vim-projectionist',
     }

@@ -11,6 +11,11 @@ function lolsay() {
   cowsay $1 | lolcat
 }
 
+function unlock_devbox() {
+  key=$(op item get ag7wkoyd7bf5tmdxkziaf7z3mu --fields password)
+  ssh root@devbox-recovery "echo -n $key | cryptroot-unlock"
+}
+
 # alias tmux='tmux -2'
 function tn { if [ "$1" ]; then tmux new -s "$1"; else tmux new -s "$(basename "$PWD" | tr . _)"; fi }
 function ta { if [ "$1" ]; then tmux attach -t "$1"; else tmux attach; fi }

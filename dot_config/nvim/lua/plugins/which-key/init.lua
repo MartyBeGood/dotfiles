@@ -13,12 +13,11 @@ return {
       return "<Plug>(" .. cmd .. ")"
     end
 
-    local git_files_or_all_files = function()
-      if helpers.cwd_in_git_repo() then
-        return themed_telescope(telescope_builtin.git_files)
-      else
-        return themed_telescope(telescope_builtin.find_files)
-      end
+    local all_files = function()
+      return themed_telescope(
+        telescope_builtin.find_files,
+        { find_command = { 'rg', '--files', '--hidden', '--glob', '!.git/*', '--no-ignore-vcs' } }
+      )
     end
 
     wk.setup({
@@ -38,7 +37,7 @@ return {
 
     wk.register({
       ["<space>"] = {
-        ["<space>"] = { git_files_or_all_files(), "Find Files" },
+        ["<space>"] = { themed_telescope(telescope_builtin.find_files), "Find Files in project" },
         b = {
           name = "Buffer...",
           b = { themed_telescope(telescope_builtin.buffers), "Switch buffers" },
@@ -55,7 +54,7 @@ return {
           j = { cmdify("TSJJoin"), "Join thing under cursor" },
           c = { cmdify("TSJToggle"), "Toggle split/join thing under cursor" }
         },
-        f = { themed_telescope(telescope_builtin.find_files), "Find Files" },
+        f = { all_files(), "Find ALL Files in working dir" },
         g = {
           name = "Git...",
           c = {

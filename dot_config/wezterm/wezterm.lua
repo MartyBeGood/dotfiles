@@ -52,4 +52,15 @@ local settings = {
   font = wezterm.font('Nerdosevka'),
 }
 
+local act = wezterm.action
+settings.keys = {
+  { key = 's', mods = 'SHIFT|SUPER', action = act.SplitVertical { domain = 'CurrentPaneDomain' } },
+  { key = 'p', mods = 'SHIFT|SUPER', action = act.ActivateCommandPalette },
+  { key = 'v', mods = 'SHIFT|SUPER', action = act.SplitHorizontal { domain = 'CurrentPaneDomain' } },
+  { key = 'h', mods = 'SHIFT|SUPER', action = act.ActivatePaneDirection('Left') },
+  { key = 'j', mods = 'SHIFT|SUPER', action = act.ActivatePaneDirection('Down') },
+  { key = 'k', mods = 'SHIFT|SUPER', action = act.ActivatePaneDirection('Up') },
+  { key = 'l', mods = 'SHIFT|SUPER', action = act.ActivatePaneDirection('Right') },
+}
+
 return settings

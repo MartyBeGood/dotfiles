@@ -1,41 +1,41 @@
 # change focus
-cmd + ctrl - h : yabai -m window --focus west || yabai -m display --focus prev
-cmd + ctrl - j : yabai -m window --focus south
-cmd + ctrl - k : yabai -m window --focus north
-cmd + ctrl - l : yabai -m window --focus east || yabai -m display --focus next
-cmd + ctrl - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
-cmd + ctrl - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+ctrl + shift - h : yabai -m window --focus west || yabai -m display --focus prev
+ctrl + shift - j : yabai -m window --focus south
+ctrl + shift - k : yabai -m window --focus north
+ctrl + shift - l : yabai -m window --focus east || yabai -m display --focus next
+ctrl + shift - n : yabai -m window --focus stack.next || yabai -m window --focus stack.first
+ctrl + shift - p : yabai -m window --focus stack.prev || yabai -m window --focus stack.last
 
 # warp window in current workspace
-cmd + ctrl + alt - h : yabai -m window --warp west  || $(yabai -m window --display west; yabai -m display --focus west)
-cmd + ctrl + alt - j : yabai -m window --warp south || $(yabai -m window --display south; yabai -m display --focus south)
-cmd + ctrl + alt - k : yabai -m window --warp north || $(yabai -m window --display north; yabai -m display --focus north)
-cmd + ctrl + alt - l : yabai -m window --warp east || $(yabai -m window --display east; yabai -m display --focus east)
+ctrl + shift + alt - h : yabai -m window --warp west  || $(yabai -m window --display west; yabai -m display --focus west)
+ctrl + shift + alt - j : yabai -m window --warp south || $(yabai -m window --display south; yabai -m display --focus south)
+ctrl + shift + alt - k : yabai -m window --warp north || $(yabai -m window --display north; yabai -m display --focus north)
+ctrl + shift + alt - l : yabai -m window --warp east || $(yabai -m window --display east; yabai -m display --focus east)
 
 # swap window in current workspace
-cmd + ctrl + shift - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
-cmd + ctrl + shift - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
-cmd + ctrl + shift - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
-cmd + ctrl + shift - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
-cmd + ctrl - n : yabai -m window --swap stack.next || yabai -m window --swap stack.first # Not released yet
-cmd + ctrl - p : yabai -m window --swap stack.prev || yabai -m window --swap stack.last # Not released yet
+ctrl + shift + cmd - h : yabai -m window --swap west || $(yabai -m window --display west; yabai -m display --focus west)
+ctrl + shift + cmd - j : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+ctrl + shift + cmd - k : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+ctrl + shift + cmd - l : yabai -m window --swap east || $(yabai -m window --display east; yabai -m display --focus east)
+ctrl + shift - n : yabai -m window --swap stack.next || yabai -m window --swap stack.first # Not released yet
+ctrl + shift - p : yabai -m window --swap stack.prev || yabai -m window --swap stack.last # Not released yet
 
 # Stack the next window inserted to the current container
-cmd + ctrl - i : yabai -m window --insert stack
+ctrl + shift - i : yabai -m window --insert stack
 
 # Rotate the parent container
-cmd + ctrl - u : yabai -m window --toggle split
+ctrl + shift - u : yabai -m window --toggle split
 
 # go back to previous workspace (kind of like back_and_forth in i3)
-cmd + ctrl - b : yabai -m space --focus recent
+ctrl + shift - b : yabai -m space --focus recent
 
 # move focused window to previous workspace
 alt + shift - b : yabai -m window --space recent; \
                   yabai -m space --focus recent
 
-cmd + ctrl - f : yabai -m window --toggle float
+ctrl + shift - f : yabai -m window --toggle float
 
 # change layout of desktop
-cmd + ctrl - t : yabai -m space --layout bsp
+ctrl + shift - t : yabai -m space --layout bsp
 
-cmd + ctrl + alt + shift - r : yabai --restart-service
+ctrl + shift + alt - r : yabai --restart-service

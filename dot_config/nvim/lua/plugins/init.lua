@@ -38,7 +38,7 @@ return {
   {
     "kazhala/close-buffers.nvim",
     cond = not vim.g.vscode,
-    opts = function ()
+    opts = function()
       return {}
     end,
     config = function(_, opts)
@@ -82,16 +82,8 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
   },
   {
-    'tanvirtin/vgit.nvim',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-    cond = not vim.g.vscode,
-    opts = {
-      hls = {
-        GitComment = 'diffComment'
-      }
-    }
+    'lewis6991/gitsigns.nvim',
+    config = true
   },
   {
     'akinsho/git-conflict.nvim',

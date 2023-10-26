@@ -32,15 +32,16 @@ return {
     },
     opts = {
       cmdline = {
-        enabled = true,
+        enabled = false,
         view = "cmdline"
       },
       messages = {
-        enabled = true,
+        enabled = false,
       },
       lsp = {
         override = {
           ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+
           ['vim.lsp.util.stylize_markdown'] = true,
           ['cmp.entry.get_documentation'] = true,
         },
@@ -55,6 +56,24 @@ return {
       },
       presets = {
         long_message_to_split = true
+      },
+      routes = {
+        {
+          filter = {
+            event = "msg_show",
+            kind = "",
+            find = "B written"
+          },
+          opts = { skip = true }
+        }
+      },
+      views = {
+        mini = {
+          position = {
+            row = -2,
+            col = "100%"
+          }
+        }
       }
     }
   },

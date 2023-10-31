@@ -1,7 +1,6 @@
 return {
   {
     "nvim-neotest/neotest",
-    cond = not vim.g.vscode,
     ft = { 'ruby', 'js', 'ts', 'go' },
     dependencies = {
       'olimorris/neotest-rspec',

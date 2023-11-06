@@ -55,6 +55,7 @@ local spec = lush.extends({ darcula_solid }).with(function()
     DiffviewStatusIgnored { CommentDim },
     DiffviewFilePanelPath { CommentDim },
     LazyComment { CommentDim },
+    GitSignsCurrentLineBlame { CommentDim },
 
     -- other fixes
     -- Need to redefine these because reasons

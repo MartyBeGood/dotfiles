@@ -7,31 +7,17 @@ return {
   },
   { 'tpope/vim-projectionist' },
   {
-    'ggandor/leap.nvim',
-    dependencies = { 'tpope/vim-repeat' },
-    cond = not vim.g.vscode,
-    event = "BufWinEnter",
-    config = function() require('leap').add_default_mappings() end
-  },
-  {
     "kylechui/nvim-surround",
     config = true,
     event = "BufWinEnter",
   },
   {
-    'windwp/nvim-autopairs',
+    "numToStr/Comment.nvim",
     config = true,
-    cond = not vim.g.vscode,
-    event = "BufWinEnter",
   },
   {
     'michaeljsmith/vim-indent-object',
     event = 'BufWinEnter',
-  },
-  {
-    "numToStr/Comment.nvim",
-    config = true,
-    event = "BufWinEnter",
   },
   {
     "sindrets/winshift.nvim",

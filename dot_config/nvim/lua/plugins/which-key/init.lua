@@ -42,11 +42,6 @@ return {
           name = "Buffer...",
           b = { themed_telescope(telescope_builtin.buffers), "Switch buffers" },
         },
-        c = {
-          s = { cmdify("TSJSplit"), "Split thing under cursor" },
-          j = { cmdify("TSJJoin"), "Join thing under cursor" },
-          c = { cmdify("TSJToggle"), "Toggle split/join thing under cursor" }
-        },
         f = { all_files(), "Find ALL Files in working dir" },
         g = {
           name = "Git...",

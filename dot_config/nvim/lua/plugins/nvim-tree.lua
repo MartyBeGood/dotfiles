@@ -31,7 +31,7 @@ return {
           file = true,
           folder = true,
           folder_arrow = true,
-          git = true,
+          git = false,
         },
         glyphs = {
           default = "",
@@ -47,15 +47,6 @@ return {
             symlink = "",
             symlink_open = "",
           },
-          git = {
-            unstaged = "",
-            staged = "",
-            unmerged = "",
-            renamed = "",
-            untracked = "󰩴",
-            deleted = "",
-            ignored = "",
-          },
         },
       },
     },
@@ -65,9 +56,7 @@ return {
       exclude = {},
     },
     git = {
-      enable = true,
-      ignore = true,
-      timeout = 400,
+      enable = false,
     },
     actions = {
       use_system_clipboard = true,

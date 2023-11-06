@@ -13,15 +13,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
 
-if vim.g.vscode then
-else
-  require("options")
-  require("autocmds")
+require("options")
+require("autocmds")
 
-  vim.cmd.colorscheme('darcula-visible-comments')
+vim.cmd.colorscheme('darcula-visible-comments')
 
-  vim.o.guifont = "Nerdosevka:h15:w-1"
-  vim.opt.linespace = 1
+vim.o.guifont = "Nerdosevka:h15:w-1"
+vim.opt.linespace = 1
 
-  require("helpers").link_navic_to_other_hlgroups()
-end

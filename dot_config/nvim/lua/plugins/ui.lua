@@ -5,6 +5,7 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     event = "UIEnter",
+    cond = false,
     config = function()
       require('lualine').setup({
         options = {
@@ -33,9 +34,11 @@ return {
     opts = {
       cmdline = {
         enabled = false,
-        view = "cmdline"
       },
       messages = {
+        enabled = false,
+      },
+      popupmenu = {
         enabled = false,
       },
       lsp = {
@@ -77,32 +80,4 @@ return {
       }
     }
   },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    event = "BufReadPre",
-    main = "ibl",
-    opts = {
-      indent = {
-        char = "┆",
-      },
-      exclude = {
-        filetypes = {
-          'help',
-          'dashboard',
-          'git',
-          'markdown',
-          'text',
-          'terminal',
-          'lspinfo',
-          'packer',
-          'NvimTree',
-        },
-        buftypes = {
-          'terminal',
-          'nofile',
-          'TelescopePrompt'
-        },
-      }
-    }
-  }
 }

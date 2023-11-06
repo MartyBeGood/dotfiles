@@ -1,10 +1,5 @@
 return {
   {
-    'Wansmer/treesj',
-    config = true,
-    event = 'BufWinEnter',
-  },
-  {
     'nvim-treesitter/nvim-treesitter',
 
     main = 'nvim-treesitter.configs', -- Which module to call '#setup(opts)' on
@@ -13,7 +8,7 @@ return {
       sync_install = false, -- Don't install parsers synchronously (only applied to `ensure_installed`)
       highlight = {
         enable = true,
-        additional_vim_regex_highlighting = { 'ruby' }, -- Needed for non-treesitter indentation to work
+        -- additional_vim_regex_highlighting = { 'ruby' }, -- Needed for non-treesitter indentation to work
       },
       indent = {
         enable = true,
@@ -33,7 +28,6 @@ return {
     dependencies = {
       "RRethy/nvim-treesitter-endwise",
       "windwp/nvim-ts-autotag",
-      'nvim-treesitter/nvim-treesitter-textobjects',
     }
   }
 }

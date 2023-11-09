@@ -5,7 +5,6 @@ return {
       'nvim-tree/nvim-web-devicons',
     },
     event = "UIEnter",
-    cond = false,
     config = function()
       require('lualine').setup({
         options = {

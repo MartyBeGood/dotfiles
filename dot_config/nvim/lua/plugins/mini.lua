@@ -33,7 +33,6 @@ return {
     require('mini.move').setup()
     require('mini.pairs').setup()
     require('mini.operators').setup()
-    require('mini.statusline').setup()
     require('mini.splitjoin').setup({
       mappings = {
         toggle = 'gs',

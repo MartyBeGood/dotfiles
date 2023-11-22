@@ -5,6 +5,7 @@ return {
     local augroup = vim.api.nvim_create_augroup
     local autocmd = vim.api.nvim_create_autocmd
 
+    require('mini.ai').setup()
     -- require('mini.comment').setup()
     require('mini.indentscope').setup({
       draw = {
@@ -12,7 +13,7 @@ return {
         animation = function() return 0 end,
       },
       options = {
-        border = 'top',
+        border = 'both',
         try_as_border = true
       }
     })
@@ -28,6 +29,15 @@ return {
       },
       callback = function()
         vim.api.nvim_buf_set_var(vim.api.nvim_get_current_buf(), 'miniindentscope_disable', true)
+      end
+    })
+    autocmd('FileType', {
+      group = 'miniindentscope',
+      pattern = { 'slim', 'python' },
+      callback = function()
+        vim.api.nvim_buf_set_var(
+          vim.api.nvim_get_current_buf(), 'miniindentscope_config', { options = { border = 'top', } }
+        )
       end
     })
     require('mini.move').setup()

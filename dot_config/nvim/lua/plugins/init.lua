@@ -16,10 +16,6 @@ return {
     config = true,
   },
   {
-    'michaeljsmith/vim-indent-object',
-    event = 'BufWinEnter',
-  },
-  {
     "sindrets/winshift.nvim",
     cond = not vim.g.vscode,
     config = true,

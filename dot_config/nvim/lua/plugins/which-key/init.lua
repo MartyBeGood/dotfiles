@@ -1,7 +1,6 @@
 return {
   "folke/which-key.nvim",
   event = 'BufEnter',
-  cond = not vim.g.vscode,
   config = function()
     local wk = require('which-key')
     local helpers = require('helpers')

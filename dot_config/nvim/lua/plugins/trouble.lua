@@ -4,7 +4,6 @@ return {
     'folke/lsp-colors.nvim',
     'nvim-tree/nvim-web-devicons'
   },
-  cond = not vim.g.vscode,
   opts = function()
     return {
       mode = 'document_diagnostics',

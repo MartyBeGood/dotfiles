@@ -17,21 +17,18 @@ return {
   },
   {
     "sindrets/winshift.nvim",
-    cond = not vim.g.vscode,
     config = true,
   },
 
   -- language support
   {
     "lmeijvogel/vim-yaml-helper",
-    cond = not vim.g.vscode,
     ft = "yaml",
   },
 
   -- Git
   {
     'sindrets/diffview.nvim',
-    cond = not vim.g.vscode,
     cmd = { 'DiffviewOpen', 'DiffviewFileHistory', 'DiffviewToggleFiles', 'DiffviewFocusFiles', 'DiffviewRefresh' },
     dependencies = 'nvim-tree/nvim-web-devicons',
   },
@@ -44,7 +41,6 @@ return {
   {
     'akinsho/git-conflict.nvim',
     version = '*',
-    cond = not vim.g.vscode,
     config = true,
   },
   { 'tpope/vim-fugitive' },
@@ -53,7 +49,6 @@ return {
   {
     'akinsho/toggleterm.nvim',
     cmd = { 'ToggleTerm', 'ToggleTermSendCurrentLine', 'ToggleTermSendVisualLines', 'ToggleTermSendVisualSelection' },
-    cond = not vim.g.vscode,
     opts = {
       size = function(term)
         if term.direction == 'horizontal' then
@@ -70,17 +65,14 @@ return {
   -- colorschemes
   {
     'briones-gabriel/darcula-solid.nvim',
-    cond = not vim.g.vscode,
     dependencies = "rktjmp/lush.nvim",
     event = "VeryLazy" -- required to build the variation I'm using, so this gets loaded anyway.
   },
   {
     'ofirgall/ofirkai.nvim',
-    cond = not vim.g.vscode,
   },
   {
     'marko-cerovac/material.nvim',
-    cond = not vim.g.vscode,
     opts = {
       contrast = {
         sidebars = true,

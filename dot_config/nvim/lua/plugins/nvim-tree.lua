@@ -1,7 +1,6 @@
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  cond = not vim.g.vscode,
   cmd = { "NvimTreeOpen", "NvimTreeToggle", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeFindFileToggle" },
   opts = {
     hijack_cursor = true,

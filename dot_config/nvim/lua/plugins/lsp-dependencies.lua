@@ -27,30 +27,26 @@ local codicons = {
   TypeParameter = " ",
 }
 
-if vim.g.vscode then
-  return {}
-else
-  return {
-    {
-      'williamboman/mason.nvim',
-      build = ':MasonUpdate',
-      config = true,
-    },
+return {
+  {
+    'williamboman/mason.nvim',
+    build = ':MasonUpdate',
+    config = true,
+  },
 
-    { 'neovim/nvim-lspconfig', },
-    {
-      'folke/neodev.nvim',
-      config = true,
-    },
-    {
-      'onsails/lspkind.nvim',
-      config = function()
-        require('lspkind').init({
-          mode = 'symbol',
-          preset = 'codicons'
-        })
-      end,
-      event = 'VeryLazy',
-    },
-  }
-end
+  { 'neovim/nvim-lspconfig', },
+  {
+    'folke/neodev.nvim',
+    config = true,
+  },
+  {
+    'onsails/lspkind.nvim',
+    config = function()
+      require('lspkind').init({
+        mode = 'symbol',
+        preset = 'codicons'
+      })
+    end,
+    event = 'VeryLazy',
+  },
+}

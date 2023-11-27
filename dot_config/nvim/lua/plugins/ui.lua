@@ -18,10 +18,15 @@ return {
           lualine_a = { 'mode' },
           lualine_b = { 'branch', 'diff', 'diagnostics' },
           lualine_c = {
-            { 'filename', path = 1 },
+            {
+              'filename',
+              path = 1,
+              symbols = { modified = '󰛄', readonly = '' },
+            },
+          },
+          lualine_x = {
             {
               function()
-                local msg = 'No Active Lsp'
                 local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
                 local clients = vim.lsp.get_active_clients()
 
@@ -41,9 +46,16 @@ return {
               end,
             }
           },
-          lualine_x = { 'encoding', 'fileformat', 'filetype' },
-          lualine_y = { 'progress' },
-          lualine_z = { 'location' }
+          lualine_y = {
+            'filetype',
+            'encoding',
+            'fileformat'
+          },
+          lualine_z = {
+            'progress',
+            'location',
+            'searchcount'
+          }
         },
       })
     end

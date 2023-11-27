@@ -1,3 +1,5 @@
+local cmdify = require('helpers').cmdify
+
 -- Plugins that don't have enough config to warrant their own file go here
 return {
   -- Editing goodness
@@ -17,7 +19,25 @@ return {
   },
   {
     "sindrets/winshift.nvim",
-    config = true,
+    config = function()
+      require('which-key').register({
+        ["<space>"] = {
+          w = {
+            name = "Window...",
+            w = { cmdify("WinShift"), "Enter move mode" },
+            s = { cmdify("WinShift swap"), "Swap current window with..." },
+            h = { cmdify("WinShift left"), "Move current window left" },
+            j = { cmdify("WinShift down"), "Move current window down" },
+            k = { cmdify("WinShift up"), "Move current window up" },
+            l = { cmdify("WinShift right"), "Move current window right" },
+            H = { cmdify("WinShift far_left"), "Move current window all the way left" },
+            J = { cmdify("WinShift far_down"), "Move current window all the way down" },
+            K = { cmdify("WinShift far_up"), "Move current window all the way up" },
+            L = { cmdify("WinShift far_right"), "Move current window all the way right" },
+          }
+        }
+      })
+    end
   },
 
   -- language support
@@ -41,7 +61,25 @@ return {
   {
     'akinsho/git-conflict.nvim',
     version = '*',
-    config = true,
+    config = function()
+      require('git-conflict').setup({})
+
+      require('which-key').register({
+        ["<space>"] = {
+          g = {
+            c = {
+              name = "Conflict...",
+              o = { "<Plug>(git-conflict-ours)", "Choose ours" },
+              t = { "<Plug>(git-conflict-theirs)", "Choose theirs" },
+              b = { "<Plug>(git-conflict-both)", "Choose both" },
+              ["0"] = { "<Plug>(git-conflict-none)", "Choose none" },
+              n = { "<Plug>(git-conflict-next-conflict)", "Go to next conflict" },
+              p = { "<Plug>(git-conflict-prev-conflict)", "Go to prev conflict" },
+            },
+          },
+        },
+      })
+    end,
   },
   { 'tpope/vim-fugitive' },
 
@@ -49,17 +87,27 @@ return {
   {
     'akinsho/toggleterm.nvim',
     cmd = { 'ToggleTerm', 'ToggleTermSendCurrentLine', 'ToggleTermSendVisualLines', 'ToggleTermSendVisualSelection' },
-    opts = {
-      size = function(term)
-        if term.direction == 'horizontal' then
-          return vim.o.lines * 0.3
-        elseif term.direction == 'vertical' then
-          return math.max(vim.o.columns * 0.4, 25)
-        else
-          return 20
-        end
-      end,
-    }
+    config = function()
+      require('toggleterm').setup({
+        size = function(term)
+          if term.direction == 'horizontal' then
+            return vim.o.lines * 0.3
+          elseif term.direction == 'vertical' then
+            return math.max(vim.o.columns * 0.4, 25)
+          else
+            return 20
+          end
+        end,
+      })
+      require('which-key').register({
+        ["<space>"] = {
+          o = {
+            T = { cmdify('exe v:count1 . "ToggleTerm"'), 'Toggle terminal #<count>' },
+            t = { cmdify('ToggleTerm'), 'Toggle all terminals' }
+          }
+        }
+      })
+    end
   },
 
   -- colorschemes

@@ -44,15 +44,6 @@ return {
         f = { all_files(), "Find ALL Files in working dir" },
         g = {
           name = "Git...",
-          c = {
-            name = "Conflict...",
-            o = { plug("git-conflict-ours"), "Choose ours" },
-            t = { plug("git-conflict-theirs"), "Choose theirs" },
-            b = { plug("git-conflict-both"), "Choose both" },
-            ["0"] = { plug("git-conflict-none"), "Choose none" },
-            n = { plug("git-conflict-next-conflict"), "Go to next conflict" },
-            p = { plug("git-conflict-prev-conflict"), "Go to prev conflict" },
-          },
           f = { themed_telescope(telescope_builtin.git_files), "Files in Git" },
           g = { cmdify("Git"), "Overview" },
           h = { cmdify("DiffviewFileHistory %"), "History of current buffer" },
@@ -68,13 +59,11 @@ return {
             end,
             "Print treesitter captures at cursor",
           },
-
         },
         o = {
           name = "Open...",
           f = { cmdify("NvimTreeToggle"), "File Browser" },
           F = { cmdify("NvimTreeFindFile"), "File Browser at current file" },
-          t = { cmdify("ToggleTerm"), "Terminal" },
         },
         s = {
           name = "Search...",
@@ -83,19 +72,6 @@ return {
           g = { themed_telescope(telescope_builtin.live_grep), "String in project" },
           h = { themed_telescope(telescope_builtin.help_tags), "Vim Helptags" },
         },
-        w = {
-          name = "Window...",
-          w = { cmdify("WinShift"), "Enter move mode" },
-          s = { cmdify("WinShift swap"), "Swap current window with..." },
-          h = { cmdify("WinShift left"), "Move current window left" },
-          j = { cmdify("WinShift down"), "Move current window down" },
-          k = { cmdify("WinShift up"), "Move current window up" },
-          l = { cmdify("WinShift right"), "Move current window right" },
-          H = { cmdify("WinShift far_left"), "Move current window all the way left" },
-          J = { cmdify("WinShift far_down"), "Move current window all the way down" },
-          K = { cmdify("WinShift far_up"), "Move current window all the way up" },
-          L = { cmdify("WinShift far_right"), "Move current window all the way right" },
-        }
       },
       g = {
         p = {

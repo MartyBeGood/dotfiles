@@ -3,11 +3,19 @@ return {
     "vim-test/vim-test",
     dependencies = {
       'akinsho/toggleterm.nvim',
-      'tpope/vim-dispatch'
     },
     config = function()
-      vim.g["test#strategy"] = "dispatch"
+      local tt = require('toggleterm')
+      vim.g["test#custom_strategies"] = {
+        tterm = function(cmd)
+          local term_id = 500
+          tt.exec(cmd, term_id)
+        end
+      }
+
+      vim.g["test#strategy"] = "tterm"
       vim.g['test#ruby#rspec#options'] = {
+
         file = '--format documentation'
       }
 
@@ -20,6 +28,7 @@ return {
             l = { cmdify("TestLast"), "Run last" },
             s = { cmdify("TestSuite"), "Run test suite" },
             t = { cmdify("TestNearest"), "Run nearest" },
+            p = { cmdify("ToggleTerm 500"), "Toggle test terminal" },
           }
         }
       })

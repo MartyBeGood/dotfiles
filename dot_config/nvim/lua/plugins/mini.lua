@@ -6,7 +6,10 @@ return {
     local autocmd = vim.api.nvim_create_autocmd
 
     require('mini.ai').setup()
-    -- require('mini.comment').setup()
+    require('mini.move').setup()
+    require('mini.pairs').setup()
+    require('mini.operators').setup()
+
     require('mini.indentscope').setup({
       draw = {
         delay = 0,
@@ -40,9 +43,6 @@ return {
         )
       end
     })
-    require('mini.move').setup()
-    require('mini.pairs').setup()
-    require('mini.operators').setup()
     require('mini.splitjoin').setup({
       mappings = {
         toggle = 'gs',
@@ -52,4 +52,3 @@ return {
     })
   end
 }
-

@@ -9,12 +9,6 @@ return {
     view = {
       width = 32,
       side = "right",
-      mappings = {
-        custom_only = false,
-        list = {
-          -- user mappings go here
-        },
-      },
     },
     renderer = {
       indent_markers = {

@@ -17,6 +17,7 @@ opt.completeopt = 'menu,menuone,noinsert,noselect' -- Autocomplete options
 opt.timeoutlen = 500                               -- shorter timeout for which-key
 opt.modeline = false                               -- I don't use modeline and it's a potential security risk
 opt.autoread = true                                -- update unmodified buffers if file changes on disk
+
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
@@ -31,7 +32,7 @@ opt.smartcase = true      -- Ignore lowercase for the whole pattern
 opt.linebreak = true      -- Wrap on word boundary
 opt.termguicolors = true  -- Enable 24-bit RGB colors
 opt.cursorline = true     -- Highlight line with cursor
-opt.laststatus = 2        -- One statusline per window
+opt.laststatus = 2        -- One statusline per split
 
 -----------------------------------------------------------
 -- Tabs, indent, whitespace

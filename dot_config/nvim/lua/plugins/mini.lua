@@ -36,7 +36,7 @@ return {
     })
     autocmd('FileType', {
       group = 'miniindentscope',
-      pattern = { 'slim', 'python' },
+      pattern = { 'slim', 'python', 'yaml' },
       callback = function()
         vim.api.nvim_buf_set_var(
           vim.api.nvim_get_current_buf(), 'miniindentscope_config', { options = { border = 'top', } }

@@ -46,12 +46,12 @@ EOF
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-if [ -f ~/.local/bin/rtx ]; then
-  eval "$(~/.local/bin/rtx activate zsh)"
+if [ -f ~/.local/bin/mise ]; then
+  eval "$(~/.local/bin/mise activate zsh)"
 else
-  if [ command -v 'rtx' &> /dev/null ]; then
-    eval "$(rtx activate zsh)"
+  if [ command -v 'mise' &> /dev/null ]; then
+    eval "$(mise activate zsh)"
   else
-    echo "rtx not available. chezmoi setup might be borked."
+    echo "mise not available. chezmoi setup might be borked."
   fi
 fi

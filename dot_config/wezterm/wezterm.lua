@@ -16,7 +16,6 @@ local settings = {
   use_dead_keys = false,
   use_ime = false,
 
-
   -- Colors
   color_scheme = theme,
   colors = {

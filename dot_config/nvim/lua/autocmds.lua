@@ -30,7 +30,7 @@ autocmd('BufWritePre', {
   end
 })
 
--- Don't auto commenting new lines
+-- Don't auto comment new lines if the line I'm coming from is commented
 autocmd('BufEnter', {
   pattern = '*',
   command = 'set fo-=c fo-=r fo-=o'
@@ -59,6 +59,11 @@ autocmd('Filetype', {
 autocmd('FileType', {
   pattern = 'eruby.yaml',
   command = 'set filetype=yaml'
+})
+
+autocmd('FileType', {
+  pattern = 'markdown',
+  command = 'set syntax=markdown'
 })
 
 augroup('fugitiveLineNumber', { clear = true })

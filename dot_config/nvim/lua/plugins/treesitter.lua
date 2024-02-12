@@ -8,7 +8,7 @@ return {
       sync_install = false, -- Don't install parsers synchronously (only applied to `ensure_installed`)
       highlight = {
         enable = true,
-        -- additional_vim_regex_highlighting = { 'ruby' }, -- Needed for non-treesitter indentation to work
+        additional_vim_regex_highlighting = { 'markdown', 'gitcommit' }, -- TS seems to take away highlighting from these filetypes
       },
       indent = {
         enable = true,

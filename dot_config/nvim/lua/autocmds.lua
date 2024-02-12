@@ -61,17 +61,13 @@ autocmd('FileType', {
   command = 'set filetype=yaml'
 })
 
-autocmd('FileType', {
-  pattern = 'markdown',
-  command = 'set syntax=markdown'
-})
-
 augroup('fugitiveLineNumber', { clear = true })
 autocmd('FileType', {
   group = 'fugitiveLineNumber',
   pattern = { 'fugitive' },
   command = 'setlocal nonumber'
 })
+
 -- Terminal settings:
 -- Open a Terminal on the right tab
 autocmd('CmdlineEnter', {

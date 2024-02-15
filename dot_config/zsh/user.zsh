@@ -7,6 +7,9 @@ fi
 
 zsh_config_dir=${0:a:h}
 
+# Don't treat globs that don't resolve as an error (e.g. when passing globs through SSH)
+setopt +o nomatch
+
 # env vars
 export EDITOR=nvim
 export PATH=$HOME/.local/bin:$PATH
@@ -42,6 +45,11 @@ Usage: kop [port_number]
 EOF
   fi
 }
+
+if type zoxide &>/dev/null
+then
+  eval "$(zoxide init zsh)"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

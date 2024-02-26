@@ -11,7 +11,8 @@ set $othermod Mod1
 # is used in bar {} blocks.
 font pango:Segoe UI 9
 
-new_window normal
+default_border pixel 1
+new_window pixel 1
 new_float pixel 1
 hide_edge_borders both
 
@@ -96,8 +97,8 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# have the default workspace on the external screen if possible
-workspace $ws1 output DisplayPort-0
+# have the '0' workspace on the laptop monitor
+workspace $ws10 output eDP
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1

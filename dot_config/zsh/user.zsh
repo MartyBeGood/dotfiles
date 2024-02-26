@@ -7,7 +7,7 @@ fi
 
 zsh_config_dir=${0:a:h}
 
-# Don't treat globs that don't resolve as an error (e.g. when passing globs through SSH)
+# Be less annoying about globs you can't resolve yourself
 setopt +o nomatch
 
 # env vars

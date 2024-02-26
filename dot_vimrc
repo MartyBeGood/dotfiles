@@ -1,0 +1,40 @@
+set nocompatible
+
+syntax on
+set modelines=0
+
+set number
+set belloff=all
+
+set encoding=utf-8
+
+set wrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set noshiftround
+
+set scrolloff=3
+set backspace=indent,eol,start
+set matchpairs+=<:>
+
+set hidden
+set cursorline
+
+call plug#begin('~/.vim/plugged')
+" Features
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-endwise'
+  Plug 'tpope/vim-commentary'
+  Plug 'tpope/vim-surround'
+
+" Syntax highlighting
+  Plug 'sheerun/vim-polyglot'
+  Plug 'isobit/vim-caddyfile'
+
+" Color scheme
+  Plug 'crusoexia/vim-monokai'
+call plug#end()
+
+colorscheme monokai

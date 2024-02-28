@@ -12,8 +12,8 @@
   {{- $arch = .chezmoi.arch -}}
 {{- end -}}
 
-.local/bin/mise:
-  type: file
-  url: "https://mise.jdx.dev/mise-latest-{{- $os -}}-{{- $arch -}}"
-  executable: true
-  refreshPeriod: 168h
+["local/bin/mise"]
+  type = "file"
+  url = "https://mise.jdx.dev/mise-latest-{{- $os -}}-{{- $arch -}}"
+  executable = true
+  refreshPeriod = "168h"

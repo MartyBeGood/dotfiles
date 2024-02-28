@@ -1,10 +1,1 @@
 README.md
-
-{{- if ne .chezmoi.os "darwin" }}
-.wezterm.lua
-.config/yabai/
-.config/skhd/
-{{- end}}
-{{- if eq .use_chruby false}}
-.config/zsh/chruby.zsh
-{{- end }}

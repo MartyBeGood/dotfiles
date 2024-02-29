@@ -33,6 +33,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-surround'
 
   Plug 'lifepillar/vim-mucomplete'
+  Plug '~/.fzf'
 
 " Syntax highlighting
   Plug 'sheerun/vim-polyglot'
@@ -40,6 +41,7 @@ call plug#begin('~/.vim/plugged')
 
 " Color scheme
   Plug 'crusoexia/vim-monokai'
+
 call plug#end()
 
 colorscheme monokai

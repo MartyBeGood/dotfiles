@@ -19,6 +19,9 @@ set scrolloff=3
 set backspace=indent,eol,start
 set matchpairs+=<:>
 
+set completeopt+=menuone,noselect
+set shortmess+=c
+
 set hidden
 set cursorline
 
@@ -29,7 +32,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
 
-  Plug 'maralla/completor.vim'
+  Plug 'lifepillar/vim-mucomplete'
 
 " Syntax highlighting
   Plug 'sheerun/vim-polyglot'
@@ -40,3 +43,5 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 colorscheme monokai
+
+let g:mucomplete#enable_auto_at_startup = 1

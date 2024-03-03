@@ -1,8 +1,9 @@
 #!/bin/bash
 
 # This just runs the fzf installer, without redoing the setup for the .*rc files
-# {{ $cmdpath := joinPath .chezmoi.sourceDir "get_fzf_head_commit.sh"}}
-# FZF version = {{ output $cmdpath }}
+# {{ $fzf_dir := joinPath .chezmoi.homeDir ".fzf" }} 
+# {{ $fzf_hash := output "git" "-C" $fzf_dir "rev-parse" "HEAD" }}
+# FZF version = {{ $fzf_hash }}
 
 ~/.fzf/install --no-update-rc --key-bindings --completion > /dev/null
-echo "ran 'fzf install'"
+echo "ran 'fzf install'. HEAD now at {{ $fzf_hash }}"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH=~/bin:$PATH
+export PATH=~/.local/bin:~/bin:$PATH
 export EDITOR=nvim
 
 # common functions
@@ -8,3 +8,14 @@ export EDITOR=nvim
 
 # fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+if [ -f ~/.local/bin/mise ]; then
+  eval "$(~/.local/bin/mise activate bash)"
+else
+  if [ command -v 'mise' &> /dev/null ]; then
+    eval "$(mise activate bash)"
+  else
+    echo "mise not available. chezmoi setup might be borked."
+  fi
+fi

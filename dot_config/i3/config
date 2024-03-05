@@ -11,9 +11,9 @@ set $othermod Mod1
 # is used in bar {} blocks.
 font pango:Segoe UI 9
 
-default_border pixel 1
-new_window pixel 1
-new_float pixel 1
+default_border pixel 2
+new_window pixel 2
+new_float pixel 2
 hide_edge_borders both
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -44,7 +44,7 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+Shift+q kill
 
 # launcher is handled by plasma for now
-# bindsym $mod+space exec --no-startup-id "~/.config/rofi/launchers/type-2/launcher.sh"
+bindsym $mod+space exec --no-startup-id rofi -show combi
 
 bindsym $othermod+Tab exec --no-startup-id rofi -show window
 

@@ -117,28 +117,22 @@ return {
     event = "VeryLazy" -- required to build the variation I'm using, so this gets loaded anyway.
   },
   {
-    'marko-cerovac/material.nvim',
-    opts = {
-      contrast = {
-        sidebars = true,
-        floating_windows = true,
-        cursor_line = true
-      },
-      plugins = {
-        "gitsigns",
-        "indent-blankline",
-        "nvim-cmp",
-        "nvim-tree",
-        "telescope",
-        "trouble",
-        "which-key"
-      },
-      high_visibility = {
-        lighter = true,
-        darker = true
-      },
-    },
+    'polirritmico/monokai-nightasty.nvim',
     lazy = false,
+    opts = {
+      dark_style_background = "dark",
+      light_style_background = "default", -- or 'dark', 'transparent', #'RRGGBB'
+      hl_styles = {
+        comments = { italic = true },
+        keywords = { italic = false },
+        functions = {},
+        variables = {},
+        floats = "default",   -- 'default', 'dark', 'transparent'
+        sidebars = "default", -- 'default', 'dark', 'transparent'
+      }
+    },
+    config = function(_, opts)
+      require('monokai-nightasty').load(opts)
+    end
   },
-
 }

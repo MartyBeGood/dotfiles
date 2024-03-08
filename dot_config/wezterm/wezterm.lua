@@ -1,6 +1,6 @@
 local wezterm = require 'wezterm'
 
-local theme = "Monokai Dark (Gogh)"
+local theme = "midnight-in-mojave"
 local extra_colors = {
   background = '#1e1e1e',
   cursor = '#ff9808',

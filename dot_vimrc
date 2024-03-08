@@ -27,6 +27,8 @@ set shortmess+=c
 
 set hidden
 set cursorline
+set t_Co=256
+set termguicolors
 
 call plug#begin('~/.vim/plugged')
 " Features
@@ -35,18 +37,20 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'tpope/vim-surround'
 
-  Plug 'lifepillar/vim-mucomplete'
+  Plug 'maralla/completor.vim'
   Plug '~/.fzf'
+
+  Plug 'vim-airline/vim-airline'
 
 " Syntax highlighting
   Plug 'sheerun/vim-polyglot'
   Plug 'isobit/vim-caddyfile'
 
 " Color scheme
-  Plug 'crusoexia/vim-monokai'
-
+  Plug 'danilo-augusto/vim-afterglow'
 call plug#end()
 
-colorscheme monokai
 
-let g:mucomplete#enable_auto_at_startup = 1
+set background=dark
+colorscheme afterglow
+

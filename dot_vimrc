@@ -8,6 +8,9 @@ set belloff=all
 
 set encoding=utf-8
 
+set mouse=a
+set splitbelow
+set splitright
 set wrap
 set tabstop=2
 set shiftwidth=2

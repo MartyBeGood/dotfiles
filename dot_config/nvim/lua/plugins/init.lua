@@ -113,6 +113,7 @@ return {
   -- colorschemes
   {
     'briones-gabriel/darcula-solid.nvim',
+    lazy = false,
     dependencies = "rktjmp/lush.nvim",
     event = "VeryLazy" -- required to build the variation I'm using, so this gets loaded anyway.
   },

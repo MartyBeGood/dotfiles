@@ -12,11 +12,11 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("plugins")
+vim.cmd.colorscheme('darcula-visible-comments')
 
 require("options")
 require("autocmds")
 
-vim.cmd.colorscheme('darcula-visible-comments')
 
 vim.o.guifont = "Nerdosevka:h15:w-1"
 vim.opt.linespace = 1

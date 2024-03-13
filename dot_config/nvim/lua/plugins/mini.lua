@@ -1,6 +1,5 @@
 return {
   'echasnovski/mini.nvim',
-  version = false,
   config = function()
     local augroup = vim.api.nvim_create_augroup
     local autocmd = vim.api.nvim_create_autocmd
@@ -20,6 +19,7 @@ return {
         try_as_border = true
       }
     })
+
     -- autocmd that sets vim.b.miniindentscope_disable to true for filetypes NvimTree fugitive gitcommit toggleterm
     augroup('miniindentscope', { clear = true })
     autocmd('FileType', {

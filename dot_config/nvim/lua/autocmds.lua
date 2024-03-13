@@ -84,3 +84,8 @@ autocmd('BufLeave', {
   pattern = 'term://*',
   command = 'stopinsert'
 })
+
+autocmd('Colorscheme', {
+  pattern = '*',
+  command = 'highlight link MiniIndentscopeSymbol Keyword'
+})

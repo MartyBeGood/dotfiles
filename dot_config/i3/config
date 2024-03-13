@@ -9,7 +9,7 @@ set $othermod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in bar {} blocks.
-font pango:Segoe UI 9
+font pango:Inter Display 9
 
 default_border pixel 2
 new_window pixel 2
@@ -44,7 +44,7 @@ bindsym $mod+Return exec wezterm
 bindsym $mod+Shift+q kill
 
 # launcher is handled by plasma for now
-bindsym $mod+space exec --no-startup-id rofi -show combi
+# bindsym $mod+space exec --no-startup-id rofi -show combi
 
 bindsym $othermod+Tab exec --no-startup-id rofi -show window
 
@@ -182,4 +182,5 @@ for_window [class="plasmashell" window_type="notification"] border none, move po
 for_window [class="Tuple"] floating enable, border none
 for_window [class="spectacle"] floating enable
 for_window [title="Pop"] floating enable
+for_window [title="zoom"] floating enabe
 no_focus [class="plasmashell" window_type="notification"]

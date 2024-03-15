@@ -15,7 +15,7 @@ return {
         -- Disabling treesitter-indentation until either of the following tickets is resolved:
         -- https://github.com/nvim-treesitter/nvim-treesitter/issues/3363
         -- https://github.com/tree-sitter/tree-sitter-ruby/issues/230
-        disable = { 'ruby' }
+        disable = { 'ruby', 'html' }
       },
       autotag = {
         enable = true,

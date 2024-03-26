@@ -1,13 +1,36 @@
 local wezterm = require 'wezterm'
 
-local theme = "midnight-in-mojave"
 local extra_colors = {
-  background = '#1e1e1e',
   cursor = '#ff9808',
 }
 
-local theme_colors = wezterm.color.get_builtin_schemes()[theme]
+local dark_mode = function()
+  if wezterm.gui then
+    return wezterm.gui.get_appearance():find 'Dark'
+  end
 
+  return true
+end
+
+local theme_by_appearance = function()
+  if dark_mode() then
+    return "midnight-in-mojave"
+  else
+    return "Google Light (base16)"
+  end
+end
+
+local extra_colors_by_appearance = function()
+  local mcolors = {}
+
+  if dark_mode() then
+    mcolors.cursor_bg = extra_colors.cursor
+    mcolors.cursor_border = extra_colors.cursor
+    mcolors.tab_bar = { background = extra_colors.background }
+  end
+
+  return mcolors
+end
 
 local settings = {
   -- Keyboard-related settings
@@ -17,19 +40,8 @@ local settings = {
   use_ime = false,
 
   -- Colors
-  color_scheme = theme,
-  colors = {
-    background = extra_colors.background,
-    cursor_bg = extra_colors.cursor,
-    cursor_border = extra_colors.cursor,
-    cursor_fg = theme_colors.background,
-
-    tab_bar = {
-      background = theme_colors.background,
-
-    }
-  },
-
+  color_scheme = theme_by_appearance(),
+  colors = extra_colors_by_appearance(),
 
 
   -- UI-related settings
@@ -49,6 +61,9 @@ local settings = {
   cell_width = 0.88,
   underline_position = -4,
   font = wezterm.font('Nerdosevka'),
+
+  -- to make wezterm respect the GTK theme on wayland
+  enable_wayland = false,
 }
 
 return settings

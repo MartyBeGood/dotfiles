@@ -16,7 +16,7 @@ require("lazy").setup("plugins")
 require("options")
 require("autocmds")
 
-vim.cmd.colorscheme('darcula-visible-comments')
+vim.cmd.colorscheme('monokai-nightasty')
 
 
 vim.o.guifont = "Nerdosevka:h15:w-1"

@@ -31,14 +31,13 @@
 	hooksPath = /devbox/support/default_githooks
 {{- end }}
 {{- if lookPath "delta" }}
-	pager = delta
+	pager = delta --diff-so-fancy
 
 [interactive]
 	diffFilter = delta --color-only
 
 [delta]
 	navigate = true
-	light = false
 	line-numbers = true
 
 [diff]

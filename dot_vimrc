@@ -49,12 +49,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'isobit/vim-caddyfile'
 
 " Color scheme
-  Plug 'danilo-augusto/vim-afterglow'
+  Plug 'lunacookies/vim-colors-xcode'
 call plug#end()
 
 let g:mucomplete#enable_auto_at_startup = 1
 
-
-set background=dark
-colorscheme afterglow
-
+colorscheme xcode

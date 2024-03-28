@@ -25,6 +25,8 @@ antigen apply
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+[ -f ~/.aliases ] && source ~/.aliases
+
 # common functions
 [ -f ~/.functions ] && source ~/.functions
 

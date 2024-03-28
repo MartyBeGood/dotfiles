@@ -83,6 +83,14 @@ return {
   },
   { 'tpope/vim-fugitive' },
 
+  {
+    'norcalli/nvim-colorizer.lua',
+    cond = false, -- I don't need it that often and there's https://github.com/norcalli/nvim-colorizer.lua/issues/96 which gets annoying at start
+    config = function()
+      require('colorizer').setup({ "*", }, { mode = 'foreground' })
+    end
+  },
+
   -- IDE-like features
   {
     'akinsho/toggleterm.nvim',
@@ -118,7 +126,7 @@ return {
     event = "VeryLazy" -- required to build the variation I'm using, so this gets loaded anyway.
   },
   {
-    'polirritmico/monokai-nightasty.nvim',
+    'MartyBeGood/martykai.nvim',
     lazy = false,
     opts = {
       dark_style_background = "dark",
@@ -133,7 +141,7 @@ return {
       }
     },
     config = function(_, opts)
-      require('monokai-nightasty').load(opts)
+      require('martykai').load(opts)
     end
   },
 }

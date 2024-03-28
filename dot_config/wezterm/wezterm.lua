@@ -14,7 +14,7 @@ end
 
 local theme_by_appearance = function()
   if dark_mode() then
-    return "midnight-in-mojave"
+    return "Monokai (terminal.sexy)"
   else
     return "Google Light (base16)"
   end
@@ -24,6 +24,7 @@ local extra_colors_by_appearance = function()
   local mcolors = {}
 
   if dark_mode() then
+    mcolors.background = '#1e1e1e'
     mcolors.cursor_bg = extra_colors.cursor
     mcolors.cursor_border = extra_colors.cursor
     mcolors.tab_bar = { background = extra_colors.background }

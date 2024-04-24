@@ -69,16 +69,15 @@ m.server_settings = {
     }
   },
   pyright = {},
-  rubocop = {},
   rust_analyzer = {},
   solargraph = {
     settings = {
       solargraph = {
-        diagnostics = false -- Rubocop does this better
+        diagnostics = true
       }
     },
     init_options = {
-      formatting = false -- Rubocop does this better
+      formatting = true
     }
   },
   tsserver = {},

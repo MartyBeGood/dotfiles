@@ -2,6 +2,11 @@ return {
   { "MartyBeGood/martykai.nvim" },
   { "tpope/vim-rails" },
   { "tpope/vim-fugitive" },
+  {
+    -- needed for darcula-visible-comments
+    "santos-gabriel-dario/darcula-solid.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+  },
   { "slim-template/vim-slim" },
 
   {

@@ -1,6 +1,8 @@
 return {
   { "MartyBeGood/martykai.nvim" },
   { "tpope/vim-rails" },
+  { "tpope/vim-fugitive" },
+  { "slim-template/vim-slim" },
 
   {
     "folke/which-key.nvim",

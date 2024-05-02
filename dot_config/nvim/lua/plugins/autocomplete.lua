@@ -1,28 +1,5 @@
 return {
   {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    opts = {
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        keymap = {
-          accept = "<M-Space>",
-          accept_line = "<M-l>",
-          next = "<M-n>",
-          prev = "<M-p>",
-        },
-      },
-    },
-  },
-
-  {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
-  },
-  {
     "hrsh7th/nvim-cmp",
     opts = function(_, opts)
       local has_words_before = function()
@@ -61,6 +38,76 @@ return {
         end, { "i", "s" }),
         ["<C-Space>"] = cmp.mapping.complete(),
       })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        diagnosticls = {
+          init_options = {
+            linters = {
+              slimlint = {
+                command = "slim-lint",
+                rootPatterns = { ".git/" },
+                debounce = 100,
+                args = { "--reporter", "json", "--stdin-file-path", "%filepath" },
+                sourceName = "slim-lint",
+                parseJson = {
+                  errorsRoot = "files[0].offenses",
+                  line = "location.line",
+                  message = "${message}",
+                  security = "severity",
+                },
+                securities = {
+                  error = "error",
+                  warning = "warning",
+                },
+              },
+            },
+            filetypes = {
+              slim = "slimlint",
+            },
+          },
+        },
+        emmet_ls = {},
+        solargraph = {
+          mason = false, -- No autoinstall plz
+          settings = {
+            solargraph = {
+              diagnostics = true,
+            },
+          },
+          init_options = {
+            formatting = true,
+          },
+        },
+      },
+    },
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    event = "InsertEnter",
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = true,
+        keymap = {
+          accept = "<M-Space>",
+          accept_line = "<M-l>",
+          next = "<M-n>",
+          prev = "<M-p>",
+        },
+      },
+    },
+  },
+
+  {
+    "L3MON4D3/LuaSnip",
+    -- Remove all keybindings. They're handled in nvim-cmp.
+    keys = function()
+      return {}
     end,
   },
 }

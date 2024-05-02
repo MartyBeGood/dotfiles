@@ -41,22 +41,4 @@ return {
       },
     },
   },
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        solargraph = {
-          mason = false, -- No autoinstall plz
-          settings = {
-            solargraph = {
-              diagnostics = true,
-            },
-          },
-          init_options = {
-            formatting = true,
-          },
-        },
-      },
-    },
-  },
 }

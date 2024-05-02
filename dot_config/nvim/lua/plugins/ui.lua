@@ -95,9 +95,9 @@ return {
     opts = {
       -- set the theme for files pickers to ivy
       defaults = {
-        layout_config = {
-          prompt_position = "top",
-        },
+        -- layout_config = {
+        --   prompt_position = "top",
+        -- },
         border = false,
         prompt_prefix = "  ",
         selection_caret = "  ",
@@ -123,6 +123,18 @@ return {
           previewer = false,
         },
         help_tags = {
+          theme = "ivy",
+          border = false,
+        },
+        lsp_dynamic_workspace_symbols = {
+          theme = "ivy",
+          border = false,
+        },
+        lsp_workspace_symbols = {
+          theme = "ivy",
+          border = false,
+        },
+        lsp_document_symbols = {
           theme = "ivy",
           border = false,
         },

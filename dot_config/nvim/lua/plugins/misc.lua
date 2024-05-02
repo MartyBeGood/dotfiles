@@ -1,11 +1,24 @@
 return {
   { "MartyBeGood/martykai.nvim" },
+  { "tpope/vim-rails" },
 
+  {
+    "folke/which-key.nvim",
+    opts = {
+      defaults = {
+        ["<leader>t"] = { name = "+testing" }, -- keybinds in lua/plugins/testing.lua
+      },
+    },
+  },
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "martykai",
     },
+  },
+  {
+    "akinsho/nvim-toggleterm.lua",
+    config = true,
   },
   {
     "echasnovski/mini.indentscope",
@@ -25,6 +38,24 @@ return {
     opts = {
       mappings = {
         replace = "gsc",
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        solargraph = {
+          mason = false, -- No autoinstall plz
+          settings = {
+            solargraph = {
+              diagnostics = true,
+            },
+          },
+          init_options = {
+            formatting = true,
+          },
+        },
       },
     },
   },

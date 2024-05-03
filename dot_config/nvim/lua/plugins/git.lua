@@ -1,46 +1,20 @@
 return {
   {
-    'sindrets/diffview.nvim',
-    cmd = { 'DiffviewOpen', 'DiffviewFileHistory', 'DiffviewToggleFiles', 'DiffviewFocusFiles', 'DiffviewRefresh' },
-    dependencies = 'nvim-tree/nvim-web-devicons',
-  },
-  {
-    'lewis6991/gitsigns.nvim',
+    "lewis6991/gitsigns.nvim",
     opts = {
       current_line_blame = true,
-    }
-  },
-  {
-    'akinsho/git-conflict.nvim',
-    version = '*',
-    config = function()
-      require('git-conflict').setup({})
-
-      require('which-key').register({
-        ["<space>"] = {
-          g = {
-            c = {
-              name = "Conflict...",
-              o = { "<Plug>(git-conflict-ours)", "Choose ours" },
-              t = { "<Plug>(git-conflict-theirs)", "Choose theirs" },
-              b = { "<Plug>(git-conflict-both)", "Choose both" },
-              ["0"] = { "<Plug>(git-conflict-none)", "Choose none" },
-              n = { "<Plug>(git-conflict-next-conflict)", "Go to next conflict" },
-              p = { "<Plug>(git-conflict-prev-conflict)", "Go to prev conflict" },
-            },
-          },
-        },
-      })
-    end,
-  },
-  { 'tpope/vim-fugitive' },
-  {
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim",
-      "nvim-telescope/telescope.nvim",
     },
-    config = true
   },
+  {
+    "akinsho/git-conflict.nvim",
+    keys = {
+      { "<leader>gxo", "<Plug>(git-conflict-ours)", desc = "Resolve with ours" },
+      { "<leader>gxt", "<Plug>(git-conflict-theirs)", desc = "Resolve with theirs" },
+      { "<leader>gxb", "<Plug>(git-conflict-both)", desc = "Resolve with both" },
+      { "<leader>gx0", "<Plug>(git-conflict-none)", desc = "Resolve with none" },
+      { "<leader>gxn", "<Plug>(git-conflict-next-conflict)", desc = "Go to next conflict" },
+      { "<leader>gxp", "<Plug>(git-conflict-prev-conflict)", desc = "Go to prev conflict" },
+    },
+  },
+  { "tpope/vim-fugitive" },
 }

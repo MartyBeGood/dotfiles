@@ -1,7 +1,6 @@
 return {
   { "MartyBeGood/martykai.nvim" },
   { "tpope/vim-rails" },
-  { "tpope/vim-fugitive" },
   {
     -- needed for darcula-visible-comments
     "santos-gabriel-dario/darcula-solid.nvim",
@@ -14,6 +13,7 @@ return {
     opts = {
       defaults = {
         ["<leader>t"] = { name = "+testing" }, -- keybinds in lua/plugins/testing.lua
+        ["<leader>gx"] = { name = "+conflict" }, -- keybinds in lua/plugins/git.lua
       },
     },
   },

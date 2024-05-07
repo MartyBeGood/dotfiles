@@ -19,10 +19,50 @@ autocmd("FileType", {
     vim.api.nvim_buf_set_var(vim.api.nvim_get_current_buf(), "miniindentscope_disable", true)
   end,
 })
+
 autocmd("FileType", {
   group = "miniindentscope",
   pattern = { "slim", "python", "yaml" },
   callback = function()
     vim.api.nvim_buf_set_var(vim.api.nvim_get_current_buf(), "miniindentscope_config", { options = { border = "top" } })
+  end,
+})
+
+-- Don't auto comment new lines if the line I'm coming from is commented
+autocmd("BufEnter", {
+  pattern = "*",
+  command = "set fo-=c fo-=r fo-=o",
+})
+
+-- Turn line numbers off in terminal buffers
+augroup("termopen", { clear = true })
+autocmd("TermOpen", {
+  group = "termopen",
+  pattern = "*",
+  callback = function()
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+    vim.wo.cursorline = false
+  end,
+})
+
+-- ...and in fugitive
+augroup("fugitiveLineNumbers", { clear = true })
+autocmd("FileType", {
+  group = "fugitiveLineNumbers",
+  pattern = "fugitive",
+  callback = function()
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+  end,
+})
+
+-- Treat eruby.yaml as yaml
+augroup("syntaxfixes", { clear = true })
+autocmd("FileType", {
+  group = "syntaxfixes",
+  pattern = "eruby.yaml",
+  callback = function()
+    vim.bo.filetype = "yaml"
   end,
 })

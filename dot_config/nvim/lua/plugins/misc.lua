@@ -24,10 +24,6 @@ return {
     },
   },
   {
-    "akinsho/nvim-toggleterm.lua",
-    config = true,
-  },
-  {
     "echasnovski/mini.indentscope",
     opts = {
       draw = {

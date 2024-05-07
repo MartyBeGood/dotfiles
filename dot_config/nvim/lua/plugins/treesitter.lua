@@ -5,6 +5,9 @@ return {
       "RRethy/nvim-treesitter-endwise",
     },
     opts = {
+      indent = {
+        disable = { "ruby" }, -- Treesitter dedents when you enter a . in a method (since something.end may be a method)
+      },
       endwise = {
         enable = true,
       },

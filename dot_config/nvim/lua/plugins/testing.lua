@@ -1,19 +1,8 @@
 return {
   {
     "vim-test/vim-test",
-    dependencies = {
-      "akinsho/toggleterm.nvim",
-    },
     config = function()
-      local tt = require("toggleterm")
-      vim.g["test#custom_strategies"] = {
-        tterm = function(cmd)
-          local term_id = 500
-          tt.exec(cmd, term_id)
-        end,
-      }
-
-      vim.g["test#strategy"] = "tterm"
+      vim.g["test#strategy"] = "neovim_sticky"
       vim.g["test#ruby#rspec#options"] = {
 
         file = "--format documentation",

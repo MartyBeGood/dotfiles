@@ -40,9 +40,7 @@ autocmd("TermOpen", {
   group = "termopen",
   pattern = "*",
   callback = function()
-    vim.wo.number = false
-    vim.wo.relativenumber = false
-    vim.wo.cursorline = false
+    vim.api.nvim_command("setlocal nonumber norelativenumber nocursorline")
   end,
 })
 
@@ -52,8 +50,7 @@ autocmd("FileType", {
   group = "fugitiveLineNumbers",
   pattern = "fugitive",
   callback = function()
-    vim.wo.number = false
-    vim.wo.relativenumber = false
+    vim.api.nvim_command("setlocal nonumber norelativenumber")
   end,
 })
 

@@ -4,7 +4,6 @@ return {
     config = function()
       vim.g["test#strategy"] = "neovim_sticky"
       vim.g["test#ruby#rspec#options"] = {
-
         file = "--format documentation",
       }
     end,

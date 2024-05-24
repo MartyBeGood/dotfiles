@@ -32,7 +32,6 @@ return {
       },
       options = {
         border = "both",
-        try_as_border = true,
       },
     },
   },

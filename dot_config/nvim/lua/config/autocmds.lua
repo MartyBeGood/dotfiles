@@ -63,3 +63,13 @@ autocmd("FileType", {
     vim.bo.filetype = "yaml"
   end,
 })
+
+-- Turn off autoformatting for certain filetypes
+augroup("autoformat", { clear = true })
+autocmd("FileType", {
+  group = "autoformat",
+  pattern = { "scss", "css" },
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})

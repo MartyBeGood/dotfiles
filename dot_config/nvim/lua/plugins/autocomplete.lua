@@ -13,6 +13,8 @@ return {
 
       opts.completion.completeopt = "menu,menuone,noinsert,noselect"
 
+      opts.experimental.ghost_text = false -- Ghost text is for copilot suggestions
+
       opts.mapping = vim.tbl_extend("force", opts.mapping, {
         ["<CR>"] = cmp.mapping.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace }),
         ["<Tab>"] = cmp.mapping(function(fallback)

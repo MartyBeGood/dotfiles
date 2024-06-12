@@ -6,6 +6,15 @@ return {
     "santos-gabriel-dario/darcula-solid.nvim",
     dependencies = { "rktjmp/lush.nvim" },
   },
+  {
+    "ellisonleao/gruvbox.nvim",
+    opts = {
+      contrast = "hard",
+      italic = {
+        strings = false,
+      },
+    },
+  },
   { "slim-template/vim-slim" },
 
   {
@@ -20,7 +29,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "martykai",
+      colorscheme = "gruvbox",
     },
   },
   {

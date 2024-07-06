@@ -5,3 +5,4 @@ vim.opt.laststatus = 2
 vim.g.lualine_laststatus = 2
 vim.opt.wrap = true
 vim.opt.relativenumber = false
+vim.opt.grepformat = "%f:%l:%m,%f:%l%m,%f  %l%m"

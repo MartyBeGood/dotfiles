@@ -14,7 +14,7 @@ end
 
 local theme_by_appearance = function()
 	if dark_mode() then
-		return "GruvboxDarkHard"
+		return "Dark+"
 	else
 		return "GruvboxLight"
 	end

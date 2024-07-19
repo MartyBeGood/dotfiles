@@ -1,5 +1,7 @@
+{{- if isExecutable "/bin/bash" -}}
 #!/bin/bash
 
 # Make this script not execute unless there's a new starship release
 # {{ (gitHubLatestRelease "starship/starship").TagName }}
 curl -sS https://starship.rs/install.sh | sh -s -- --bin-dir ~/.local/bin -y
+{{- end }}

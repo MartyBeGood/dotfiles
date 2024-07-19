@@ -1,3 +1,4 @@
+{{- if isExecutable "/bin/bash" -}}
 #!/bin/bash
 
 # This just runs the fzf installer, without redoing the setup for the .*rc files
@@ -7,3 +8,4 @@
 
 ~/.fzf/install --no-update-rc --key-bindings --completion > /dev/null
 echo "ran 'fzf install'. HEAD now at {{ $fzf_hash }}"
+{{- end -}}

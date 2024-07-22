@@ -66,6 +66,9 @@ return {
       presets = {
         command_palette = false,
       },
+      notify = {
+        view = "mini",
+      },
       cmdline = {
         view = "cmdline",
       },
@@ -102,6 +105,11 @@ return {
         border = false,
         prompt_prefix = "  ",
         selection_caret = "  ",
+        mappings = {
+          i = {
+            ["<C-f>"] = require("telescope.actions").to_fuzzy_refine,
+          },
+        },
       },
       pickers = {
         find_files = {

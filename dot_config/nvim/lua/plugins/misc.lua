@@ -1,6 +1,10 @@
 return {
   { "MartyBeGood/martykai.nvim" },
+
+  -- The rails stuff
   { "tpope/vim-rails" },
+  { "slim-template/vim-slim" },
+
   {
     -- needed for darcula-visible-comments
     "santos-gabriel-dario/darcula-solid.nvim",
@@ -15,12 +19,11 @@ return {
       },
     },
   },
-  { "slim-template/vim-slim" },
 
   {
     "folke/which-key.nvim",
     opts = {
-      defaults = {
+      spec = {
         ["<leader>t"] = { name = "+testing" }, -- keybinds in lua/plugins/testing.lua
         ["<leader>gx"] = { name = "+conflict" }, -- keybinds in lua/plugins/git.lua
       },
@@ -45,11 +48,7 @@ return {
     },
   },
   {
-    "echasnovski/mini.surround",
-    opts = {
-      mappings = {
-        replace = "gsc",
-      },
-    },
+    "kylechui/nvim-surround",
+    config = true,
   },
 }

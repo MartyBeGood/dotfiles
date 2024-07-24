@@ -87,76 +87,88 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
+      "MunifTanjim/nui.nvim",
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        config = function()
+          require("telescope").load_extension("fzf")
+        end,
+      },
     },
     keys = {
       { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "Switch buffers" },
     },
-    opts = {
-      -- set the theme for files pickers to ivy
-      defaults = {
-        -- layout_config = {
-        --   prompt_position = "top",
-        -- },
-        border = false,
-        prompt_prefix = "  ",
-        selection_caret = "  ",
-        mappings = {
-          i = {
-            ["<C-f>"] = require("telescope.actions").to_fuzzy_refine,
+    opts = function(_, lazy_options)
+      local ivy_theme = {
+        defaults = require("telescope.themes").get_ivy({
+          layout_config = {
+            height = 0.4,
+          },
+        }),
+      }
+
+      local my_opts = {
+        -- set the theme for files pickers to ivy
+        defaults = {
+          prompt_prefix = "  ",
+          selection_caret = "  ",
+          borderchars = { " ", " ", " ", " ", " ", " ", " ", " " },
+          mappings = {
+            i = {
+              ["<C-f>"] = require("telescope.actions").to_fuzzy_refine,
+            },
           },
         },
-      },
-      pickers = {
-        find_files = {
-          theme = "ivy",
-          border = false,
-          previewer = false,
-        },
-        git_files = {
-          theme = "ivy",
-          border = false,
-          previewer = false,
-        },
-        live_grep = {
-          theme = "ivy",
-          border = false,
-        },
-        buffers = {
-          theme = "ivy",
-          border = false,
-          previewer = false,
-        },
-        help_tags = {
-          theme = "ivy",
-          border = false,
-        },
-        lsp_dynamic_workspace_symbols = {
-          theme = "ivy",
-          border = false,
-        },
-        lsp_workspace_symbols = {
-          theme = "ivy",
-          border = false,
-        },
-        lsp_document_symbols = {
-          theme = "ivy",
-          border = false,
-        },
-        colorscheme = {
-          theme = "ivy",
-          border = false,
-        },
-        lsp_references = {
-          theme = "ivy",
-          border = false,
-          trim_text = true,
-        },
-      },
-    },
+        -- pickers = {
+        --   find_files = {
+        --     theme = "ivy",
+        --     border = false,
+        --     previewer = false,
+        --   },
+        --   git_files = {
+        --     theme = "ivy",
+        --     border = false,
+        --     previewer = false,
+        --   },
+        --   live_grep = {
+        --     theme = "ivy",
+        --     border = false,
+        --   },
+        --   buffers = {
+        --     theme = "ivy",
+        --     border = false,
+        --     previewer = false,
+        --   },
+        --   help_tags = {
+        --     theme = "ivy",
+        --     border = false,
+        --   },
+        --   lsp_dynamic_workspace_symbols = {
+        --     theme = "ivy",
+        --     border = false,
+        --   },
+        --   lsp_workspace_symbols = {
+        --     theme = "ivy",
+        --     border = false,
+        --   },
+        --   lsp_document_symbols = {
+        --     theme = "ivy",
+        --     border = false,
+        --   },
+        --   colorscheme = {
+        --     theme = "ivy",
+        --     border = false,
+        --   },
+        --   lsp_references = {
+        --     theme = "ivy",
+        --     border = false,
+        --     trim_text = true,
+        --   },
+        -- },
+      }
+
+      return vim.tbl_deep_extend("force", lazy_options, ivy_theme, my_opts)
+    end,
   },
 }

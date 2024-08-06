@@ -20,5 +20,26 @@ return {
         update_n_lines = "sn"
       }
     }
-  }
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    dependencies = {
+      {
+        's1n7ax/nvim-window-picker',
+        name = 'window-picker',
+        event = 'VeryLazy',
+        version = '2.*',
+        opts = {
+          hint = 'floating-big-letter',
+          show_prompt = false,
+
+        }
+      }
+    },
+    opts = {
+      window = {
+        position = "right",
+      },
+    },
+  },
 }

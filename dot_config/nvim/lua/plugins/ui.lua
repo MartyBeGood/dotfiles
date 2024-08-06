@@ -52,15 +52,6 @@ return {
   },
 
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      window = {
-        position = "right",
-      },
-    },
-  },
-
-  {
     "folke/noice.nvim",
     opts = {
       presets = {

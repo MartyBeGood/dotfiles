@@ -9,7 +9,7 @@ $cmd_duration\
 $line_break\
 $shell\
 $python\
-$character"""
+"""
 
 [directory]
 style = "blue"
@@ -47,8 +47,10 @@ format = "[$virtualenv]($style) "
 style = "bright-black"
 
 [shell]
+
 disabled = false
 bash_indicator = ""
 zsh_indicator = ""
 fish_indicator = " "
 powershell_indicator = ""
+format = "[$indicator]($style)  "

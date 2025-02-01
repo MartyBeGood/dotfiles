@@ -8,6 +8,7 @@ return {
   {
     "akinsho/git-conflict.nvim",
     keys = {
+      { "<leader>gx", name = "+conflict" },
       { "<leader>gxo", "<Plug>(git-conflict-ours)", desc = "Resolve with ours" },
       { "<leader>gxt", "<Plug>(git-conflict-theirs)", desc = "Resolve with theirs" },
       { "<leader>gxb", "<Plug>(git-conflict-both)", desc = "Resolve with both" },

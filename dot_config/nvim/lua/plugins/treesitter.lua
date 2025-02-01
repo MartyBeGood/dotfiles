@@ -24,9 +24,10 @@ return {
       max_join_length = 1000, -- default: 120.
     },
     keys = {
-      { "<leader>cJ", "<cmd>TSJSplit<CR>", desc = "Split TS node under cursor" },
-      { "<leader>cK", "<cmd>TSJJoin<CR>", desc = "Join TS node into one line" },
-      { "<leader>cj", "<cmd>TSJToggle<CR>", desc = "Toggle single/multiline" },
+      { "gl", group = "line" },
+      { "gls", "<cmd>TSJSplit<CR>", desc = "Split TS node under cursor" },
+      { "glj", "<cmd>TSJJoin<CR>", desc = "Join TS node into one line" },
+      { "gll", "<cmd>TSJToggle<CR>", desc = "Toggle single/multiline" },
     },
   },
 }

@@ -11,8 +11,9 @@ return {
         mappings = false,
       },
       spec = {
-        ["<leader>t"] = { name = "+testing" }, -- keybinds in lua/plugins/testing.lua
-        ["<leader>gx"] = { name = "+conflict" }, -- keybinds in lua/plugins/git.lua
+        { "<leader>t", group = "testing" },
+        { "<leader>gx", group = "conflict" },
+        { "gl", group = "line" },
       },
     },
   },

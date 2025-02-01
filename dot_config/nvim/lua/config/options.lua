@@ -7,3 +7,4 @@ vim.opt.wrap = true
 vim.opt.relativenumber = false
 vim.opt.grepformat = "%f:%l:%m,%f:%l%m,%f  %l%m"
 vim.opt.splitkeep = "cursor"
+vim.g.snacks_animate = false

@@ -1,24 +1,7 @@
 return {
-  { "MartyBeGood/martykai.nvim" },
-
   -- The rails stuff
   { "tpope/vim-rails" },
   { "slim-template/vim-slim" },
-
-  {
-    -- needed for darcula-visible-comments
-    "santos-gabriel-dario/darcula-solid.nvim",
-    dependencies = { "rktjmp/lush.nvim" },
-  },
-  {
-    "ellisonleao/gruvbox.nvim",
-    opts = {
-      contrast = "hard",
-      italic = {
-        strings = false,
-      },
-    },
-  },
 
   {
     "folke/which-key.nvim",
@@ -36,7 +19,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "martykai",
+      colorscheme = "tokyonight",
     },
   },
   {

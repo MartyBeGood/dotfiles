@@ -15,6 +15,26 @@ return {
     },
   },
   {
+    "marko-cerovac/material.nvim",
+    opts = {
+      contrast = {
+        sidebars = true,
+        floating_windows = true,
+        lsp_virtual_text = true,
+      },
+
+      styles = {
+        comments = { italic = true },
+      },
+
+      high_visibility = {
+        darker = true,
+      },
+
+      lualine_style = "stealth",
+    },
+  },
+  {
     "polirritmico/monokai-nightasty.nvim",
     opts = {
       on_colors = function(colors)
@@ -36,7 +56,7 @@ return {
   {
     "folke/tokyonight.nvim",
     opts = {
-      style = "moon",
+      style = "storm",
     },
   },
   {

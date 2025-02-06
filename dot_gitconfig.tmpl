@@ -30,6 +30,13 @@
 {{- if eq .chezmoi.hostname "devbox" }}
 	hooksPath = /devbox/support/default_githooks
 {{- end }}
+{{ if eq .chezmoi.os "linux" }}
+{{   if (.chezmoi.kernel.osrelease | lower | contains "microsoft") }}
+  # Use the windows OpenSSH agent
+  sshcommand = "ssh.exe"
+{{   end }}
+{{ end }}
+
 {{- if lookPath "delta" }}
 	pager = delta --diff-so-fancy
 

@@ -1,9 +1,0 @@
-[".config/fish/functions/fisher.fish"]
-type = "file"
-url = "https://raw.githubusercontent.com/jorgebucaran/fisher/master/functions/fisher.fish"
-refreshPeriod = "168h"
-
-[".config/fish/completions/fisher.fish"]
-type = "file"
-url = "https://raw.githubusercontent.com/jorgebucaran/fisher/master/completions/fisher.fish"
-refreshPeriod = "168h"

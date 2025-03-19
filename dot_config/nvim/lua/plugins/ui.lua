@@ -180,4 +180,12 @@ return {
       return vim.tbl_deep_extend("force", lazy_options, ivy_theme, my_opts)
     end,
   },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = {
+        enabled = false,
+      },
+    },
+  },
 }

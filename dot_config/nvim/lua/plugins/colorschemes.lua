@@ -34,6 +34,7 @@ return {
       lualine_style = "stealth",
     },
   },
+
   {
     "polirritmico/monokai-nightasty.nvim",
     opts = {

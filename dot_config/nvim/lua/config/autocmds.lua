@@ -14,6 +14,7 @@ autocmd("FileType", {
     "fugitive",
     "gitcommit",
     "toggleterm",
+    "terminal",
   },
   callback = function()
     vim.api.nvim_buf_set_var(vim.api.nvim_get_current_buf(), "miniindentscope_disable", true)

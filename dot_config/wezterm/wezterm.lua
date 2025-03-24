@@ -4,15 +4,15 @@ local wezterm = require("wezterm")
 local is_windows = wezterm.target_triple:find("windows") ~= nil
 
 local extra_colors = {
-  cursor = "#ff9808",
+	cursor = "#ff9808",
 }
 
 local dark_mode = function()
-  if wezterm.gui then
-    return wezterm.gui.get_appearance():find("Dark")
-  end
+	if wezterm.gui then
+		return wezterm.gui.get_appearance():find("Dark")
+	end
 
-  return true
+	return true
 end
 
 local theme_by_appearance = function()
@@ -49,10 +49,10 @@ c.colors = extra_colors_by_appearance()
 
 c.hide_tab_bar_if_only_one_tab = true
 c.window_padding = {
-  left = 0,
-  right = 0,
-  top = 1,
-  bottom = 0,
+	left = 0,
+	right = 0,
+	top = 1,
+	bottom = 0,
 }
 c.audible_bell = "Disabled"
 
@@ -61,14 +61,13 @@ c.cell_width = 0.90
 -- c.line_height = 1.1
 c.underline_position = -4
 c.font = wezterm.font_with_fallback({
-  { family = "Cascadia Code", weight = "DemiLight" },
-  "JetBrainsMono NF"
+	{ family = "Cascadia Code", weight = "DemiLight" },
+	"JetBrainsMono NF",
 })
 
 if is_windows then
-  c.default_prog = { "pwsh" }
-  c.mux_enable_ssh_agent = false -- The Win OpenSSH agent works fine. Don't misconfigure yourself.
+	c.default_prog = { "pwsh" }
+	c.mux_enable_ssh_agent = false -- The Win OpenSSH agent works fine. Don't misconfigure yourself.
 end
-
 
 return c

@@ -1,40 +1,18 @@
 return {
   {
+    -- needed for darcula-visible-comments
+    "santos-gabriel-dario/darcula-solid.nvim",
+    dependencies = { "rktjmp/lush.nvim" },
+  },
+  -- { -- Looks pretty, but is broken
+  --   "wtfox/jellybeans.nvim",
+  -- },
+  {
     "rebelot/kanagawa.nvim",
     opts = {
       theme = "dragon",
     },
   },
-  {
-    "navarasu/onedark.nvim",
-    opts = {
-      style = "warmer",
-      diagnostics = {
-        darker = false,
-      },
-    },
-  },
-  {
-    "marko-cerovac/material.nvim",
-    opts = {
-      contrast = {
-        sidebars = true,
-        floating_windows = true,
-        lsp_virtual_text = true,
-      },
-
-      styles = {
-        comments = { italic = true },
-      },
-
-      high_visibility = {
-        darker = true,
-      },
-
-      lualine_style = "stealth",
-    },
-  },
-
   {
     "polirritmico/monokai-nightasty.nvim",
     opts = {
@@ -55,14 +33,18 @@ return {
     },
   },
   {
+    "navarasu/onedark.nvim",
+    opts = {
+      style = "warmer",
+      diagnostics = {
+        darker = false,
+      },
+    },
+  },
+  {
     "folke/tokyonight.nvim",
     opts = {
       style = "storm",
     },
-  },
-  {
-    -- needed for darcula-visible-comments
-    "santos-gabriel-dario/darcula-solid.nvim",
-    dependencies = { "rktjmp/lush.nvim" },
   },
 }

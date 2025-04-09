@@ -17,7 +17,7 @@ end
 
 local theme_by_appearance = function()
   if dark_mode() then
-    return "Dark+"
+    return "Apple System Colors"
   else
     return "Vs Code Light+ (Gogh)"
   end
@@ -27,11 +27,9 @@ local extra_colors_by_appearance = function()
   local mcolors = {}
 
   if dark_mode() then
-    mcolors.background = "#1e1e1e"
-
     mcolors.cursor_bg = extra_colors.cursor
     mcolors.cursor_border = extra_colors.cursor
-    mcolors.tab_bar = { background = extra_colors.background }
+    -- mcolors.tab_bar = { background = extra_colors.background }
   end
 
   return mcolors
@@ -61,9 +59,34 @@ c.cell_width = 0.90
 -- c.line_height = 1.1
 c.underline_position = -4
 c.font = wezterm.font_with_fallback({
-	{ family = "Cascadia Code", weight = "DemiLight" },
-	"JetBrainsMono NF",
+  { family = "Iosevka Term",  stretch = "Expanded" },
+  -- "MonaspiceAr Nerd Font Propo",
+  { family = "Cascadia Code", weight = "DemiLight" },
+  "JetBrainsMono Nerd Font Propo",
 })
+
+local italics_font = "Iosevka"
+local use_separate_italics_font = false
+
+if use_separate_italics_font then
+  c.font_rules = {
+    {
+      italic = true,
+      intensity = 'Bold',
+      font = wezterm.font { family = italics_font, weight = 'Bold', style = 'Italic', stretch = "Expanded" },
+    },
+    {
+      italic = true,
+      intensity = 'Half',
+      font = wezterm.font { family = italics_font, weight = 'DemiBold', style = 'Italic', stretch = "Expanded" },
+    },
+    {
+      italic = true,
+      intensity = 'Normal',
+      font = wezterm.font { family = italics_font, style = 'Italic', stretch = "Expanded" },
+    },
+  }
+end
 
 if is_windows then
 	c.default_prog = { "pwsh" }

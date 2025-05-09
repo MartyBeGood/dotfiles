@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 -- local act =
 
 local is_windows = wezterm.target_triple:find("windows") ~= nil
+local is_mac = wezterm.target_triple:find("darwin") ~= nil
 
 local extra_colors = {
 	cursor = "#ff9808",
@@ -16,23 +17,23 @@ local dark_mode = function()
 end
 
 local theme_by_appearance = function()
-  if dark_mode() then
-    return "Apple System Colors"
-  else
-    return "Vs Code Light+ (Gogh)"
-  end
+	if dark_mode() then
+		return "Apple System Colors"
+	else
+		return "Vs Code Light+ (Gogh)"
+	end
 end
 
 local extra_colors_by_appearance = function()
-  local mcolors = {}
+	local mcolors = {}
 
-  if dark_mode() then
-    mcolors.cursor_bg = extra_colors.cursor
-    mcolors.cursor_border = extra_colors.cursor
-    -- mcolors.tab_bar = { background = extra_colors.background }
-  end
+	if dark_mode() then
+		mcolors.cursor_bg = extra_colors.cursor
+		mcolors.cursor_border = extra_colors.cursor
+		-- mcolors.tab_bar = { background = extra_colors.background }
+	end
 
-  return mcolors
+	return mcolors
 end
 
 local c = wezterm.config_builder()
@@ -54,38 +55,37 @@ c.window_padding = {
 }
 c.audible_bell = "Disabled"
 
-c.font_size = 11
-c.cell_width = 0.90
--- c.line_height = 1.1
+c.font_size = 14
+c.cell_width = 0.9
+-- c.line_height = 1.15
 c.underline_position = -4
 c.font = wezterm.font_with_fallback({
-  { family = "Iosevka Term",  stretch = "Expanded" },
-  -- "MonaspiceAr Nerd Font Propo",
-  { family = "Cascadia Code", weight = "DemiLight" },
-  "JetBrainsMono Nerd Font Propo",
+	{ family = "Iosevka Term", stretch = "Expanded" },
+	{ family = "Cascadia Code", weight = "DemiLight" },
+	"JetBrainsMono Nerd Font Propo",
 })
 
 local italics_font = "Iosevka"
 local use_separate_italics_font = false
 
 if use_separate_italics_font then
-  c.font_rules = {
-    {
-      italic = true,
-      intensity = 'Bold',
-      font = wezterm.font { family = italics_font, weight = 'Bold', style = 'Italic', stretch = "Expanded" },
-    },
-    {
-      italic = true,
-      intensity = 'Half',
-      font = wezterm.font { family = italics_font, weight = 'DemiBold', style = 'Italic', stretch = "Expanded" },
-    },
-    {
-      italic = true,
-      intensity = 'Normal',
-      font = wezterm.font { family = italics_font, style = 'Italic', stretch = "Expanded" },
-    },
-  }
+	c.font_rules = {
+		{
+			italic = true,
+			intensity = "Bold",
+			font = wezterm.font({ family = italics_font, weight = "Bold", style = "Italic", stretch = "Expanded" }),
+		},
+		{
+			italic = true,
+			intensity = "Half",
+			font = wezterm.font({ family = italics_font, weight = "DemiBold", style = "Italic", stretch = "Expanded" }),
+		},
+		{
+			italic = true,
+			intensity = "Normal",
+			font = wezterm.font({ family = italics_font, style = "Italic", stretch = "Expanded" }),
+		},
+	}
 end
 
 if is_windows then

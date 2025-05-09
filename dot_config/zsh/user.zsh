@@ -3,8 +3,7 @@
 
 [ -f ~/.aliases ] && source ~/.aliases
 
-# common functions
-[ -f ~/.functions ] && source ~/.functions
+# common functions [ -f ~/.functions ] && source ~/.functions
 
 function kop() {
   if [ $1 ]; then lsof -n -i:$1 | grep LISTEN | awk '{ print $2 }' | uniq | xargs kill -9;
@@ -19,6 +18,14 @@ EOF
 # then
 #   eval "$(zoxide init zsh)"
 # fi
+
+if type nvim &> /dev/null; then
+  export EDITOR='nvim'
+elif type vim &> /dev/null; then
+  export EDITOR='vim'
+elif type vi &> /dev/null; then
+  export EDITOR='vi'
+fi
 
 if type starship &>/dev/null
 then

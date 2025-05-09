@@ -1,5 +1,6 @@
 #!/usr/bin/sh
 
 alias ls='ls --color=auto'
+alias ssh='ssh -A'
 alias hrun='heroku run --env=AUCTIONET_CORE_EMPLOYEE_ID=2640'
 alias lazyvim='NVIM_APPNAME=lazyvim nvim'

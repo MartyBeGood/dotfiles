@@ -2,3 +2,4 @@
 
 alias ls='ls --color=auto'
 alias hrun='heroku run --env=AUCTIONET_CORE_EMPLOYEE_ID=2640'
+alias lazyvim='NVIM_APPNAME=lazyvim nvim'

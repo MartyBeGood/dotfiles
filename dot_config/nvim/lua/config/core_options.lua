@@ -67,7 +67,18 @@ if env.SSH_TTY and not env.TMUX then
 end
 -- End Copying stuff
 
-vim.diagnostic.config({ virtual_lines = true })
+vim.diagnostic.config({
+  virtual_lines = { current_line = true },
+  signs = {
+    active = true,
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN] = "",
+      [vim.diagnostic.severity.HINT] = "",
+      [vim.diagnostic.severity.INFO] = "",
+    }
+  }
+})
 
 -- vim.o.foldcolumn = '1'
 vim.o.foldlevel = 99

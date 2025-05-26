@@ -1,8 +1,8 @@
 return {
   init_options = {
     enabledFeatures = {
-      formatting = false,
-      diagnostics = false,
+      formatting = true,
+      diagnostics = true,
     }
   }
 }

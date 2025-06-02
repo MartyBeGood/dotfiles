@@ -1,5 +1,4 @@
 return {
-  { "echasnovski/mini.move", config = true },
-  { "tpope/vim-rails" },
-  { "slim-template/vim-slim" },
+  { "tpope/vim-rails",        cond = not vim.g.vscode },
+  { "slim-template/vim-slim", cond = not vim.g.vscode },
 }

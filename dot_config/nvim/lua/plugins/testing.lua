@@ -1,6 +1,7 @@
 return {
   {
     "vim-test/vim-test",
+    cond = not vim.g.vscode,
     config = function()
       vim.g["test#strategy"] = "neovim_sticky"
       vim.g["test#ruby#rspec#options"] = {

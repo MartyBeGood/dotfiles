@@ -2,6 +2,7 @@ return {
   {             -- Getting the Lua LSP to work better in the nvim config dir
     "folke/lazydev.nvim",
     ft = "lua", -- only load on lua files
+    cond = not vim.g.vscode,
     opts = {
       library = {
         -- See the configuration section for more details
@@ -14,6 +15,7 @@ return {
   { -- Default configs for a bunch of language servers
     "neovim/nvim-lspconfig",
     event = "VeryLazy",
+    cond = not vim.g.vscode,
     dependencies = { "saghen/blink.cmp" },
     config = function()
       -- enable servers here. TODO: get this list from ~/.config/nvim/lsp/ files
@@ -32,6 +34,7 @@ return {
 
   { -- Default configs for efm-ls (A language server adapter for a bunch of linters)
     "creativenull/efmls-configs-nvim",
+    cond = not vim.g.vscode,
     dependencies = { "neovim/nvim-lspconfig" },
   }
 }

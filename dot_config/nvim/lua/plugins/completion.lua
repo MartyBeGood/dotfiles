@@ -5,6 +5,7 @@ return {
 
     -- use a release tag to download pre-built binaries
     version = "1.*",
+    cond = not vim.g.vscode,
     opts = {
       -- 'default' (recommended) for mappings similar to built-in completions (C-y to accept)
       -- 'super-tab' for mappings similar to vscode (tab to accept)

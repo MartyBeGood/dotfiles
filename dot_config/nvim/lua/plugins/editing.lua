@@ -1,11 +1,33 @@
 return {
-  { "numToStr/Comment.nvim",  config = true }, -- nvim 0.10+ commenting is okay, but this is still an improvement
-  { "echasnovski/mini.move",  config = true }, -- Move things with Alt+direction
-  { "kylechui/nvim-surround", config = true }, -- vim-surround, but treesitter-aware
-  { "echasnovski/mini.pairs", config = true }, -- autoclose pairs
+  { "numToStr/Comment.nvim",  config = true },                          -- nvim 0.10+ commenting is okay, but this is still an improvement
+  { "echasnovski/mini.move",  config = true },                          -- Move things with Alt+direction
+  { "kylechui/nvim-surround", config = true },                          -- vim-surround, but treesitter-aware
+  { "echasnovski/mini.pairs", config = true, cond = not vim.g.vscode }, -- autoclose pairs
+  {
+    "echasnovski/mini.indentscope",
+    opts = {
+      options = {
+        try_as_border = true, -- Check if current line is the border of an adjacent scope first
+      }
+    },
+
+    config = function(_, opts)
+      require("mini.indentscope").setup(opts)
+
+      vim.g.miniindentscope_disable = true -- I use snacks for drawing indent guides
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "slim", "python", "yaml" },
+        callback = function()
+          vim.api.nvim_buf_set_var(vim.api.nvim_get_current_buf(), "miniindentscope_config",
+            { options = { border = "top" } })
+        end,
+      })
+    end
+  },
   {
     "stevearc/conform.nvim",
     event = { "BufWritePre", "VeryLazy" },
+    cond = not vim.g.vscode,
     cmd = "ConformInfo",
     keys = {
       { "<leader>cf", function() require("conform").format({ async = true, lsp_format = "fallback" }) end, desc = "format file" },

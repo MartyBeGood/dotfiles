@@ -13,6 +13,7 @@ return {
   {
     "Wansmer/treesj",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
+    cond = not vim.g.vscode,
     opts = {
       use_default_keymaps = false,
       check_syntax_error = true,

@@ -1,4 +1,3 @@
-local padded_noborder = { " ", " ", " ", " ", " ", " ", " ", " " }
 local defaults = {
   winopts = {
     border = "solid",
@@ -11,6 +10,7 @@ return {
   {
     "ibhagwan/fzf-lua",
     event = "VeryLazy",
+    cond = not vim.g.vscode,
     opts = {
       border = "solid",
       preview = {

@@ -1,6 +1,7 @@
 return {
   { -- Colorscheme
     "polirritmico/monokai-nightasty.nvim",
+    cond = not vim.g.vscode,
     lazy = false,
     opts = {
       on_colors = function(colors)
@@ -31,6 +32,7 @@ return {
 
   { -- icons for everything
     "echasnovski/mini.icons",
+    cond = not vim.g.vscode,
     config = function(_, opts)
       require("mini.icons").setup(opts)
       MiniIcons.mock_nvim_web_devicons()
@@ -39,12 +41,14 @@ return {
 
   { -- LSP messages
     "j-hui/fidget.nvim",
+    cond = not vim.g.vscode,
     event = "VeryLazy",
     opts = {}
   },
 
   { -- various goodies (Indent guides, Toggles)
     "folke/snacks.nvim",
+    cond = not vim.g.vscode,
     lazy = false,
     opts = {
       indent = {
@@ -52,21 +56,17 @@ return {
           char = "▏",
         },
         animate = { enabled = false },
-        -- scope = {
-        --   char = "▏",
-        --   -- underline = true,
-        -- },
         chunk = {
           enabled = false, -- Looks cool, but I don't think it's more useful than scope
         },
       },
-      scope = {},
       toggle = {},
     },
   },
 
   { -- uncomplicated folds
     "kevinhwang91/nvim-ufo",
+    cond = not vim.g.vscode,
     dependencies = {
       "kevinhwang91/promise-async"
     },
@@ -108,6 +108,7 @@ return {
   { -- Show me my keymaps
     "folke/which-key.nvim",
     event = "VeryLazy",
+    cond = false,
     opts = {
       spec = {
         { "<leader>c", group = "code" },
@@ -118,10 +119,69 @@ return {
       }
     },
   },
+  {
+    "echasnovski/mini.clue",
+    cond = not vim.g.vscode,
+    config = function()
+      local clue = require("mini.clue")
+
+      clue.setup({
+        window = {
+          delay = 100,
+        },
+        triggers = {
+          -- Leader triggers
+          { mode = 'n', keys = '<Leader>' },
+          { mode = 'x', keys = '<Leader>' },
+
+          -- Built-in completion
+          { mode = 'i', keys = '<C-x>' },
+
+          -- `g` key
+          { mode = 'n', keys = 'g' },
+          { mode = 'x', keys = 'g' },
+
+          -- Marks
+          { mode = 'n', keys = "'" },
+          { mode = 'n', keys = '`' },
+          { mode = 'x', keys = "'" },
+          { mode = 'x', keys = '`' },
+
+          -- Registers
+          { mode = 'n', keys = '"' },
+          { mode = 'x', keys = '"' },
+          { mode = 'i', keys = '<C-r>' },
+          { mode = 'c', keys = '<C-r>' },
+
+          -- Window commands
+          { mode = 'n', keys = '<C-w>' },
+
+          -- `z` key
+          { mode = 'n', keys = 'z' },
+          { mode = 'x', keys = 'z' },
+        },
+
+        clues = {
+          -- Enhance this by adding descriptions for <Leader> mapping groups
+          clue.gen_clues.builtin_completion(),
+          clue.gen_clues.g(),
+          clue.gen_clues.marks(),
+          clue.gen_clues.registers(),
+          clue.gen_clues.windows(),
+          clue.gen_clues.z(),
+          { mode = 'n', keys = "<leader>c", desc = "code" },
+          { mode = 'n', keys = "<leader>f", desc = "files" },
+          { mode = 'n', keys = "<leader>s", desc = "search" },
+          { mode = 'n', keys = "<leader>t", desc = "tests" },
+          { mode = 'n', keys = "<leader>u", desc = "toggles" }
+        }
+      })
+    end
+  },
 
   { -- Statusline
     "nvim-lualine/lualine.nvim",
-
+    cond = not vim.g.vscode,
     opts = {
       options = {
         component_separators = { left = "", right = "" },
@@ -156,6 +216,7 @@ return {
   { -- General UI overhaul
     "folke/noice.nvim",
     event = "VeryLazy",
+    cond = not vim.g.vscode,
     dependencies = { "MunifTanjim/nui.nvim" },
     opts = {
       presets = {

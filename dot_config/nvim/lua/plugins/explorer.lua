@@ -2,6 +2,7 @@ return {
   {
     "stevearc/oil.nvim",
     event = "VeryLazy",
+    cond = not vim.g.vscode,
     opts = {
       keymaps = {
         ["<C-v>"] = { "actions.select", opts = { vertical = true } },
@@ -9,7 +10,7 @@ return {
       }
     },
     keys = {
-      { "<leader>fm", "<cmd>Oil<CR>", desc = "Directory editor here" },
+      { "<leader>fm", "<cmd>Oil<CR>",   desc = "Directory editor here" },
       { "<leader>fM", "<cmd>Oil .<CR>", desc = "Directory editor at cwd" },
     },
   },

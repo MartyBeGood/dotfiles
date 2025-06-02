@@ -17,7 +17,7 @@ opt.undofile = true
 opt.number = true
 opt.signcolumn = "yes"
 opt.updatetime = 250
-opt.timeoutlen = 300
+opt.timeoutlen = 1000
 
 opt.splitbelow = true
 opt.splitright = true

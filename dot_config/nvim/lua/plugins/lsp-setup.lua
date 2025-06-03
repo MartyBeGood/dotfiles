@@ -1,7 +1,6 @@
 return {
-  {             -- Getting the Lua LSP to work better in the nvim config dir
+  { -- Getting the Lua LSP to work better in the nvim config dir
     "folke/lazydev.nvim",
-    ft = "lua", -- only load on lua files
     cond = not vim.g.vscode,
     opts = {
       library = {

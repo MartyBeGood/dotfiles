@@ -98,21 +98,7 @@ return {
     },
   },
 
-  { -- Show me my keymaps
-    "folke/which-key.nvim",
-    event = "VeryLazy",
-    cond = false,
-    opts = {
-      spec = {
-        { "<leader>c", group = "code" },
-        { "<leader>f", group = "files" },
-        { "<leader>s", group = "search" },
-        { "<leader>t", group = "test" },
-        { "<leader>u", group = "toggles" }
-      }
-    },
-  },
-  {
+  { -- show me my keymaps
     "echasnovski/mini.clue",
     cond = not vim.g.vscode,
     config = function()

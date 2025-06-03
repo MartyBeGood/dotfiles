@@ -39,13 +39,6 @@ return {
     end
   },
 
-  { -- LSP messages
-    "j-hui/fidget.nvim",
-    cond = not vim.g.vscode,
-    event = "VeryLazy",
-    opts = {}
-  },
-
   { -- various goodies (Indent guides, Toggles)
     "folke/snacks.nvim",
     cond = not vim.g.vscode,

@@ -1,5 +1,6 @@
 return {
   -- The rails stuff
+  { "tpope/vim-projectionist" },
   { "tpope/vim-rails" },
   { "slim-template/vim-slim" },
 

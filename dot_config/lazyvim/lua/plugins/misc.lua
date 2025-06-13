@@ -11,28 +11,17 @@ return {
         mappings = false,
       },
       spec = {
-        { "<leader>t", group = "testing" },
+        { "<leader>t",  group = "testing" },
         { "<leader>gx", group = "conflict" },
-        { "gl", group = "line" },
+        { "gl",         group = "line" },
       },
     },
   },
+
   {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "monokai-nightasty",
-    },
-  },
-  {
-    "echasnovski/mini.indentscope",
-    opts = {
-      draw = {
-        delay = 0,
-        animation = require("mini.indentscope").gen_animation.none(),
-      },
-      options = {
-        border = "both",
-      },
     },
   },
 }

@@ -55,6 +55,12 @@ return {
       },
       toggle = {},
     },
+
+    config = function(_, opts)
+      require("snacks").setup(opts)
+
+      Snacks.toggle.option("background", { off = "dark", on = "light", name = "Light Background" }):map("<leader>ub")
+    end
   },
 
   { -- uncomplicated folds

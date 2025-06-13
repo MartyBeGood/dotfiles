@@ -39,6 +39,13 @@ return {
     end
   },
 
+  { -- LSP messages
+    "j-hui/fidget.nvim",
+    cond = not vim.g.vscode,
+    event = "VeryLazy",
+    opts = {}
+  },
+
   { -- various goodies (Indent guides, Toggles)
     "folke/snacks.nvim",
     cond = not vim.g.vscode,
@@ -104,7 +111,21 @@ return {
     },
   },
 
-  { -- show me my keymaps
+  { -- Show me my keymaps
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    cond = false,
+    opts = {
+      spec = {
+        { "<leader>c", group = "code" },
+        { "<leader>f", group = "files" },
+        { "<leader>s", group = "search" },
+        { "<leader>t", group = "test" },
+        { "<leader>u", group = "toggles" }
+      }
+    },
+  },
+  {
     "echasnovski/mini.clue",
     cond = not vim.g.vscode,
     config = function()

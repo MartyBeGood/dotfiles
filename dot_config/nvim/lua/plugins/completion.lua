@@ -1,10 +1,7 @@
 return {
   { -- Autocompletion
     "saghen/blink.cmp",
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-      "folke/lazydev.nvim"
-    },
+    dependencies = { "rafamadriz/friendly-snippets" },
 
     -- use a release tag to download pre-built binaries
     version = "1.*",

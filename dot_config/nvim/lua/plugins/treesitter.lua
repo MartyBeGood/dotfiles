@@ -2,6 +2,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     dependencies = { "RRethy/nvim-treesitter-endwise" },
+    -- cond = not vim.g.vscode,
     opts = {
       ensure_installed = { "lua", "vimdoc" },
       indent = { disable = { "ruby" } },

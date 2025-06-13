@@ -32,6 +32,10 @@ then
   eval "$(starship init zsh)"
 fi
 
+if type zoxide &>/dev/null; then
+  eval "$(zoxide init zsh)"
+fi
+
 if [ -f ~/.local/bin/mise ]; then
   eval "$(~/.local/bin/mise activate zsh)"
 else

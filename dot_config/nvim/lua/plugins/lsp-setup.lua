@@ -1,6 +1,7 @@
 return {
-  { -- Getting the Lua LSP to work better in the nvim config dir
+  {             -- Getting the Lua LSP to work better in the nvim config dir
     "folke/lazydev.nvim",
+    ft = "lua", -- only load on lua files
     cond = not vim.g.vscode,
     opts = {
       library = {
@@ -23,6 +24,7 @@ return {
         "lua_ls",
         "openscad_lsp",
         "ruby_lsp",
+        "ts_ls"
       }
 
       for _, server in ipairs(servers) do

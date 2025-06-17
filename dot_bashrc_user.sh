@@ -28,6 +28,6 @@ if [ -x "$(command -v starship)" ]; then
 fi
 
 # load zoxide if it exists
-if [-x  "$(command -v zoxide)" ]; then
+if [ -x  "$(command -v zoxide)" ]; then
   eval "$(zoxide init bash)"
 fi

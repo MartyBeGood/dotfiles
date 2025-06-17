@@ -1,29 +1,33 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = { "RRethy/nvim-treesitter-endwise" },
-    -- cond = not vim.g.vscode,
+    dependencies = {
+      "RRethy/nvim-treesitter-endwise",
+    },
     opts = {
-      ensure_installed = { "lua", "vimdoc" },
-      indent = { disable = { "ruby" } },
-      highlight = { enable = true },
-      endwise = { enable = true },
+      indent = {
+        disable = { "ruby" }, -- Treesitter dedents when you enter a . in a method (since something.end may be a method)
+      },
+      endwise = {
+        enable = true,
+      },
     },
   },
-
   {
     "Wansmer/treesj",
-    dependencies = { "nvim-treesitter/nvim-treesitter" },
-    cond = not vim.g.vscode,
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+    },
     opts = {
       use_default_keymaps = false,
       check_syntax_error = true,
-      max_join_length = 1000,
+      max_join_length = 1000, -- default: 120.
     },
     keys = {
-      { "<leader>cs", "<cmd>TSJSplit<CR>",  desc = "Multiline token" },
-      { "<leader>cj", "<cmd>TSJJoin<CR>",   desc = "Single-line token" },
-      { "<leader>cm", "<cmd>TSJToggle<CR>", desc = "Toggle token single/multiline" },
+      { "gl", group = "line" },
+      { "gls", "<cmd>TSJSplit<CR>", desc = "Split TS node under cursor" },
+      { "glj", "<cmd>TSJJoin<CR>", desc = "Join TS node into one line" },
+      { "gll", "<cmd>TSJToggle<CR>", desc = "Toggle single/multiline" },
     },
-  }
+  },
 }

@@ -1,7 +1,6 @@
 return {
   {
     "vim-test/vim-test",
-    cond = not vim.g.vscode,
     config = function()
       vim.g["test#strategy"] = "neovim_sticky"
       vim.g["test#ruby#rspec#options"] = {
@@ -10,11 +9,11 @@ return {
     end,
 
     keys = {
-      { "<leader>t",  name = "+testing" },
+      { "<leader>t", name = "+testing" },
       { "<leader>tt", "<cmd>TestNearest<CR>", desc = "Run nearest test" },
-      { "<leader>tf", "<cmd>TestFile<CR>",    desc = "Run all tests in file" },
-      { "<leader>tl", "<cmd>TestLast<CR>",    desc = "Run last test" },
-      { "<leader>ts", "<cmd>TestSuite<CR>",   desc = "Run test suite" },
+      { "<leader>tf", "<cmd>TestFile<CR>", desc = "Run all tests in file" },
+      { "<leader>tl", "<cmd>TestLast<CR>", desc = "Run last test" },
+      { "<leader>ts", "<cmd>TestSuite<CR>", desc = "Run test suite" },
     },
   },
 }

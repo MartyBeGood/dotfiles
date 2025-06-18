@@ -7,14 +7,14 @@ return {
   {
     "folke/which-key.nvim",
     opts = {
-      preset = "helix",
+      preset = "classic",
       icons = {
         mappings = false,
       },
       spec = {
-        { "<leader>t",  group = "testing" },
+        { "<leader>t", group = "testing" },
         { "<leader>gx", group = "conflict" },
-        { "gl",         group = "line" },
+        { "gl", group = "line" },
       },
     },
   },

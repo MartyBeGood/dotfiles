@@ -5,9 +5,7 @@ return {
       "s1n7ax/nvim-window-picker",
     },
     opts = {
-      window = {
-        position = "right",
-      },
+      window = {},
       filesystem = {
         filtered_items = {
           visible = true,

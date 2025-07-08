@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# This script runs after updating the ohmytmux config, to ensure that the symlinks are set up correctly.
+# {{ $ohmytmux_dir := joinPath .chezmoi.homeDir ".ohmytmux" }}
+# {{ $omt_hash := output "git" "-C" $ohmytmux_dir "rev-parse" "HEAD" }}
+# Oh My Tmux version = {{ $omt_hash }}
+
+mkdir -p ~/.config/tmux
+ln -sf {{ $ohmytmux_dir }}/.tmux.conf ~/.config/tmux/tmux.conf

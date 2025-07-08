@@ -36,12 +36,7 @@ return {
   {
     "ibhagwan/fzf-lua",
     opts = {
-      winopts = {
-        border = "solid",
-        preview = {
-          border = "solid",
-        },
-      },
+      "ivy",
     },
   },
 }

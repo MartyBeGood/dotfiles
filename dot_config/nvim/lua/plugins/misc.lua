@@ -1,8 +1,10 @@
 return {
   -- The rails stuff
-  { "tpope/vim-projectionist" },
-  { "tpope/vim-rails" },
   { "slim-template/vim-slim" },
+  {
+    "tpope/vim-rails",
+    dependencies = { "tpope/vim-projectionist" },
+  },
 
   {
     "folke/which-key.nvim",

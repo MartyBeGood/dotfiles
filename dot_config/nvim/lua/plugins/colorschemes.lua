@@ -47,4 +47,13 @@ return {
       style = "storm",
     },
   },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    opts = {
+      background = {
+        dark = "macchiato",
+      },
+    },
+  },
 }

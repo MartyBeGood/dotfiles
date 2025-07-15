@@ -17,30 +17,30 @@ return {
     },
   },
 
-  -- {
-  --   "navarasu/onedark.nvim", -- Iconic atom theme. Toggling dark-> light works, then gets stuck in light mode.
-  --   opts = {
-  --     -- style = "warmer",
-  --     diagnostics = {
-  --       darker = false,
-  --     },
-  --   },
-  -- },
-
-  -- {
-  --   "marko-cerovac/material.nvim", -- Material theme. Toggling doesn't work right.
-  --   opts = {
-  --     lualine_style = "stealth", -- 'default', 'stealth'
-  --     high_visibility = {
-  --       darker = true,
-  --       lighter = true,
-  --     },
-  --   },
-  -- },
+  {
+    "marko-cerovac/material.nvim", -- Material theme. Toggling doesn't work right.
+    opts = {
+      lualine_style = "stealth", -- 'default', 'stealth'
+      high_visibility = {
+        darker = true,
+        lighter = true,
+      },
+    },
+  },
 
   {
     "EdenEast/nightfox.nvim", -- Collection of nice-looking themes, but doesn't support background toggling.
     opts = {},
+  },
+
+  {
+    "projekt0n/github-nvim-theme", -- GitHub theme. Light mode is a bit harsh, dark mode is nice.
+    main = "github-theme",
+    opts = {
+      styles = {
+        comments = "italic",
+      },
+    },
   },
 
   -- Niche themes I like or try. Might not always look good in all plugins
@@ -52,33 +52,12 @@ return {
   },
 
   {
-    "WTFox/jellybeans.nvim", -- Testing this one. neutral grey, a bit dark, good contrast.
-  },
-
-  -- {
-  --   "nyoom-engineering/oxocarbon.nvim", -- Light mode seems.. harsh.
-  --   -- no options, no setup.
-  -- },
-
-  {
     "olimorris/onedarkpro.nvim", -- A more colorful variant of onedark, with a light mode that doesn't get toggled by the background option.
     opts = {},
   },
 
-  -- {
-  --   "rebelot/kanagawa.nvim", -- If gruvbox and catppuccin had a baby. Bluish. The 'dragon' variant is too dark-on-dark.
-  --   opts = {
-  --     theme = "dragon",
-  --   },
-  -- },
-
   {
-    "ellisonleao/gruvbox.nvim", -- The classic.
-    opts = {},
-  },
-
-  {
-    "polirritmico/monokai-nightasty.nvim", -- It's Monokai.
+    "polirritmico/monokai-nightasty.nvim", -- Monokai with a neutral grey background.
     opts = {
       on_colors = function(colors)
         if vim.o.background == "light" then

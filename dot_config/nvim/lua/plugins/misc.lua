@@ -1,6 +1,6 @@
 local make_colorschemes = function()
-  vim.g.dark_theme = "jellybeans"
-  vim.g.light_theme = "monokai-nightasty"
+  vim.g.dark_theme = "github_dark"
+  vim.g.light_theme = "github_light"
 
   if vim.o.bg == "dark" then
     return vim.g.dark_theme

@@ -511,8 +511,8 @@ pane_frames false
 // Options:
 //   - true (default)
 //   - false
-// 
-// session_serialization false
+// I don't want this. It just messes with my `zn`/`za` mappings
+session_serialization false
  
 // Whether pane viewports are serialized along with the session, default is false
 // Options:

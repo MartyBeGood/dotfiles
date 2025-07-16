@@ -74,16 +74,3 @@ autocmd("FileType", {
     vim.b.autoformat = false
   end,
 })
-
-autocmd({ "OptionSet" }, {
-  pattern = { "background" },
-  callback = function()
-    if vim.o.bg == "dark" then
-      print("Switching to dark theme: " .. vim.g.dark_theme)
-      vim.cmd.colorscheme(vim.g.dark_theme)
-    else
-      print("Switching to light theme: " .. vim.g.light_theme)
-      vim.cmd.colorscheme(vim.g.light_theme)
-    end
-  end,
-})

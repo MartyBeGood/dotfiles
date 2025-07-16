@@ -1,13 +1,3 @@
-local make_colorschemes = function()
-  vim.g.dark_theme = "material-darker"
-  vim.g.light_theme = "onelight"
-
-  if vim.o.bg == "dark" then
-    return vim.g.dark_theme
-  else
-    return vim.g.light_theme
-  end
-end
 return {
   -- The rails stuff
   { "slim-template/vim-slim" },
@@ -34,7 +24,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = make_colorschemes(),
+      colorscheme = "monokai-nightasty",
     },
   },
 }

@@ -1,64 +1,17 @@
 return {
-  -- Popular (> 1k stars) colorschemes with good plugin support.
-  {
-    "folke/tokyonight.nvim", -- Lazyvim default. Bluish, some hard-to-read combinations in the statusline
-    opts = {
-      style = "storm",
-    },
-  },
+  -- NOTE: to future self: Just leave it as is unless monokai-nightasty is broken. You've tried and failed to find a better one many times.
 
-  {
-    "catppuccin/nvim", -- Has themes for everything. More readable than tokyonight, much the same vibe.
-    name = "catppuccin",
-    opts = {
-      background = {
-        dark = "macchiato",
-      },
-    },
-  },
-
-  {
-    "marko-cerovac/material.nvim", -- Material theme. Toggling doesn't work right.
-    opts = {
-      lualine_style = "stealth", -- 'default', 'stealth'
-      high_visibility = {
-        darker = true,
-        lighter = true,
-      },
-    },
-  },
-
-  {
-    "EdenEast/nightfox.nvim", -- Collection of nice-looking themes, but doesn't support background toggling.
-    opts = {},
-  },
-
-  {
-    "projekt0n/github-nvim-theme", -- GitHub theme. Light mode is a bit harsh, dark mode is nice.
-    main = "github-theme",
-    opts = {
-      styles = {
-        comments = "italic",
-      },
-    },
-  },
-
-  -- Niche themes I like or try. Might not always look good in all plugins
-
-  {
-    -- needed for darcula-visible-comments
-    "santos-gabriel-dario/darcula-solid.nvim", -- Darcula from JetBrains. Not much plugin support, familiar looks. No light variant. background change breaks it.
-    dependencies = { "rktjmp/lush.nvim" },
-  },
-
-  {
-    "olimorris/onedarkpro.nvim", -- A more colorful variant of onedark, with a light mode that doesn't get toggled by the background option.
-    opts = {},
-  },
-
+  -- Themes I've tried and didn't like enough to keep:
+  -- "folke/tokyonight.nvim", -- Lazyvim default. Bluish, some hard-to-read combinations in the statusline
+  -- "catppuccin/nvim", -- Has themes for everything. More readable than tokyonight, much the same vibe.
+  -- "marko-cerovac/material.nvim", -- Material theme. Toggling doesn't work right.
+  -- "EdenEast/nightfox.nvim", -- Collection of nice-looking themes, but doesn't support background toggling.
+  -- "projekt0n/github-nvim-theme", -- GitHub theme. Light mode is a bit harsh, dark mode is nice.
   {
     "polirritmico/monokai-nightasty.nvim", -- Monokai with a neutral grey background.
     opts = {
+      dim_inactive = false,
+      dark_style_background = "dark",
       on_colors = function(colors)
         if vim.o.background == "light" then
           colors.blue = "#0043c3"

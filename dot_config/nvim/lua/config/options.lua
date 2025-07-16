@@ -12,6 +12,8 @@ vim.opt.clipboard = "" -- Don't use system clipboard anywhere. The LazyVim defau
 vim.opt.breakindent = true
 vim.g.snacks_animate = false
 
+vim.g.maplocalleader = ","
+
 if vim.env.SSH_TTY and not vim.env.TMUX then
   vim.g.clipboard = {
     name = "OSC 52",

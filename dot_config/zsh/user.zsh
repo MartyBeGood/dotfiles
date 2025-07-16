@@ -7,7 +7,8 @@ fi
 
 [ -f ~/.aliases ] && source ~/.aliases
 
-# common functions [ -f ~/.functions ] && source ~/.functions
+# common functions
+[ -f ~/.functions ] && source ~/.functions
 
 function kop() {
   if [ $1 ]; then lsof -n -i:$1 | grep LISTEN | awk '{ print $2 }' | uniq | xargs kill -9;

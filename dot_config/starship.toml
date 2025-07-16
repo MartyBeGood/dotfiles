@@ -9,6 +9,7 @@ $cmd_duration\
 $line_break\
 $shell\
 $python\
+$character
 """
 
 [directory]
@@ -20,23 +21,26 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-format = "[$branch]($style)"
-style = "bright-black"
+format = '\([$branch]($style) '
 
 [git_status]
-format = '([ \[$all_status$ahead_behind\]]($style) )'
 style = "cyan"
-# conflicted = "​"
-# untracked = "​"
-# modified = "​"
-# staged = "​"
-# renamed = "​"
-# deleted = "​"
-stashed = "≡"
+ahead = " [ 󰁝 ](green)"
+behind = " [ 󰁅 ](red)"
+conflicted = "[ $count](red)"
+deleted = '[ ](yellow)'
+diverged = '[ ](red)'
+format = '$conflicted$untracked$modified$renamed$deleted$staged$ahead_behind$stashed\)'
+modified = '[ ](yellow)'
+renamed = "[ ](green)"
+staged = '[ ](green)'
+stashed = '[  $count](blue)'
+untracked = '[ ](yellow)'
+up_to_date = "  "
+
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
-style = "bright-black"
 
 [cmd_duration]
 format = "[$duration]($style) "

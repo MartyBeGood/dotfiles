@@ -10,7 +10,10 @@ export EDITOR=nvim
 [ -f ~/.aliases ] && source ~/.aliases
 
 # fzf
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if [ -f ~/.fzf.bash ]; then
+  source ~/.fzf.bash
+  export FZF_DEFAULT_OPTS="--color=16"
+fi
 
 if [ -f ~/.local/bin/mise ]; then
   eval "$(~/.local/bin/mise activate bash)"

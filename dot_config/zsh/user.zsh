@@ -1,5 +1,9 @@
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+  export FZF_DEFAULT_OPTS="--color=16"
+fi
+
 
 [ -f ~/.aliases ] && source ~/.aliases
 

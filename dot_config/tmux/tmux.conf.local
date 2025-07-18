@@ -401,6 +401,17 @@ tmux_conf_urlscan_options="--compact --dedupe"
 # set -g prefix C-a
 # bind C-a send-prefix
 
+unbind C-h
+unbind C-l
+bind -r n next-window
+bind -r p previous-window
+
+unbind C-S-H
+unbind C-S-L
+bind -r C-n swap-window -t +1 \; select-window -t +1
+bind -r C-p swap-window -t -1 \; select-window -t -1
+
+
 # if you don't want Oh my tmux! to alter a binding or a setting, use #!important
 # bind c new-window -c '#{pane_current_path}' #!important
 

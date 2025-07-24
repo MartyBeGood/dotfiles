@@ -13,7 +13,13 @@ $character
 """
 
 [directory]
-style = "blue"
+# style = "blue"
+truncation_length = 5
+truncate_to_repo = false
+truncation_symbol = "…/"
+before_repo_root_style = "cyan"
+repo_root_style = "bold cyan underline"
+
 
 [character]
 success_symbol = "[❯](purple)"
@@ -21,7 +27,7 @@ error_symbol = "[❯](red)"
 vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-format = '\([$branch]($style) '
+format = '[\($branch]($style) '
 
 [git_status]
 style = "cyan"
@@ -30,17 +36,24 @@ behind = " [ 󰁅 $count](red)"
 conflicted = "[ $count](red)"
 deleted = '[ ](yellow)'
 diverged = '[ ](red)'
-format = '$conflicted$untracked$modified$renamed$deleted$staged$ahead_behind$stashed\)'
+format = '$conflicted$untracked$modified$renamed$deleted$staged$ahead_behind$stashed[\)](bold purple)'
 modified = '[ ](yellow)'
 renamed = "[ ](green)"
 staged = '[ ](green)'
 stashed = '[  $count](blue)'
 untracked = '[ ](yellow)'
-up_to_date = "  "
+up_to_date = " [ ](green)"
 
 
 [git_state]
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
+
+[hostname]
+ssh_symbol = "@"
+format = "[$ssh_symbol$hostname]($style) "
+
+[username]
+format = "[$user]($style)"
 
 [cmd_duration]
 format = "[$duration]($style) "

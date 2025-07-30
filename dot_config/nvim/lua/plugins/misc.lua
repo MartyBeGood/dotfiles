@@ -22,6 +22,11 @@ return {
   },
 
   {
+    "brenoprata10/nvim-highlight-colors",
+    opts = {},
+  },
+
+  {
     "LazyVim/LazyVim",
     opts = {
       colorscheme = "monokai-nightasty",

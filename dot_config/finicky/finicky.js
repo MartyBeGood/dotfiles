@@ -88,14 +88,6 @@ const slackRewriter = {
   },
 };
 
-const matchNonWorkPageFromMail = function(url, options) {
-  if (options.opener.bundleId !== "com.apple.mail") {
-    return false
-  }
-  return true
-
-}
-
 const workPages = [
   "github.com",
   "*.auctionet.*",
@@ -115,12 +107,12 @@ export default {
       browser: "Safari",
     },
     {
+      match: "linear.app/*",
+      browser: "Linear",
+    },
+    {
       match: ({ url }) => { return url.protocol === "slack" || url.protocol === "slack:" },
       browser: "Slack"
-    },
-    { // Open non-work links I click in the mail app and open them in Safari
-      match: matchNonWorkPageFromMail,
-      browser: "Safari",
     },
   ],
 }

@@ -254,7 +254,7 @@ return {
           FzfLuaScrollBorderFull = { fg = colors.subtext1, bg = colors.surface0 },
           FzfLuaScrollFloatEmpty = { fg = colors.surface0, bg = colors.surface0 },
           FzfLuaScrollFloatFull = { fg = colors.subtext1, bg = colors.surface0 },
-          FzfLuaCursorLine = { bg = colors.surface2 },
+          FzfLuaCursorLine = { link = "CursorLine" },
           FzfLuaLivePrompt = { fg = colors.red },
 
           ["@annotation"] = { link = "TSAnnotation" },

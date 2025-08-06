@@ -1,7 +1,6 @@
 # fzf
 if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
-  export FZF_DEFAULT_OPTS="--color=16"
 fi
 
 

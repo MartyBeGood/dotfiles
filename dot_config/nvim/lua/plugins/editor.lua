@@ -33,10 +33,4 @@ return {
       buffer_leader_key = "m", -- Per Buffer Mappings
     },
   },
-  {
-    "ibhagwan/fzf-lua",
-    opts = {
-      "ivy",
-    },
-  },
 }

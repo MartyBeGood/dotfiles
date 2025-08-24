@@ -88,23 +88,6 @@ return {
     tag = "v1.32.0", -- Pin this to the last release before v2, which broke lazyvim
   },
   {
-    "zbirenbaum/copilot.lua",
-    event = "InsertEnter",
-    opts = {
-      suggestion = {
-        enabled = true,
-        auto_trigger = true,
-        keymap = {
-          accept = "<M-y>",
-          accept_line = "<M-l>",
-          next = "<M-n>",
-          prev = "<M-p>",
-        },
-      },
-    },
-  },
-
-  {
     "L3MON4D3/LuaSnip",
     -- Remove all keybindings. They're handled in nvim-cmp.
     keys = function()

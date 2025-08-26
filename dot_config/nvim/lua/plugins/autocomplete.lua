@@ -74,6 +74,7 @@ return {
             formatting = true,
           },
         },
+        sourcekit = {},
         jdtls = {
           handlers = {
             -- TODO: Don't suppress everything, just the stuff that's annoying

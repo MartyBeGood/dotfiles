@@ -65,8 +65,4 @@ return {
       },
     },
   },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    -- tag = "v1.32.0", -- Pin this to the last release before v2, which broke lazyvim
-  },
 }

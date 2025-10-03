@@ -53,13 +53,17 @@ font-feature = cv02
 font-feature = cv08
 
 adjust-cell-width = -1
-adjust-cell-height = 20%
+adjust-cell-height = 25%
 adjust-underline-position = 6
 theme = dark:gruvpuccin-dark,light:gruvpuccin-light
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor,ssh-terminfo
 cursor-style = block
 cursor-style-blink = false
 cursor-text = black
 adjust-cursor-thickness = 3
 macos-option-as-alt = left
 macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = tabs
+
+# This apparently fixes the titlebar theme inconsistencies
+window-theme = system

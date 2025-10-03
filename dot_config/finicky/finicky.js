@@ -95,9 +95,13 @@ const workPages = [
 ]
 
 export default {
-  defaultBrowser: "Firefox",
+  defaultBrowser: "Vivaldi",
   rewrite: [slackRewriter],
   handlers: [
+    {
+      match: "https://figma.com/*",
+      browser: "Figma",
+    },
     {
       match: "apple.com/*",
       browser: "Safari",

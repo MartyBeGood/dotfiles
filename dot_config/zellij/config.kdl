@@ -228,126 +228,6 @@ keybinds clear-defaults=true {
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
     }
 }
-themes {
-    sometheme {
-        text_unselected {
-            base 230 230 230
-            background 32 32 32
-            emphasis_0 255 151 0
-            emphasis_1 0 135 255
-            emphasis_2 164 228 0
-            emphasis_3 227 68 129
-        }
-        text_selected {
-            base 230 230 230
-            background 30 30 30
-            emphasis_0 255 151 0
-            emphasis_1 0 135 255
-            emphasis_2 164 228 0
-            emphasis_3 227 68 129
-        }
-        ribbon_selected {
-            base 32 32 32
-            background 164 228 0
-            emphasis_0 255 0 95
-            emphasis_1 255 151 0
-            emphasis_2 227 68 129
-            emphasis_3 98 216 241
-        }
-        ribbon_unselected {
-            base 32 32 32
-            background 85 85 85
-            emphasis_0 255 0 95
-            emphasis_1 230 230 230
-            emphasis_2 98 216 241
-            emphasis_3 227 68 129
-        }
-        table_title {
-            base 164 228 0
-            background 0
-            emphasis_0 255 151 0
-            emphasis_1 0 135 255
-            emphasis_2 164 228 0
-            emphasis_3 227 68 129
-        }
-        table_cell_selected {
-            base 230 230 230
-            background 30 30 30
-            emphasis_0 255 151 0
-            emphasis_1 0 135 255
-            emphasis_2 164 228 0
-            emphasis_3 227 68 129
-        }
-        table_cell_unselected {
-            base 230 230 230
-            background 32 32 32
-            emphasis_0 255 151 0
-            emphasis_1 0 135 255
-            emphasis_2 164 228 0
-            emphasis_3 227 68 129
-        }
-        list_selected {
-            base 230 230 230
-            background 30 30 30
-            emphasis_0 255 151 0
-            emphasis_1 0 135 255
-            emphasis_2 164 228 0
-            emphasis_3 227 68 129
-        }
-        list_unselected {
-            base 230 230 230
-            background 32 32 32
-            emphasis_0 255 151 0
-            emphasis_1 0 135 255
-            emphasis_2 164 228 0
-            emphasis_3 227 68 129
-        }
-        frame_selected {
-            base 164 228 0
-            background 0
-            emphasis_0 255 151 0
-            emphasis_1 0 135 255
-            emphasis_2 227 68 129
-            emphasis_3 0
-        }
-        frame_highlight {
-            base 255 151 0
-            background 0
-            emphasis_0 255 151 0
-            emphasis_1 255 151 0
-            emphasis_2 255 151 0
-            emphasis_3 255 151 0
-        }
-        exit_code_success {
-            base 164 228 0
-            background 0
-            emphasis_0 0 135 255
-            emphasis_1 32 32 32
-            emphasis_2 227 68 129
-            emphasis_3 98 216 241
-        }
-        exit_code_error {
-            base 255 0 95
-            background 0
-            emphasis_0 255 255 135
-            emphasis_1 0
-            emphasis_2 0
-            emphasis_3 0
-        }
-        multiplayer_user_colors {
-            player_1 227 68 129
-            player_2 98 216 241
-            player_3 0
-            player_4 255 255 135
-            player_5 0 135 255
-            player_6 0
-            player_7 255 0 95
-            player_8 0
-            player_9 0
-            player_10 0
-        }
-    }
-}
 
 // Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect
@@ -384,7 +264,7 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "sometheme"
+theme "ansi"
  
 // Choose the base input mode of zellij.
 // Default: normal

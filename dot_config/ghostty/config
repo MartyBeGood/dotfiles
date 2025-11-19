@@ -41,19 +41,11 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
-font-family = "CommitMono"
-font-size = 15
-# Usual ligatures: <=
-font-feature = ss01
-# Arrows: -> <- >->
-font-feature = ss02
-# alternative g in non-cursive
-font-feature = cv02
-# alternative aefgy in cursive
-font-feature = cv08
+font-family = "Iosevka Term Extended"
+font-size = 13
 
 adjust-cell-width = -1
-adjust-cell-height = 25%
+adjust-cell-height = 15%
 adjust-underline-position = 6
 theme = dark:greypuccin-dark,light:greypuccin-light
 shell-integration-features = no-cursor,ssh-terminfo

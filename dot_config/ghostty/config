@@ -57,5 +57,6 @@ macos-option-as-alt = left
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
 
+gtk-titlebar-style = tabs
 # This apparently fixes the titlebar theme inconsistencies
 window-theme = system

@@ -3,8 +3,8 @@ foreground = #ebebeb
 cursor-color = #e78a4e
 selection-foreground = #ebebeb
 selection-background = #8cd5c4
-palette = 0=#3b3b3b
-palette = 8=#616161
+palette = 0=#3b3b3f
+palette = 8=#525255
 palette = 1=#fc8388
 palette = 9=#fe9f88
 palette = 2=#a9b665

@@ -98,22 +98,10 @@ export default {
   defaultBrowser: "Vivaldi",
   rewrite: [slackRewriter],
   handlers: [
-    {
-      match: "https://figma.com/*",
-      browser: "Figma",
-    },
-    {
-      match: "apple.com/*",
-      browser: "Safari",
-    },
-    {
-      match: "meet.google.com/*",
-      browser: "Safari",
-    },
-    {
-      match: "linear.app/*",
-      browser: "Linear",
-    },
+    // {
+    //   match: "linear.app/*",
+    //   browser: "Linear",
+    // },
     {
       match: ({ url }) => { return url.protocol === "slack" || url.protocol === "slack:" },
       browser: "Slack"

@@ -1,5 +1,27 @@
--- Stolen from https://gist.github.com/fang2hou/8f87a43c02c26463b1689736cbc3b09e
--- Found in https://github.com/catppuccin/nvim/discussions/323#discussioncomment-12522504
+-- TODO: come up with a clever way to make this also fit in when working over SSH
+local dark_variant = "mocha"
+if vim.fn.system("uname"):match("Darwin") then
+  dark_variant = "frappe"
+end
+
+local dark_colors = {
+  -- Colors specified in color_overrides.all seem to override the darker colors in latte. Define the shared dark colors here to keep the light/dark mode toggleable
+  rosewater = "#f4dbd6",
+  flamingo = "#f0c6c6",
+  pink = "#f5bde6",
+  mauve = "#c6a0f6",
+  red = "#fc8388",
+  maroon = "#fd7ca9",
+  peach = "#f5a885",
+  yellow = "#eed49f",
+  green = "#bdd486",
+  teal = "#8cd5c4",
+  sky = "#8ed9dd",
+  sapphire = "#76c6df",
+  blue = "#87c0f7",
+  lavender = "#b7bdf8",
+}
+
 return {
   "catppuccin/nvim",
   lazy = true,
@@ -7,7 +29,7 @@ return {
   opts = {
     background = {
       light = "latte",
-      dark = "mocha",
+      dark = dark_variant,
     },
     color_overrides = {
       latte = {
@@ -38,21 +60,9 @@ return {
         mantle = "#ebebeb",
         crust = "#e0e0e0",
       },
-      mocha = {
-        rosewater = "#f4dbd6",
-        flamingo = "#f0c6c6",
-        pink = "#f5bde6",
-        mauve = "#c6a0f6",
-        red = "#fc8388",
-        maroon = "#fd7ca9",
-        peach = "#f5a885",
-        yellow = "#eed49f",
-        green = "#bdd486",
-        teal = "#8cd5c4",
-        sky = "#8ed9dd",
-        sapphire = "#76c6df",
-        blue = "#87c0f7",
-        lavender = "#b7bdf8",
+
+      -- shades of grey taken from gnome 48
+      mocha = vim.tbl_extend("keep", {
         text = "#e4e4e4",
         subtext1 = "#c1c1c1",
         subtext0 = "#aeaeae",
@@ -65,7 +75,23 @@ return {
         base = "#222226",
         mantle = "#212125",
         crust = "#1d1d20",
-      },
+      }, dark_colors),
+
+      -- neutral greys that fit in on macos or gnome <= 46
+      frappe = vim.tbl_extend("keep", {
+        text = "#e4e4e4",
+        subtext1 = "#c1c1c1",
+        subtext0 = "#aeaeae",
+        overlay2 = "#9b9b9b",
+        overlay1 = "#888888",
+        overlay0 = "#757575",
+        surface2 = "#525252",
+        surface1 = "#3b3b3b",
+        surface0 = "#282828",
+        base = "#222222",
+        mantle = "#212121",
+        crust = "#1d1d1d",
+      }, dark_colors),
     },
     highlight_overrides = {
       all = function(c)

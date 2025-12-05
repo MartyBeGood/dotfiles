@@ -5,6 +5,12 @@ return {
       vim.g["test#ruby#rspec#options"] = {
         file = "--format documentation",
       }
+      -- If in vscode, use neovim_vscode. Else, use neovim_sticky
+      if vim.g.vscode then
+        vim.g["test#strategy"] = "neovim_vscode"
+      else
+        vim.g["test#strategy"] = "neovim_sticky"
+      end
     end,
 
     keys = {

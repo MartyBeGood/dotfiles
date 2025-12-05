@@ -98,6 +98,12 @@ return {
         local o = require("catppuccin").options
         local u = require("catppuccin.utils.colors")
 
+        local hlg = {
+          func = { fg = c.blue, style = o.styles.functions or {} },
+          keyword = { fg = c.subtext0, style = o.styles.keywords or {} },
+          literal = { fg = c.mauve },
+        }
+
         return {
           Comment = { fg = c.yellow, style = o.styles.comments }, -- just comments
           SpecialComment = { link = "Special" }, -- special things inside a comment
@@ -111,52 +117,50 @@ return {
           ["@comment.note"] = { fg = c.base, bg = c.rosewater },
 
           -- Language builtins (keywords, builtin types, directives, etc)
-          Keyword = { fg = c.subtext0, style = o.styles.keywords or {} }, --  any other keyword
-          Conditional = { link = "Keyword" }, --  if, then, else, endif, switch, etc.
-          Repeat = { link = "Keyword" }, --   for, do, while, etc.
-          Label = { link = "Keyword" }, --    case, default, etc.
-          Include = { link = "Keyword" }, --  preprocessor #include
-          Statement = { link = "Keyword" }, -- (preferred) any statement
-          Exception = { link = "Keyword" }, --  try, catch, throw
-          PreProc = { link = "Keyword" }, -- (preferred) generic Preprocessor
-          Define = { link = "Keyword" }, -- preprocessor #define
-          Macro = { link = "Keyword" }, -- same as Define
-          PreCondit = { link = "PreProc" }, -- preprocessor #if, #else, #endif, etc.
-          StorageClass = { link = "Keyword" }, -- static, register, volatile, etc.
-          Structure = { link = "Keyword" }, --  struct, union, enum, etc.
-          Type = { link = "Keyword" }, -- (preferred) int, long, char, etc.
+          Keyword = hlg.keyword, --  any other keyword
+          Conditional = hlg.keyword, --  if, then, else, endif, switch, etc.
+          Repeat = hlg.keyword, --   for, do, while, etc.
+          Label = hlg.keyword, --    case, default, etc.
+          Include = hlg.keyword, --  preprocessor #include
+          Statement = hlg.keyword, -- (preferred) any statement
+          Exception = hlg.keyword, --  try, catch, throw
+          PreProc = hlg.keyword, -- (preferred) generic Preprocessor
+          Define = hlg.keyword, -- preprocessor #define
+          Macro = hlg.keyword, -- same as Define
+          PreCondit = hlg.keyword, -- preprocessor #if, #else, #endif, etc.
+          StorageClass = hlg.keyword, -- static, register, volatile, etc.
+          Structure = hlg.keyword, --  struct, union, enum, etc.
+          Type = hlg.keyword, -- (preferred) int, long, char, etc.
           Typedef = { link = "Type" }, --  A typedef
-          ["@keyword"] = { link = "Keyword" }, -- For keywords that don't fall in previous categories.
-          ["@keyword.modifier"] = { link = "Keyword" }, -- For keywords modifying other constructs (e.g. `const`, `static`, `public`)
-          ["@keyword.type"] = { link = "Keyword" }, -- For keywords describing composite types (e.g. `struct`, `enum`)
-          ["@keyword.coroutine"] = { link = "Keyword" }, -- For keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
-          ["@keyword.function"] = { link = "Keyword" }, -- For keywords used to define a function.
-          ["@keyword.operator"] = { link = "Keyword" }, -- For new keyword operator
-          ["@keyword.import"] = { link = "Include" }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-          ["@keyword.repeat"] = { link = "Repeat" }, -- For keywords related to loops.
-          ["@keyword.return"] = { link = "Keyword" },
-          ["@keyword.debug"] = { link = "Exception" }, -- For keywords related to debugging
-          ["@keyword.exception"] = { link = "Exception" }, -- For exception related keywords.
-          ["@keyword.conditional"] = { link = "Conditional" }, -- For keywords related to conditionnals.
-          ["@keyword.conditional.ternary"] = { link = "Operator" }, -- For ternary operators (e.g. `?` / `:`)
-          ["@keyword.directive"] = { link = "PreProc" }, -- various preprocessor directives & shebangs
-          ["@keyword.directive.define"] = { link = "Define" }, -- preprocessor definition directives
-          ["@keyword.export"] = { link = "Keyword" }, -- JS and lua `export`
+          ["@keyword"] = hlg.keyword, -- For keywords that don't fall in previous categories.
+          ["@keyword.modifier"] = hlg.keyword, -- For keywords modifying other constructs (e.g. `const`, `static`, `public`)
+          ["@keyword.type"] = hlg.keyword, -- For keywords describing composite types (e.g. `struct`, `enum`)
+          ["@keyword.coroutine"] = hlg.keyword, -- For keywords related to coroutines (e.g. `go` in Go, `async/await` in Python)
+          ["@keyword.function"] = hlg.keyword, -- For keywords used to define a function.
+          ["@keyword.operator"] = hlg.keyword, -- For new keyword operator
+          ["@keyword.import"] = hlg.keyword, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+          ["@keyword.repeat"] = hlg.keyword, -- For keywords related to loops.
+          ["@keyword.return"] = hlg.keyword,
+          ["@keyword.debug"] = hlg.keyword, -- For keywords related to debugging
+          ["@keyword.exception"] = hlg.keyword, -- For exception related keywords.
+          ["@keyword.conditional"] = hlg.keyword, -- For keywords related to conditionnals.
+          ["@keyword.conditional.ternary"] = hlg.keyword, -- For ternary operators (e.g. `?` / `:`)
+          ["@keyword.directive"] = hlg.keyword, -- various preprocessor directives & shebangs
+          ["@keyword.directive.define"] = hlg.keyword, -- preprocessor definition directives
+          ["@keyword.export"] = hlg.keyword, -- JS and lua `export`
 
           -- Non-String Literals, known at compile time: Numbers, Booleans, Atoms, Symbols, the like
-          NonStringLiteral = { fg = c.mauve },
-          Constant = { fg = c.peach }, -- (preferred) any constant
-          Boolean = { link = "NonStringLiteral" }, --  a boolean constant: TRUE, false
-          ["@boolean"] = { link = "Boolean" }, -- For booleans.
-          Number = { link = "NonStringLiteral" }, --   a number constant: 234, 0xff
-          Float = { link = "Number" }, --    a floating point constant: 2.3e10
-          ["@number"] = { link = "Number" }, -- For all numbers
-          ["@number.float"] = { link = "Float" }, -- For floats.
-          ["@variable.builtin"] = { link = "NonStringLiteral" }, -- Variable names that are defined by the languages, like this or self.
-          rubyClassName = { link = "NonStringLiteral" },
-          ["@constructor.python"] = { fg = c.sky }, -- __init__(), __new__().
-          ["@string.special.symbol"] = { link = "NonStringLiteral" }, -- symbols or atoms
-          ["@string.special.symbol.ruby"] = { link = "@string.special.symbol" },
+          NonStringLiteral = hlg.literal,
+          Constant = hlg.literal, -- (preferred) any constant
+          Boolean = hlg.literal, --  a boolean constant: TRUE, false
+          ["@boolean"] = hlg.literal, -- For booleans.
+          Number = hlg.literal, --   a number constant: 234, 0xff
+          Float = hlg.literal, --    a floating point constant: 2.3e10
+          ["@number"] = hlg.literal, -- For all numbers
+          ["@number.float"] = hlg.literal, -- For floats.
+          ["@variable.builtin"] = hlg.literal, -- Variable names that are defined by the languages, like this or self.
+          ["@constructor.python"] = hlg.literal, -- __init__(), __new__().
+          ["@string.special.symbol"] = hlg.literal, -- symbols or atoms
 
           -- Strings
           String = { fg = c.green, style = o.styles.strings or {} }, -- a string constant: "this is a string"
@@ -394,12 +398,23 @@ return {
 
           -- Python
 
+          -- Ruby
+          ["@string.special.symbol.ruby"] = { link = "@string.special.symbol" },
+
+          rubyCurlyBlockDelimiter = { link = "Delimiter" },
+          rubyClassName = { link = "Constant" },
+          rubyConstant = { link = "Constant" },
+          rubyPseudoVariable = { link = "NonStringLiteral" },
+          rubySymbol = { link = "NonStringLiteral" },
+          rubyKeywordAsMethod = hlg.func,
+          rubyVariableOrMethod = hlg.func,
+
           -- YAML
           ["@label.yaml"] = { fg = c.yellow }, -- Anchor and alias names.
 
           -- PHP
-          ["@function.method.php"] = { link = "Function" },
-          ["@function.method.call.php"] = { link = "Function" },
+          ["@function.method.php"] = hlg.func,
+          ["@function.method.call.php"] = hlg.func,
 
           -- C/CPP
           ["@keyword.import.c"] = { fg = c.yellow },

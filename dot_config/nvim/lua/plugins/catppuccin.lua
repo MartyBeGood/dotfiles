@@ -102,6 +102,7 @@ return {
           func = { fg = c.blue, style = o.styles.functions or {} },
           keyword = { fg = c.subtext0, style = o.styles.keywords or {} },
           literal = { fg = c.mauve },
+          text = { fg = c.text },
         }
 
         return {
@@ -400,6 +401,8 @@ return {
 
           -- Ruby
           ["@string.special.symbol.ruby"] = { link = "@string.special.symbol" },
+          ["@type.ruby"] = hlg.text,
+          ["@lsp.type.class.ruby"] = hlg.text,
 
           rubyCurlyBlockDelimiter = { link = "Delimiter" },
           rubyClassName = { link = "Constant" },

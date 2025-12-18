@@ -41,22 +41,49 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
-font-family = "Iosevka Term Extended"
-font-size = 13
-
+font-family = "Monaspace Neon Var"
 adjust-cell-width = -1
-adjust-cell-height = 15%
-adjust-underline-position = 6
-theme = dark:greypuccin-dark,light:greypuccin-light
+font-family-italic = "Monaspace Argon Var"
+# If you don't set the slant, Monaspace Argon Var looks crunchy.
+font-variation-italic = slnt=-5
+font-size = 10
+
+# Monaspace customization:
+# liga: Spacing fixes for repeated characters (///, ||)
+# ss01: equals glyphs like != and ===.
+# ss02: greater/less or equal (<=, >=).
+# ss03: arrows like -> and ~>.
+# ss04: markup, like </ and />.
+# ss05: symbols used in F#, like |>.
+# ss06: repeated uses of #, +, and &.
+# ss07: colons like :: or =:=.
+# ss08: combinations of periods with other glyphs like ..= or .-. *
+# ss09: combinations of the greater/less than and equals signs, like <=>,>>, and =<<.
+# ss10: other tags, like #[ and #(
+font-feature = liga
+font-feature = calt=1
+font-feature = cv01=2
+font-feature = ss04=1
+font-feature = ss06=1
+font-feature = ss07=1
+font-feature = ss08=1
+font-feature = ss09=1
+font-feature = ss10=1
+font-feature = cv30
+
+adjust-cell-height = 25%
+theme = dark:gnomepuccin-dark,light:gnomepuccin-light
 shell-integration-features = no-cursor,ssh-terminfo
 cursor-style = block
 cursor-style-blink = false
 cursor-text = black
-adjust-cursor-thickness = 3
+adjust-cursor-thickness = 1
 macos-option-as-alt = left
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
 
-gtk-titlebar-style = tabs
+# gtk-titlebar-style = tabs
+# gtk-titlebar = false
+window-decoration = server
 # This apparently fixes the titlebar theme inconsistencies
 window-theme = system

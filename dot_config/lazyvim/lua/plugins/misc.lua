@@ -22,8 +22,22 @@ return {
   },
 
   {
-    "brenoprata10/nvim-highlight-colors",
-    opts = {},
+    "norcalli/nvim-colorizer.lua",
+    opts = {
+      filetypes = {
+        "*",
+        "!lazy",
+        "!gitcommit",
+        "!help",
+        "!mason",
+        "!neo-tree",
+        "!messages",
+        "!checkhealth",
+      },
+      user_default_options = {
+        tailwind = true,
+      },
+    },
   },
 
   {

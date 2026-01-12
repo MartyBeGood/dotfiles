@@ -74,3 +74,14 @@ autocmd("FileType", {
     vim.b.autoformat = false
   end,
 })
+
+-- Refresh gitsigns when focusing a buffer that has git signs
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
+  pattern = "*",
+  callback = function()
+    local ok, gitsigns = pcall(require, "gitsigns")
+    if ok and vim.b.gitsigns_status_dict then
+      gitsigns.refresh()
+    end
+  end,
+})

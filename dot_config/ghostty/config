@@ -1,89 +1,39 @@
-# This is the configuration file for Ghostty.
-#
-# This template file has been automatically created at the following
-# path since Ghostty couldn't find any existing config files on your system:
-#
-#   /Users/markus/Library/Application Support/com.mitchellh.ghostty/config
-#
-# The template does not set any default options, since Ghostty ships
-# with sensible defaults for all options. Users should only need to set
-# options that they want to change from the default.
-#
-# Run `ghostty +show-config --default --docs` to view a list of
-# all available config options and their default values.
-#
-# Additionally, each config option is also explained in detail
-# on Ghostty's website, at https://ghostty.org/docs/config.
+# Ghostty config. Keep a comment on the first line for nvim ft detection
 
-# Config syntax crash course
-# ==========================
-# # The config file consists of simple key-value pairs,
-# # separated by equals signs.
-# font-family = Iosevka
-# window-padding-x = 2
-#
-# # Spacing around the equals sign does not matter.
-# # All of these are identical:
-# key=value
-# key= value
-# key =value
-# key = value
-#
-# # Any line beginning with a # is a comment. It's not possible to put
-# # a comment after a config option, since it would be interpreted as a
-# # part of the value. For example, this will have a value of "#123abc":
-# background = #123abc
-#
-# # Empty values are used to reset config keys to default.
-# key =
-#
-# # Some config options have unique syntaxes for their value,
-# # which is explained in the docs for that config option.
-# # Just for example:
-# resize-overlay-duration = 4s 200ms
-font-family = "Monaspace Neon Var"
-adjust-cell-width = -1
-font-family-italic = "Monaspace Argon Var"
-# If you don't set the slant, Monaspace Argon Var looks crunchy.
-font-variation-italic = slnt=-5
-font-size = 10
-
-# Monaspace customization:
-# liga: Spacing fixes for repeated characters (///, ||)
-# ss01: equals glyphs like != and ===.
-# ss02: greater/less or equal (<=, >=).
-# ss03: arrows like -> and ~>.
-# ss04: markup, like </ and />.
-# ss05: symbols used in F#, like |>.
-# ss06: repeated uses of #, +, and &.
-# ss07: colons like :: or =:=.
-# ss08: combinations of periods with other glyphs like ..= or .-. *
-# ss09: combinations of the greater/less than and equals signs, like <=>,>>, and =<<.
-# ss10: other tags, like #[ and #(
-font-feature = liga
-font-feature = calt=1
-font-feature = cv01=2
-font-feature = ss04=1
-font-feature = ss06=1
-font-feature = ss07=1
-font-feature = ss08=1
-font-feature = ss09=1
-font-feature = ss10=1
-font-feature = cv30
-
-adjust-cell-height = 25%
 theme = dark:gnomepuccin-dark,light:gnomepuccin-light
+
+# font-family = "SF Mono"
+# adjust-cell-height = 20%
+# adjust-cell-width = -1
+# font-size = 11
+
+font-family = "Inconsolata LGC"
+adjust-cell-height = 30%
+adjust-cell-width = -1
+font-size = 11
+
+# font-family = "IosevkaTerm Extended"
+# adjust-cell-height = 15%
+# adjust-cell-width = -1
+# font-size = 11
+
+# font-family = "Victor Mono"
+# font-style = "Medium"
+# font-style-italic = "Medium Oblique"
+# font-style-bold-italic = "Bold Oblique"
+# font-feature = ss02
+# font-size = 11
+
+
 shell-integration-features = no-cursor,ssh-terminfo
 cursor-style = block
 cursor-style-blink = false
 cursor-text = black
 adjust-cursor-thickness = 1
+window-decoration = server
+
+# MacOS specifics
+window-theme = system
 macos-option-as-alt = left
 macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
-
-# gtk-titlebar-style = tabs
-# gtk-titlebar = false
-window-decoration = server
-# This apparently fixes the titlebar theme inconsistencies
-window-theme = system

@@ -65,13 +65,35 @@ autocmd("FileType", {
   end,
 })
 
--- Turn off autoformatting for certain filetypes
-augroup("autoformat", { clear = true })
-autocmd("FileType", {
-  group = "autoformat",
-  pattern = { "scss", "css" },
+-- Turn off autoformatting for certain files
+-- Combined logic because path globbing in nvim is finicky. I tried to get the rails-locales-yaml stuff to work with globs but it didn't work until I gave up and used lua pattern matching.
+local group = vim.api.nvim_create_augroup("autoformat", { clear = true })
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  group = group,
+  pattern = "*",
   callback = function()
-    vim.b.autoformat = false
+    local ft = vim.bo.filetype
+    local filetypes_to_disable = {
+      "scss",
+      "css",
+    }
+    for _, type_without_formatting in ipairs(filetypes_to_disable) do
+      if ft == type_without_formatting then
+        vim.b.autoformat = false
+        return
+      end
+    end
+
+    local path = vim.fn.expand("%:p")
+    local path_regexes_to_disable = {
+      "config/locales/.*%.ya?ml$",
+    }
+    for _, regex in ipairs(path_regexes_to_disable) do
+      if string.match(path, regex) then
+        vim.b.autoformat = false
+        return
+      end
+    end
   end,
 })
 

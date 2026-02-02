@@ -9,6 +9,10 @@ fi
 # common functions
 [ -f ~/.functions ] && source ~/.functions
 
+# Put custom completions here
+typeset -gaU fpath=($fpath ~/.local/share/zsh/completions)
+autoload -Uz compinit && compinit
+
 function kop() {
   if [ $1 ]; then lsof -n -i:$1 | grep LISTEN | awk '{ print $2 }' | uniq | xargs kill -9;
   else cat << EOF

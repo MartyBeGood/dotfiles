@@ -3,32 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        diagnosticls = {
-          init_options = {
-            linters = {
-              slimlint = {
-                command = "slim-lint",
-                rootPatterns = { ".git/" },
-                debounce = 100,
-                args = { "--reporter", "json", "--stdin-file-path", "%filepath" },
-                sourceName = "slim-lint",
-                parseJson = {
-                  errorsRoot = "files[0].offenses",
-                  line = "location.line",
-                  message = "${message}",
-                  security = "severity",
-                },
-                securities = {
-                  error = "error",
-                  warning = "warning",
-                },
-              },
-            },
-            filetypes = {
-              slim = "slimlint",
-            },
-          },
-        },
         emmet_ls = {},
         ruby_lsp = {
           mason = false,
@@ -55,7 +29,7 @@ return {
             formatting = true,
           },
         },
-        sourcekit = {},
+        -- sourcekit = {},
         jdtls = {
           handlers = {
             -- TODO: Don't suppress everything, just the stuff that's annoying

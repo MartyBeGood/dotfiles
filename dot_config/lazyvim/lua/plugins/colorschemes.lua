@@ -7,10 +7,15 @@ return {
   -- "projekt0n/github-nvim-theme", -- GitHub theme. Light mode is a bit harsh, dark mode is nice.
   {
     "mofiqul/vscode.nvim",
-    opts = {
-      italic_comments = true,
-      underline_links = true,
-    },
+    config = function()
+      require("vscode").setup({
+        italic_comments = true,
+        underline_links = true,
+        group_overrides = {
+          NeoTreeDimText = { fg = require("vscode.colors").get_colors().vscCursorDark, bg = "NONE" },
+        },
+      })
+    end,
   },
   {
     "polirritmico/monokai-nightasty.nvim", -- Monokai with a neutral grey background.

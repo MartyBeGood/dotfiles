@@ -10,14 +10,14 @@ local dark_colors = {
   flamingo = "#f0c6c6",
   pink = "#f5bde6",
   mauve = "#c6a0f6",
-  red = "#fc8388",
+  red = "#F43653",
   maroon = "#fd7ca9",
   peach = "#f5a885",
-  yellow = "#eed49f",
-  green = "#bdd486",
+  yellow = "#D3B987",
+  green = "#CAD05C",
   teal = "#8cd5c4",
-  sky = "#8ed9dd",
-  sapphire = "#76c6df",
+  sky = "#B3DEEF",
+  sapphire = "#72CEF4",
   blue = "#87c0f7",
   lavender = "#b7bdf8",
 }
@@ -29,7 +29,7 @@ return {
   opts = {
     background = {
       light = "latte",
-      dark = dark_variant,
+      dark = "frappe",
     },
     color_overrides = {
       latte = {
@@ -85,12 +85,12 @@ return {
         overlay2 = "#9b9b9b",
         overlay1 = "#888888",
         overlay0 = "#757575",
-        surface2 = "#525252",
-        surface1 = "#3b3b3b",
+        surface2 = "#444444",
+        surface1 = "#323232",
         surface0 = "#282828",
         base = "#222222",
-        mantle = "#212121",
-        crust = "#1d1d1d",
+        mantle = "#1D1D1D",
+        crust = "#101010",
       }, dark_colors),
     },
     highlight_overrides = {

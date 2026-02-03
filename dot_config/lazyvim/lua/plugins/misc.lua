@@ -22,28 +22,14 @@ return {
   },
 
   {
-    "norcalli/nvim-colorizer.lua",
+    "LazyVim/LazyVim",
     opts = {
-      filetypes = {
-        "*",
-        "!lazy",
-        "!gitcommit",
-        "!help",
-        "!mason",
-        "!neo-tree",
-        "!messages",
-        "!checkhealth",
-      },
-      user_default_options = {
-        tailwind = true,
-      },
+      colorscheme = "catppuccin",
     },
   },
 
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "vscode",
-    },
+    "catgoose/nvim-colorizer.lua",
+    opts = {},
   },
 }

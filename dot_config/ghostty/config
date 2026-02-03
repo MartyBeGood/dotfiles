@@ -1,6 +1,6 @@
 # Ghostty config. Keep a comment on the first line for nvim ft detection
 
-theme = dark:gnomepuccin-dark,light:gnomepuccin-light
+theme = dark:Dark+,light:Apple System Colors Light
 
 # font-family = "SF Mono"
 # adjust-cell-height = 20%

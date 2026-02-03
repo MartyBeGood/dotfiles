@@ -2,11 +2,16 @@ return {
   -- NOTE: to future self: Just leave it as is unless monokai-nightasty is broken. You've tried and failed to find a better one many times.
 
   -- Themes I've tried and didn't like enough to keep:
-  -- "folke/tokyonight.nvim", -- Lazyvim default. Bluish, some hard-to-read combinations in the statusline
-  -- "catppuccin/nvim", -- Has themes for everything. More readable than tokyonight, much the same vibe.
   -- "marko-cerovac/material.nvim", -- Material theme. Toggling doesn't work right.
   -- "EdenEast/nightfox.nvim", -- Collection of nice-looking themes, but doesn't support background toggling.
   -- "projekt0n/github-nvim-theme", -- GitHub theme. Light mode is a bit harsh, dark mode is nice.
+  {
+    "mofiqul/vscode.nvim",
+    opts = {
+      italic_comments = true,
+      underline_links = true,
+    },
+  },
   {
     "polirritmico/monokai-nightasty.nvim", -- Monokai with a neutral grey background.
     opts = {

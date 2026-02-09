@@ -27,3 +27,12 @@ if vim.env.SSH_TTY and not vim.env.TMUX then
     },
   }
 end
+
+vim.filetype.add({
+  extension = {
+    caddy = "caddy",
+  },
+  filename = {
+    Caddyfile = "caddy",
+  },
+})

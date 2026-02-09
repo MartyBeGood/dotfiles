@@ -6,20 +6,20 @@ end
 
 local dark_colors = {
   -- Colors specified in color_overrides.all seem to override the darker colors in latte. Define the shared dark colors here to keep the light/dark mode toggleable
-  rosewater = "#f4dbd6",
-  flamingo = "#f0c6c6",
-  pink = "#f5bde6",
-  mauve = "#c6a0f6",
-  red = "#F43653",
-  maroon = "#fd7ca9",
-  peach = "#f5a885",
-  yellow = "#D3B987",
-  green = "#CAD05C",
-  teal = "#8cd5c4",
-  sky = "#B3DEEF",
-  sapphire = "#72CEF4",
-  blue = "#87c0f7",
-  lavender = "#b7bdf8",
+  rosewater = "#f5e0dc",
+  flamingo = "#f2cdcd",
+  pink = "#f5c2e7",
+  mauve = "#9b7bae",
+  red = "#c8504d",
+  maroon = "#8581bd",
+  peach = "#cd7628",
+  yellow = "#f6c875",
+  green = "#879d65",
+  teal = "#00adad",
+  sky = "#89dceb",
+  blue = "#829dc0",
+  sapphire = "#4ca3da",
+  lavender = "#b4befe",
 }
 
 return {
@@ -41,12 +41,12 @@ return {
         maroon = "#af2837",
         peach = "#ab4d24",
         yellow = "#b16d00",
-        green = "#317c21",
+        green = "#6d875c",
         teal = "#0d6469",
         sky = "#04a5e5",
         sapphire = "#209fb5",
         blue = "#14429e",
-        lavender = "#5267dd",
+        lavender = "#5268dd",
         text = "#202020",
         subtext1 = "#3c3c3c",
         subtext0 = "#4e4e4e",
@@ -79,18 +79,18 @@ return {
 
       -- neutral greys that fit in on macos or gnome <= 46
       frappe = vim.tbl_extend("keep", {
-        text = "#e4e4e4",
-        subtext1 = "#c1c1c1",
+        text = "#d7d7d7",
+        subtext1 = "#c3c3c3",
         subtext0 = "#aeaeae",
-        overlay2 = "#9b9b9b",
-        overlay1 = "#888888",
-        overlay0 = "#757575",
-        surface2 = "#444444",
-        surface1 = "#323232",
-        surface0 = "#282828",
-        base = "#222222",
-        mantle = "#1D1D1D",
-        crust = "#101010",
+        overlay2 = "#9a9a9a",
+        overlay1 = "#858585",
+        overlay0 = "#717171",
+        surface2 = "#5c5c5c",
+        surface1 = "#494949",
+        surface0 = "#343434",
+        base = "#282828",
+        mantle = "#191919",
+        crust = "#121212",
       }, dark_colors),
     },
     highlight_overrides = {
@@ -99,14 +99,20 @@ return {
         local u = require("catppuccin.utils.colors")
 
         local hlg = {
-          func = { fg = c.blue, style = o.styles.functions or {} },
-          keyword = { fg = c.subtext0, style = o.styles.keywords or {} },
+          func = { fg = c.yellow, style = o.styles.functions or {} },
+          keyword = { fg = c.peach, style = o.styles.keywords or {} },
           literal = { fg = c.mauve },
           text = { fg = c.text },
+          muted_comment = { fg = c.subtext0, style = o.styles.comments or {} },
+          link = {
+            keyword = { link = "Keyword" },
+            normal = { link = "Normal" },
+            func = { link = "Function" },
+          },
         }
 
         return {
-          Comment = { fg = c.yellow, style = o.styles.comments }, -- just comments
+          Comment = { fg = c.sky, style = o.styles.comments }, -- just comments
           SpecialComment = { link = "Special" }, -- special things inside a comment
           ["@comment"] = { link = "Comment" },
           ["@comment.documentation"] = { link = "Comment" }, -- For comments documenting code
@@ -116,6 +122,8 @@ return {
           ["@comment.hint"] = { fg = c.base, bg = c.blue },
           ["@comment.todo"] = { fg = c.base, bg = c.flamingo },
           ["@comment.note"] = { fg = c.base, bg = c.rosewater },
+
+          CursorLineNr = { fg = c.peach },
 
           -- Language builtins (keywords, builtin types, directives, etc)
           Keyword = hlg.keyword, --  any other keyword
@@ -170,8 +178,8 @@ return {
           ["@character"] = { link = "Character" }, -- character literals
 
           Identifier = { fg = c.flamingo, style = o.styles.variables or {} }, -- (preferred) any variable name
-          Function = { fg = c.blue, style = o.styles.functions or {} }, -- function name (also: methods for classes)
-          Operator = { fg = c.sky, style = o.styles.operators or {} }, -- "sizeof", "+", "*", etc.
+          Function = hlg.func,
+          Operator = { fg = c.text, style = o.styles.operators or {} }, -- "sizeof", "+", "*", etc.
 
           Special = { fg = c.pink }, -- (preferred) any special symbol
           SpecialChar = { link = "Special" }, -- special character in a constant
@@ -300,7 +308,7 @@ return {
           ["@type.definition"] = { link = "Type" }, -- type definitions (e.g. `typedef` in C)
 
           ["@attribute"] = { link = "Constant" }, -- attribute annotations (e.g. Python decorators)
-          ["@property"] = { fg = c.lavender, style = o.styles.properties or {} }, -- For fields, like accessing `bar` property on `foo.bar`. Overriden later for data languages and CSS.
+          ["@property"] = { fg = c.mauve, style = o.styles.properties or {} }, -- For fields, like accessing `bar` property on `foo.bar`. Overriden later for data languages and CSS.
 
           -- Functions
           ["@function"] = { link = "Function" }, -- For function (calls and definitions).
@@ -320,7 +328,7 @@ return {
           ["@punctuation.special"] = { link = "Special" }, -- For special punctuation that does not fall in the categories before (e.g. `{}` in string interpolation).
 
           -- Markup
-          ["@markup"] = { fg = c.text }, -- For strings considerated text in a markup language.
+          ["@markup"] = hlg.link.normal, -- For strings considerated text in a markup language.
           ["@markup.strong"] = { fg = c.red, style = { "bold" } }, -- bold
           ["@markup.italic"] = { fg = c.red, style = { "italic" } }, -- italic
           ["@markup.strikethrough"] = { fg = c.text, style = { "strikethrough" } }, -- strikethrough text
@@ -428,9 +436,16 @@ return {
 
           -- gitcommit
           ["@comment.warning.gitcommit"] = { fg = c.yellow },
+          ["@comment.gitcommit"] = hlg.muted_comment,
+          ["@string.special.path.gitcommit"] = hlg.link.normal,
 
           -- gitignore
           ["@string.special.path.gitignore"] = { fg = c.text },
+
+          -- GitSigns
+          GitSignsDelete = { fg = c.red },
+          GitSignsChange = { fg = c.blue },
+          GitSignsAdd = { fg = c.green },
         }
       end,
     },

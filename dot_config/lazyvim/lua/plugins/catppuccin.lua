@@ -446,6 +446,8 @@ return {
           GitSignsDelete = { fg = c.red },
           GitSignsChange = { fg = c.blue },
           GitSignsAdd = { fg = c.green },
+
+          NeoTreeGitModified = { link = "GitSignsChange" },
         }
       end,
     },

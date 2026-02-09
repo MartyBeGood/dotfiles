@@ -7,6 +7,10 @@ return {
   },
 
   {
+    "HiPhish/jinja.vim",
+  },
+
+  {
     "folke/which-key.nvim",
     opts = {
       preset = "classic",

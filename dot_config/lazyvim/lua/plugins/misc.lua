@@ -29,7 +29,16 @@ return {
   },
 
   {
-    "catgoose/nvim-colorizer.lua",
-    opts = {},
+    "brenoprata10/nvim-highlight-colors",
+    opts = {
+      exclude_filetypes = {
+        "TelescopePrompt",
+        "Trouble",
+        "lazy",
+        "mason",
+        "mason-installer",
+        "gitcommit",
+      },
+    },
   },
 }

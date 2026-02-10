@@ -69,14 +69,12 @@ return {
     "rcarriga/nvim-notify",
     enabled = false,
   },
+
   {
     "folke/noice.nvim",
     opts = {
       presets = {
         command_palette = false,
-      },
-      notify = {
-        view = "mini",
       },
       cmdline = {
         view = "cmdline",
@@ -97,6 +95,9 @@ return {
     "folke/snacks.nvim",
     opts = {
       dashboard = {
+        enabled = false,
+      },
+      notifier = {
         enabled = false,
       },
     },

@@ -35,6 +35,13 @@ return {
   },
 
   {
+    "ibhagwan/fzf-lua",
+    opts = {
+      file_icon_padding = " ", -- Helps Win Terminal and KiTTY to color oversize nerd-font icons all the way
+    },
+  },
+
+  {
     "folke/flash.nvim",
     cond = false,
   },

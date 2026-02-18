@@ -2,7 +2,6 @@ local wezterm = require("wezterm")
 -- local act =
 
 local is_windows = wezterm.target_triple:find("windows") ~= nil
-local is_mac = wezterm.target_triple:find("darwin") ~= nil
 
 local extra_colors = {
 	cursor = "#ff9808",
@@ -55,41 +54,20 @@ c.window_padding = {
 }
 c.audible_bell = "Disabled"
 
-c.font_size = 14
-c.cell_width = 0.9
--- c.line_height = 1.15
+c.font_size = 11
+c.cell_width = 0.85
+c.line_height = 1.15
 c.underline_position = -4
 c.font = wezterm.font_with_fallback({
-	{ family = "Iosevka Term", stretch = "Expanded" },
-	{ family = "Cascadia Code", weight = "DemiLight" },
-	"JetBrainsMono Nerd Font Propo",
+	-- { family = "Iosevka Term", stretch = "Expanded" },
+	{ family = "Google Sans Code", weight = "DemiLight" },
+	{ family = "Symbols Nerd Font" },
 })
 
-local italics_font = "Iosevka"
-local use_separate_italics_font = false
-
-if use_separate_italics_font then
-	c.font_rules = {
-		{
-			italic = true,
-			intensity = "Bold",
-			font = wezterm.font({ family = italics_font, weight = "Bold", style = "Italic", stretch = "Expanded" }),
-		},
-		{
-			italic = true,
-			intensity = "Half",
-			font = wezterm.font({ family = italics_font, weight = "DemiBold", style = "Italic", stretch = "Expanded" }),
-		},
-		{
-			italic = true,
-			intensity = "Normal",
-			font = wezterm.font({ family = italics_font, style = "Italic", stretch = "Expanded" }),
-		},
-	}
-end
+c.font_rules = {}
 
 if is_windows then
-	c.default_prog = { "pwsh" }
+	c.default_prog = { "powershell" }
 	c.mux_enable_ssh_agent = false -- The Win OpenSSH agent works fine. Don't misconfigure yourself.
 end
 

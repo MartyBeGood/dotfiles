@@ -417,15 +417,15 @@ return {
           rubyConstant = { link = "Constant" },
           rubyPseudoVariable = { link = "NonStringLiteral" },
           rubySymbol = { link = "NonStringLiteral" },
-          rubyKeywordAsMethod = hlg.func,
-          rubyVariableOrMethod = hlg.func,
+          rubyKeywordAsMethod = hlg.link.func,
+          rubyVariableOrMethod = hlg.link.func,
 
           -- YAML
           ["@label.yaml"] = { fg = c.yellow }, -- Anchor and alias names.
 
           -- PHP
-          ["@function.method.php"] = hlg.func,
-          ["@function.method.call.php"] = hlg.func,
+          ["@function.method.php"] = hlg.link.func,
+          ["@function.method.call.php"] = hlg.link.func,
 
           -- C/CPP
           ["@keyword.import.c"] = { fg = c.yellow },
@@ -448,6 +448,7 @@ return {
           GitSignsAdd = { fg = c.green },
 
           NeoTreeGitModified = { link = "GitSignsChange" },
+          NeoTreeDirectoryName = hlg.text,
         }
       end,
     },

@@ -3,6 +3,7 @@ return {
   config = function()
     vim.g.copilot_no_tab_map = true
   end,
+  cond = false, -- I'll use the Lazyvim copilot plugins and sidekick instead
   event = "VeryLazy",
   keys = {
     {

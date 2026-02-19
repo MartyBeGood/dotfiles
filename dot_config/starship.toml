@@ -51,6 +51,7 @@ format = '\([$state( $progress_current/$progress_total)]($style)\) '
 [hostname]
 ssh_symbol = "@"
 format = "[$ssh_symbol$hostname]($style) "
+style = "bold green"
 
 [username]
 format = "[$user]($style)"

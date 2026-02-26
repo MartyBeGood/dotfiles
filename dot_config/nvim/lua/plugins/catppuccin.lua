@@ -1,9 +1,3 @@
--- TODO: come up with a clever way to make this also fit in when working over SSH
-local dark_variant = "mocha"
-if vim.fn.system("uname"):match("Darwin") then
-  dark_variant = "frappe"
-end
-
 local dark_colors = {
   -- Colors specified in color_overrides.all seem to override the darker colors in latte. Define the shared dark colors here to keep the light/dark mode toggleable
   rosewater = "#f5e0dc",
@@ -103,7 +97,7 @@ return {
           keyword = { fg = c.peach, style = o.styles.keywords or {} },
           literal = { fg = c.mauve },
           text = { fg = c.text },
-          muted_comment = { fg = c.subtext0, style = o.styles.comments or {} },
+          muted_text = { fg = c.subtext0 },
           link = {
             keyword = { link = "Keyword" },
             normal = { link = "Normal" },
@@ -112,10 +106,10 @@ return {
         }
 
         return {
-          Comment = { fg = c.sky, style = o.styles.comments }, -- just comments
+          Comment = { fg = c.subtext0, style = o.styles.comments or {} }, -- just comments
           SpecialComment = { link = "Special" }, -- special things inside a comment
-          ["@comment"] = { link = "Comment" },
-          ["@comment.documentation"] = { link = "Comment" }, -- For comments documenting code
+          ["@comment"] = { fg = c.sky, style = o.styles.comments or {} },
+          ["@comment.documentation"] = { fg = c.sky, style = o.styles.comments or {} }, -- For comments documenting code
 
           ["@comment.error"] = { fg = c.base, bg = c.red },
           ["@comment.warning"] = { fg = c.base, bg = c.yellow },
@@ -436,7 +430,6 @@ return {
 
           -- gitcommit
           ["@comment.warning.gitcommit"] = { fg = c.yellow },
-          ["@comment.gitcommit"] = hlg.muted_comment,
           ["@string.special.path.gitcommit"] = hlg.link.normal,
 
           -- gitignore
@@ -457,6 +450,7 @@ return {
     integrations = {
       window_picker = true,
       diffview = true,
+      bufferline = true,
     },
   },
 }

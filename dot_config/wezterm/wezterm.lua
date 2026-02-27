@@ -29,7 +29,6 @@ local extra_colors_by_appearance = function()
 	if dark_mode() then
 		mcolors.cursor_bg = extra_colors.cursor
 		mcolors.cursor_border = extra_colors.cursor
-		-- mcolors.tab_bar = { background = extra_colors.background }
 	end
 
 	return mcolors
@@ -37,6 +36,7 @@ end
 
 local c = wezterm.config_builder()
 
+c.use_fancy_tab_bar = false
 c.send_composed_key_when_right_alt_is_pressed = true
 c.use_dead_keys = false
 c.use_ime = false
@@ -56,18 +56,39 @@ c.audible_bell = "Disabled"
 
 c.font_size = 11
 c.cell_width = 0.85
-c.line_height = 1.15
+c.line_height = 1.1
 c.underline_position = -4
 c.font = wezterm.font_with_fallback({
-	-- { family = "Iosevka Term", stretch = "Expanded" },
-	{ family = "Google Sans Code", weight = "DemiLight" },
+	-- {
+	-- 	family = "CommitMonoStock",
+	-- 	harfbuzz_features = {
+	-- 		"ss05",
+	-- 		"cv08=1",
+	-- 	},
+	-- },
+	{
+		family = "JetBrains Mono",
+		harfbuzz_features = {
+			"cv12", -- u with a downstroke
+			"zero", -- slashed zero
+			"ss19", -- !== feels neater than without ligatures, but recognizable as individual characters
+		},
+	},
 	{ family = "Symbols Nerd Font" },
 })
 
-c.font_rules = {}
+-- =~
 
 if is_windows then
-	c.default_prog = { "powershell" }
+	local function is_executable_in_path(executable)
+		return wezterm.run_child_process({ "where.exe", "/Q", executable })
+	end
+
+	if is_executable_in_path("pwsh") then
+		c.default_prog = { "pwsh" }
+	else
+		c.default_prog = { "powershell" }
+	end
 	c.mux_enable_ssh_agent = false -- The Win OpenSSH agent works fine. Don't misconfigure yourself.
 end
 

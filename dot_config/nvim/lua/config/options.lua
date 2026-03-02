@@ -30,9 +30,12 @@ end
 
 vim.filetype.add({
   extension = {
-    caddy = "caddy",
-  },
-  filename = {
     Caddyfile = "caddy",
+  },
+})
+
+vim.filetype.add({
+  filename = {
+    ["Caddyfile"] = "caddy",
   },
 })

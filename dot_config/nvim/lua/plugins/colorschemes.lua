@@ -109,4 +109,13 @@ return {
       end,
     },
   },
+  {
+    "oskarnurm/koda.nvim",
+    opts = {},
+  },
+  {
+    "MartyBeGood/lorem-gypsum.nvim",
+    opts = {},
+    dev = true,
+  },
 }

@@ -16,6 +16,7 @@ return {
         },
         -- sourcekit = {},
         jdtls = {},
+        ty = {},
       },
     },
   },

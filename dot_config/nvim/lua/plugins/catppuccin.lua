@@ -18,8 +18,10 @@ local dark_colors = {
 
 return {
   "catppuccin/nvim",
-  lazy = true,
-  name = "catppuccin",
+  lazy = false,
+  config = function(_, opts)
+    require("catppuccin").setup(opts)
+  end,
   opts = {
     background = {
       light = "latte",

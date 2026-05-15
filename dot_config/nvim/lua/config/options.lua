@@ -9,8 +9,6 @@ vim.opt.grepformat = "%f:%l:%m,%f:%l%m,%f  %l%m"
 vim.opt.splitkeep = "cursor"
 vim.opt.clipboard = "" -- Don't use system clipboard anywhere. The LazyVim default of "use system clipboard unless in SSH" confuses me.
 
-vim.opt.winborder = "rounded" -- lorem-gypsum needs a border atm
-
 vim.opt.breakindent = true
 vim.g.snacks_animate = false
 

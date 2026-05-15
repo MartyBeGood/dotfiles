@@ -116,6 +116,6 @@ return {
   {
     "MartyBeGood/lorem-gypsum.nvim",
     opts = {},
-    dev = true,
+    dev = false,
   },
 }

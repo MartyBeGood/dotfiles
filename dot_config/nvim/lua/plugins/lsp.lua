@@ -4,9 +4,10 @@ return {
     opts = {
       servers = {
         emmet_ls = {},
-        ruby_lsp = {
-          mason = false,
-        },
+        pyright = { mason = false },
+        ruby_lsp = { mason = false },
+        rubocop = { mason = false },
+        -- sourcekit = {},
         jdtls = {},
         ty = {},
       },

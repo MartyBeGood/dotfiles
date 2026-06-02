@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 -- local act =
 
 local is_windows = wezterm.target_triple:find("windows") ~= nil
+local is_mac = wezterm.target_triple:find("darwin") ~= nil
 
 local extra_colors = {
 	cursor = "#ff9808",
@@ -54,18 +55,20 @@ c.window_padding = {
 }
 c.audible_bell = "Disabled"
 
-c.font_size = 11
-c.cell_width = 0.85
-c.line_height = 1.1
+if is_mac then
+	c.font_size = 14.5
+else
+	c.font_size = 12
+end
+
+c.cell_width = 0.9
+c.line_height = 1.2
 c.underline_position = -4
 c.font = wezterm.font_with_fallback({
-	-- {
-	-- 	family = "CommitMonoStock",
-	-- 	harfbuzz_features = {
-	-- 		"ss05",
-	-- 		"cv08=1",
-	-- 	},
-	-- },
+	{
+		family = "Google Sans Code",
+		harfbuzz_features = {},
+	},
 	{
 		family = "JetBrains Mono",
 		harfbuzz_features = {

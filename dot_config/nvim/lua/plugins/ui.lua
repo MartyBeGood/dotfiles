@@ -24,9 +24,7 @@ return {
                   end
                 end
 
-                if next(server_names) == nil then
-                  return ""
-                end
+                if next(server_names) == nil then return "" end
 
                 return "󰒋 " .. table.concat(server_names, ", ")
               end,
@@ -102,14 +100,13 @@ return {
       },
     },
   },
+
   {
     "nvim-mini/mini.indentscope",
     opts = {
-      -- disable animation
       draw = {
-        animation = function()
-          return 0
-        end,
+        delay = 0,
+        animation = function() return 0 end,
       },
     },
   },

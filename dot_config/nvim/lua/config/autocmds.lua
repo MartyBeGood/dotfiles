@@ -6,21 +6,6 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
-augroup("miniindentscope", { clear = true })
-autocmd("FileType", {
-  group = "miniindentscope",
-  pattern = {
-    "NvimTree",
-    "fugitive",
-    "gitcommit",
-    "toggleterm",
-    "terminal",
-  },
-  callback = function()
-    vim.api.nvim_buf_set_var(vim.api.nvim_get_current_buf(), "miniindentscope_disable", true)
-  end,
-})
-
 autocmd("FileType", {
   group = "miniindentscope",
   pattern = { "slim", "python", "yaml" },
@@ -40,9 +25,7 @@ augroup("termopen", { clear = true })
 autocmd("TermOpen", {
   group = "termopen",
   pattern = "*",
-  callback = function()
-    vim.api.nvim_command("setlocal nonumber norelativenumber nocursorline")
-  end,
+  callback = function() vim.api.nvim_command("setlocal nonumber norelativenumber nocursorline") end,
 })
 
 -- ...and in fugitive
@@ -50,9 +33,7 @@ augroup("fugitiveLineNumbers", { clear = true })
 autocmd("FileType", {
   group = "fugitiveLineNumbers",
   pattern = "fugitive",
-  callback = function()
-    vim.api.nvim_command("setlocal nonumber norelativenumber")
-  end,
+  callback = function() vim.api.nvim_command("setlocal nonumber norelativenumber") end,
 })
 
 -- Treat eruby.yaml as yaml
@@ -60,9 +41,7 @@ augroup("syntaxfixes", { clear = true })
 autocmd("FileType", {
   group = "syntaxfixes",
   pattern = "eruby.yaml",
-  callback = function()
-    vim.bo.filetype = "yaml"
-  end,
+  callback = function() vim.bo.filetype = "yaml" end,
 })
 
 -- Turn off autoformatting for certain files
@@ -74,7 +53,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   callback = function()
     local ft = vim.bo.filetype
     local filetypes_to_disable = {
-      "scss",
       "css",
     }
     for _, type_without_formatting in ipairs(filetypes_to_disable) do
@@ -102,8 +80,6 @@ vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter" }, {
   pattern = "*",
   callback = function()
     local ok, gitsigns = pcall(require, "gitsigns")
-    if ok and vim.b.gitsigns_status_dict then
-      gitsigns.refresh()
-    end
+    if ok and vim.b.gitsigns_status_dict then gitsigns.refresh() end
   end,
 })

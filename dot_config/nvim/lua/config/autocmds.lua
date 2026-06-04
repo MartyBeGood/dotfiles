@@ -6,8 +6,9 @@
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
+augroup("my.miniindentscope", { clear = true })
 autocmd("FileType", {
-  group = "miniindentscope",
+  group = "my.miniindentscope",
   pattern = { "slim", "python", "yaml" },
   callback = function()
     vim.api.nvim_buf_set_var(vim.api.nvim_get_current_buf(), "miniindentscope_config", { options = { border = "top" } })

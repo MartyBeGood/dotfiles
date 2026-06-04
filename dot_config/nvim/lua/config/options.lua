@@ -39,3 +39,6 @@ vim.filetype.add({
     ["Caddyfile"] = "caddy",
   },
 })
+
+-- I like the sidekick ui goodies. I don't have a key for copilot
+vim.g.sidekick_nes = false

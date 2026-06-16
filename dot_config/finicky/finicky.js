@@ -66,17 +66,32 @@ const slackSubdomainMapping = {
   // personal slacks
 };
 
-const openInChrome = [
-  { match: "linear.app/*" },
-  { match: "auctionet.slack.com/*" },
-  { match: "github.com/barsoom/*" },
+const openInChromeHosts = [
+  "linear.app/*",
+  "auctionet.slack.com/*",
+  "github.com/barsoom/*",
+  "auctionet.devbox/*",
+  "*.auctionet.com/*",
+  "*.auctionet.dev/*",
+  "*.tuple.app/*",
+  "eu-app.honeybadger.io/*",
+  "meet.google.com/*",
+  "app.notion.com/*",
+  (url) => url.host === "www.figma.com",
 ];
+
+const openInChromeMatchers = [
+  // space for more complex things to open in chrome
+  ...openInChromeHosts.map(match => ({ match })),
+];
+
+const openInChrome = openInChromeMatchers.map(matcher =>({ ...matcher, browser: "Google Chrome" }))
 
 export default {
   defaultBrowser: "Vivaldi",
   rewrite: [rewriteSlack(slackSubdomainMapping)],
   handlers: [
-    ...openInChrome.map(m => ({ ...m, browser: "Google Chrome" })),
+    ...openInChrome,
     { match: ({ url }) => url.protocol === "slack" || url.protocol === "slack:", browser: "Slack" },
   ],
 };

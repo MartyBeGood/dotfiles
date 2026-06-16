@@ -53,3 +53,7 @@ else
     echo "mise not available. chezmoi setup might be borked."
   fi
 fi
+
+if [ command -v 'usage' &> /dev/null ]; then
+  source <(usage g completion-init zsh)
+fi

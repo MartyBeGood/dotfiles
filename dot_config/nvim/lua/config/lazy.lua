@@ -24,10 +24,6 @@ require("lazy").setup({
 
   checker = { enabled = false }, -- Don't nag me to update plugins
 
-  dev = {
-    path = "~/repos",
-  },
-
   performance = {
     rtp = {
       -- disable some rtp plugins

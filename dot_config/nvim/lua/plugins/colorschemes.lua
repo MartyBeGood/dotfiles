@@ -118,4 +118,8 @@ return {
     opts = {},
     dev = false,
   },
+  {
+    "ThorstenRhau/token",
+    opts = {},
+  },
 }

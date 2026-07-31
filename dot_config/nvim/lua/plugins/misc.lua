@@ -28,7 +28,7 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "lorem-gypsum",
+      colorscheme = "token",
     },
   },
 

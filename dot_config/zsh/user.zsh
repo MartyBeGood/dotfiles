@@ -22,12 +22,10 @@ EOF
   fi
 }
 
-# if type zoxide &>/dev/null
-# then
-#   eval "$(zoxide init zsh)"
-# fi
-
-if type nvim &> /dev/null; then
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  export EDITOR="code --wait"
+  export VISUAL=$EDITOR
+elif type nvim &> /dev/null; then
   export EDITOR='nvim'
 elif type vim &> /dev/null; then
   export EDITOR='vim'

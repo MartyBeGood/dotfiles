@@ -25,6 +25,14 @@ else
   fi
 fi
 
+if [[ "$TERM_PROGRAM" == "vscode" ]]; then
+  export EDITOR="code --wait"
+  export VISUAL="code --wait"
+else
+  export EDITOR="nvim"
+  export VISUAL="nvim"
+fi
+
 # load starship prompt if the command exists
 if [ -x "$(command -v starship)" ]; then
   eval "$(starship init bash)"

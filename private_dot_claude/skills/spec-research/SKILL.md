@@ -1,16 +1,16 @@
 ---
-name: research
+name: spec-research
 description: |
   Gather external knowledge the spec needs and distill it into §R — the durable
   research log — so build grounds in facts instead of hallucinating library
   behavior. Each finding cites a source; unsourced claims are flagged, never
   written as fact. Triggers when a spec decision hinges on a library/API/best
   practice the agent is unsure of, when the user says "research this", "what's
-  the best lib for…", "check current best practice", or invokes /ck:research.
+  the best lib for…", "check current best practice", or invokes /spec-research.
   Defers the §R write to the spec skill.
 ---
 
-# research — external knowledge → §R
+# spec-research — external knowledge → §R
 
 **Every finding cites a source. No source → flag it `?`, never write a guess as fact.**
 

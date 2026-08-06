@@ -1,5 +1,5 @@
 ---
-name: deepen
+name: spec-deepen
 description: |
   Optional design-improvement pass for when you have spare usage to drain. Finds
   the shallowest modules in the code the spec touches, researches a deeper
@@ -7,11 +7,11 @@ description: |
   behavior held constant, tests green before and after. Proposes §I/§V/§T edits,
   never silent rewrites. Triggers when the user says "deepen this", "improve the
   design", "this module feels shallow", "pull complexity down", "use spare
-  budget on the codebase", or invokes /ck:deepen. Leans on the codebase-design
+  budget on the codebase", or invokes /spec-deepen. Leans on the codebase-design
   skill's deep-module vocabulary when present.
 ---
 
-# deepen — make modules deep
+# spec-deepen — make modules deep
 
 **Behavior is sacred: tests green before AND after. Every change shrinks an interface or hides a decision — deepen, don't churn.**
 

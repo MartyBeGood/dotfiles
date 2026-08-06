@@ -1,5 +1,5 @@
 ---
-name: review
+name: spec-review
 description: |
   Adversarial senior review of the spec before any code is written. Constructs a
   skeptical reviewer whose authority comes from the codebase, §R research, and
@@ -8,7 +8,7 @@ description: |
   Survivors harden §V; the run ends in an explicit go / no-go gate. Triggers
   before building anything high-blast-radius, when the user says "review the
   spec", "red-team this", "is this plan sound", "senior review", or invokes
-  /ck:review.
+  /spec-review.
 ---
 
 # review — refute the spec before build

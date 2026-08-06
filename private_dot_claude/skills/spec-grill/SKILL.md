@@ -1,16 +1,16 @@
 ---
-name: grill
+name: spec-grill
 description: |
   Calibrated interrogation of a fuzzy idea before it becomes a spec. Asks one
   question at a time, recommends an answer, and lands each answer in §G (goal)
   or §C (constraints) — unknowns parked as `?` items, never guessed. The
   cheapest place to kill a bad idea is before §T exists. Triggers when the user
   has a vague idea, says "grill me", "stress-test this", "challenge my plan",
-  "interview me before I spec", or invokes /ck:grill. Defers the actual write to
+  "interview me before I spec", or invokes /spec-grill. Defers the actual write to
   the spec skill.
 ---
 
-# grill — sharpen idea before spec
+# spec-grill — sharpen idea before spec
 
 **One question at a time. Every answer lands in a § or gets parked `?`. Never guess a constraint into existence.**
 

@@ -1,5 +1,5 @@
 ---
-name: backprop
+name: spec-backprop
 description: |
   Bug → spec protocol. When a bug is found or a test fails, trace the cause,
   decide whether a new §V invariant would catch recurrence, append to §B.
@@ -7,7 +7,7 @@ description: |
   Triggers on test failure, bug report, post-mortem, or explicit user ask.
 ---
 
-# backprop — bug → spec
+# spec-backprop — bug → spec
 
 Plan-then-execute fixes the code & forgets.
 SDD fixes the code AND edits spec so recurrence is impossible.

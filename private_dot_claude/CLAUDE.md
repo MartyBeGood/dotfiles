@@ -28,6 +28,3 @@ Never hard-wrap comment lines.
 ## Commit messages
 Match Conversational style. Separate concepts/parts of the same commit on separate lines. Summarize large changes, never restate code/comments if greppable by scanning diff.
 Never add a Co-Authored-By line.
-
-## SPEC.md
-SPEC.md files always follow the format specified in `~/.claude/cavekit/FORMAT.md`

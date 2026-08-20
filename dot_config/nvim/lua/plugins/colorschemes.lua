@@ -120,6 +120,5 @@ return {
   },
   {
     "ThorstenRhau/token",
-    opts = {},
   },
 }

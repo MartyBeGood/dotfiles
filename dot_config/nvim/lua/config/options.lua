@@ -11,6 +11,7 @@ vim.opt.clipboard = "" -- Don't use system clipboard anywhere. The LazyVim defau
 
 vim.opt.breakindent = true
 vim.g.snacks_animate = false
+vim.opt.termguicolors = true
 
 vim.g.maplocalleader = ","
 

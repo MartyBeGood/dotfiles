@@ -76,7 +76,8 @@ const openInChromeHosts = [
   "*.tuple.app/*",
   "eu-app.honeybadger.io/*",
   "meet.google.com/*",
-  "app.notion.com/*",
+  "app.notion.com/p/*",
+  "www.notion.so/*",
   (url) => url.host === "www.figma.com",
 ];
 

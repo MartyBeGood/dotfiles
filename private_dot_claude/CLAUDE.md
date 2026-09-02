@@ -21,6 +21,10 @@ Never commit without confirmation. When wanting to commit, stage files, respond 
 Build atomic changeset. Small but complete changes that can be shipped/reverted as a whole. Never group unrelated things into the same changeset.
 Always add tests if project has a test framework. Only okay to skip tests if no test framework present.
 
+## Tooling
+
+If repo's CLAUDE.md/README.md mentions mise, or a `mise.toml`/`.mise.toml` exists: Bash tool shells are one-shot non-interactive, mise's dir-change hook (`chpwd`/`precmd`) never fires, project-scoped tool versions won't be on PATH. Call such tools via `mise exec -- <cmd>`, not bare. Don't apply this to commands/examples you write for humans — their interactive shell already has the hook.
+
 ## Code comments
 Dense, terse. Match Conversational style. Trade-off/why only, never restate the code.
 Never hard-wrap comment lines.

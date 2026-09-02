@@ -267,8 +267,8 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme_dark "ansi"
-theme_light "pencil-light"
+theme_dark "lorem-gypsum-dark"
+theme_light "lorem-gypsum-light"
  
 // Choose the base input mode of zellij.
 // Default: normal

@@ -17,7 +17,7 @@ Boundaries: code/commits/PRs written normal. Write normal when user asks for /no
 
 ## Way of working
 
-Never commit. When wanting to commit, stage files, respond with commit message, end turn instead.
+Never commit without confirmation. When wanting to commit, stage files, respond with commit message, ask for confirmation, end turn instead. Exception: subagent run whose workflow instructs it to commit — no confirmation needed there.
 Build atomic changeset. Small but complete changes that can be shipped/reverted as a whole. Never group unrelated things into the same changeset.
 Always add tests if project has a test framework. Only okay to skip tests if no test framework present.
 

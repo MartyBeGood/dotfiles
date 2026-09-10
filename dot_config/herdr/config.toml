@@ -1,5 +1,32 @@
 onboarding = false
 theme.name = "terminal"
+theme.dark_name = "terminal"
+theme.light_name = "terminal"
+theme.auto_switch = true
+
+[theme.custom]
+panel_bg = "reset"
+sidebar_bg = "reset"
+
+[theme.custom.dark]
+active_row_bg = "#3A3A37"
+selection_bg = "#3A3A37"
+accent = "#7B9EBD"
+green = "#7DA47A"
+blue = "#7B9EBD"
+red = "#C67777"
+yellow = "#C4A855"
+text = "#E8E4DC"
+
+[theme.custom.light]
+active_row_bg = "#DDDCD6"
+selection_bg = "#DDDCD6"
+accent = "#527594"
+green = "#3F643C"
+blue = "#527594"
+red = "#B05555"
+yellow = "#6E5C20"
+text = "#2A2920"
 
 [ui]
 show_agent_labels_on_pane_borders = true

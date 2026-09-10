@@ -1,0 +1,146 @@
+// Zellij theme based on the token light nvim palette
+// Copy to ~/.config/zellij/themes/token-light.kdl and set
+// `theme_light "token-light"` in ~/.config/zellij/config.kdl
+
+themes {
+    token-light {
+        text_unselected {
+            base 42 41 32
+            background 250 249 245
+            emphasis_0 42 41 32
+            emphasis_1 110 92 32
+            emphasis_2 63 100 60
+            emphasis_3 176 85 85
+        }
+
+        text_selected {
+            base 42 41 32
+            background 221 220 214
+            emphasis_0 42 41 32
+            emphasis_1 110 92 32
+            emphasis_2 63 100 60
+            emphasis_3 176 85 85
+        }
+
+        ribbon_unselected {
+            base 108 103 95
+            background 221 220 214
+            emphasis_0 42 41 32
+            emphasis_1 250 249 245
+            emphasis_2 110 92 32
+            emphasis_3 176 85 85
+        }
+
+        ribbon_selected {
+            base 250 249 245
+            background 82 117 148
+            emphasis_0 42 41 32
+            emphasis_1 110 92 32
+            emphasis_2 63 100 60
+            emphasis_3 176 85 85
+        }
+
+        table_title {
+            base 42 41 32
+            background 250 249 245
+            emphasis_0 42 41 32
+            emphasis_1 110 92 32
+            emphasis_2 63 100 60
+            emphasis_3 176 85 85
+        }
+
+        table_cell_unselected {
+            base 42 41 32
+            background 250 249 245
+            emphasis_0 42 41 32
+            emphasis_1 108 103 95
+            emphasis_2 110 92 32
+            emphasis_3 176 85 85
+        }
+
+        table_cell_selected {
+            base 42 41 32
+            background 221 220 214
+            emphasis_0 42 41 32
+            emphasis_1 110 92 32
+            emphasis_2 63 100 60
+            emphasis_3 176 85 85
+        }
+
+        list_unselected {
+            base 42 41 32
+            background 250 249 245
+            emphasis_0 42 41 32
+            emphasis_1 108 103 95
+            emphasis_2 110 92 32
+            emphasis_3 176 85 85
+        }
+
+        list_selected {
+            base 42 41 32
+            background 221 220 214
+            emphasis_0 42 41 32
+            emphasis_1 110 92 32
+            emphasis_2 63 100 60
+            emphasis_3 176 85 85
+        }
+
+        frame_unselected {
+            base 108 103 95
+            background 221 220 214
+            emphasis_0 108 103 95
+            emphasis_1 42 41 32
+            emphasis_2 110 92 32
+            emphasis_3 176 85 85
+        }
+
+        frame_selected {
+            base 42 41 32
+            background 250 249 245
+            emphasis_0 42 41 32
+            emphasis_1 82 117 148
+            emphasis_2 110 92 32
+            emphasis_3 176 85 85
+        }
+
+        frame_highlight {
+            base 110 92 32
+            background 250 249 245
+            emphasis_0 110 92 32
+            emphasis_1 42 41 32
+            emphasis_2 82 117 148
+            emphasis_3 176 85 85
+        }
+
+        exit_code_success {
+            base 63 100 60
+            background 250 249 245
+            emphasis_0 63 100 60
+            emphasis_1 42 41 32
+            emphasis_2 110 92 32
+            emphasis_3 176 85 85
+        }
+
+        exit_code_error {
+            base 176 85 85
+            background 250 249 245
+            emphasis_0 176 85 85
+            emphasis_1 42 41 32
+            emphasis_2 110 92 32
+            emphasis_3 63 100 60
+        }
+
+        multiplayer_user_colors {
+            player_1 110 92 32
+            player_2 45 108 108
+            player_3 154 73 41
+            player_4 63 100 60
+            player_5 82 117 148
+            player_6 176 85 85
+            player_7 124 97 154
+            player_8 63 100 60
+            player_9 154 73 41
+            player_10 108 103 95
+        }
+    }
+}

@@ -1,6 +1,6 @@
 # Ghostty config. Keep a comment on the first line for nvim ft detection
 
-theme = dark:Apple System Colors,light:Apple System Colors Light
+theme = dark:token-dark,light:token-light
 
 font-family = "CommitMono"
 font-feature = liga,clig,ss02,ss03,ss04,ss05,cv06,cv08

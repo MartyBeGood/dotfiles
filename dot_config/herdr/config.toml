@@ -1,10 +1,11 @@
 onboarding = false
 [theme]
-auto_switch = true
+auto_switch = false
 dark_name = "terminal"
 light_name = "terminal"
 
 
+name = "terminal"
 [theme.custom]
 panel_bg = "reset"
 sidebar_bg = "reset"
@@ -53,10 +54,12 @@ peach = "#613500"
 
 [ui]
 show_agent_labels_on_pane_borders = true
+pane_outer_borders = false
+pane_gaps = false
 
 status_indicators = "symbols"
 [ui.sound]
 enabled = true
 
 [ui.sidebar.agents.rows_by_agent]
-claude = [["state_icon", "machine", "workspace", "tab"], ["terminal_title_stripped"], ["agent", "$claude_usage"]]
+claude = [["state_icon", "machine", "workspace", "tab"], ["terminal_title_stripped"], ["$claude_usage"]]

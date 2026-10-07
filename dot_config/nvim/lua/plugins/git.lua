@@ -17,5 +17,18 @@ return {
       { "<leader>gxp", "<Plug>(git-conflict-prev-conflict)", desc = "Go to prev conflict" },
     },
   },
-  { "tpope/vim-fugitive" },
+  {
+    "tpope/vim-fugitive",
+    config = function()
+      -- Bare :G opens status full-width in a split instead of fugitive's default; any args/range/count fall through to fugitive's own :G definition.
+      vim.cmd([[
+        command! -bang -nargs=? -range=-1 -complete=customlist,fugitive#Complete G
+          \ if empty(<q-args>) && <count> == -1 && !<bang>0 |
+          \   exe '<mods> split' | exe '0Git' |
+          \ else |
+          \   exe fugitive#Command(<line1>, <count>, +"<range>", <bang>0, "<mods>", <q-args>) |
+          \ endif
+      ]])
+    end,
+  },
 }

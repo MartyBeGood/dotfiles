@@ -49,3 +49,5 @@ vim.filetype.add({
 
 -- I like the sidekick ui goodies. I don't have a key for copilot
 vim.g.sidekick_nes = false
+
+vim.filetype.add({ extension = { tofu = "terraform" } }) -- OpenTofu files; nvim only knows .tf
